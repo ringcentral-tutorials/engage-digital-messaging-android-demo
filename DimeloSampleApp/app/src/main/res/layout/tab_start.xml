@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ViewFlipper xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/viewflipper"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/abc_text_size_headline_material"
+                android:text="@string/welcome_to_dimelo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:gravity="center_horizontal"
+                android:textSize="@dimen/abc_text_size_medium_material"
+                android:text="@string/how_to" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+        
+        <LinearLayout
+            android:background="@color/white"
+            android:layout_weight="3"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="0px">
+
+            <android.support.v4.widget.Space
+                android:layout_weight="1"
+                android:background="@color/grey_800"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!--<TextView-->
+                <!--android:id="@+id/open_chat"-->
+                <!--android:layout_weight="1"-->
+                <!--android:textColor="@color/indigo_A700"-->
+                <!--android:textSize="@dimen/abc_text_size_large_material"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Open Chat" />-->
+
+            <!--<TextView-->
+                <!--android:layout_weight="1"-->
+                <!--android:textColor="@color/indigo_A700"-->
+                <!--android:id="@+id/open_full_screen"-->
+                <!--android:textSize="@dimen/abc_text_size_large_material"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Open Full Screen (Soon)" />-->
+
+            <TextView
+                android:layout_weight="1"
+                android:textColor="@color/indigo_A700"
+                android:id="@+id/open_full_screen"
+                android:textSize="@dimen/abc_text_size_large_material"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Open Full Screen" />
+
+            <TextView
+                android:layout_weight="1"
+                android:textColor="@color/indigo_A700"
+                android:textSize="@dimen/abc_text_size_large_material"
+                android:id="@+id/short_notif"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Simulate Short Notification" />
+
+            <TextView
+                android:layout_weight="1"
+                android:textColor="@color/indigo_A700"
+                android:textSize="@dimen/abc_text_size_large_material"
+                android:id="@+id/long_notif"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Simulate Long Notification" />
+
+            <android.support.v4.widget.Space
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <!-- Chat Layout -->
+    <FrameLayout
+        android:id="@+id/chat_start_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</ViewFlipper>
+

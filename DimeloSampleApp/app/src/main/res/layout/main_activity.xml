@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/root_layout">
+
+    <!--<android.support.v7.widget.Toolbar-->
+        <!--android:id="@+id/toolbar"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:theme="@style/Base.ThemeOverlay.AppCompat.Dark"-->
+
+
+        <!--android:minHeight="?attr/actionBarSize"-->
+        <!--android:background="?attr/colorPrimary" />-->
+
+
+    <FrameLayout
+        android:id="@+id/slider_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </FrameLayout>
+
+    <!--<FrameLayout-->
+        <!--android:id="@+id/placeHolder"-->
+        <!--android:background="#0000FF"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="20dp">-->
+    <!--</FrameLayout>-->
+
+
+    <!--<fragment android:name="com.dimelo.dimelosdk.main.Chat"-->
+        <!--android:id="@+id/chat_fragment"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content" />-->
+
+</LinearLayout>

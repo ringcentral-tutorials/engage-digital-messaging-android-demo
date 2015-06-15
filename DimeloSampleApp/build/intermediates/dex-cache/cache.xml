@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/alex/Documents/git/Dimelo/Dimelo_prod_repos/Dimelo-Android-SampleApp/DimeloSampleApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="/Users/alex/Documents/git/Dimelo/Dimelo_prod_repos/Dimelo-Android-SampleApp/DimeloSampleApp/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-5592ff5a78b3bd48ec0c927af80aab70bfb80a01.jar" />
+    </item>
+    <item
+        jar="/Users/alex/Documents/git/Dimelo/Dimelo-Android-Source/DimeloSdkAndSampleApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="/Users/alex/Documents/git/Dimelo/Dimelo-Android-Source/DimeloSdkAndSampleApp/app/build/intermediates/pre-dexed/debug/classes-ebead012a9c431dc96d32da2b93f29c5159b873a.jar" />
+    </item>
+    <item
+        jar="/Users/alex/Documents/git/Dimelo/Dimelo-Android-Source/DimeloSdkAndSampleApp/app/build/intermediates/exploded-aar/com.android/volley/1.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="0c06efd043d6b8ab0428d4ada0c5e33718fbee78">
+        <dex dex="/Users/alex/Documents/git/Dimelo/Dimelo-Android-Source/DimeloSdkAndSampleApp/app/build/intermediates/pre-dexed/debug/classes-594392e64bca15f92fa345f50bdcd6637a027572.jar" />
+    </item>
+    <item
+        jar="/Users/alex/Documents/git/Dimelo/Dimelo_prod_repos/Dimelo-Android-SampleApp/DimeloSampleApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a78183f30e769a98ab4820794f597763088d3065">
+        <dex dex="/Users/alex/Documents/git/Dimelo/Dimelo_prod_repos/Dimelo-Android-SampleApp/DimeloSampleApp/app/build/intermediates/pre-dexed/debug/classes-b0bfdf9c0f7a1d4fa26ddaa2e3a41817bc5c3465.jar" />
+    </item>
+    <item
+        jar="/Users/alex/Documents/git/Dimelo/Dimelo_prod_repos/Dimelo-Android-SampleApp/DimeloSampleApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="/Users/alex/Documents/git/Dimelo/Dimelo_prod_repos/Dimelo-Android-SampleApp/DimeloSampleApp/app/build/intermediates/pre-dexed/debug/classes-19754428aa18e89602492a9e2b1a8982d53a1368.jar" />
+    </item>
+    <item
+        jar="/Users/alex/Documents/git/Dimelo/Dimelo_prod_repos/Dimelo-Android-SampleApp/DimeloSampleApp/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="5b37cf49773f7f17aca9830efd3053b0cac56728">
+        <dex dex="/Users/alex/Documents/git/Dimelo/Dimelo_prod_repos/Dimelo-Android-SampleApp/DimeloSampleApp/app/build/intermediates/pre-dexed/debug/classes-180b79320f386d4e98b621bf30aeba06073ed7c6.jar" />
+    </item>
+    <item
+        jar="/Users/alex/Documents/git/Dimelo/Dimelo-Android-Source/DimeloSdkAndSampleApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="/Users/alex/Documents/git/Dimelo/Dimelo-Android-Source/DimeloSdkAndSampleApp/app/build/intermediates/pre-dexed/debug/classes-ebead012a9c431dc96d32da2b93f29c5159b873a.jar" />
+    </item>
+    <item
+        jar="/Users/alex/Documents/git/Dimelo/Dimelo-Android-Source/DimeloSdkAndSampleApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="8d736fefa22d896e84a268354b3ed48a42663150">
+        <dex dex="/Users/alex/Documents/git/Dimelo/Dimelo-Android-Source/DimeloSdkAndSampleApp/app/build/intermediates/pre-dexed/debug/classes-222fc2bf8c4d548d9ed2301f93335e556ffb517b.jar" />
+    </item>
+    <item
+        jar="/Users/alex/Documents/git/Dimelo/Dimelo-Android-Source/DimeloSdkAndSampleApp/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="5b37cf49773f7f17aca9830efd3053b0cac56728">
+        <dex dex="/Users/alex/Documents/git/Dimelo/Dimelo-Android-Source/DimeloSdkAndSampleApp/app/build/intermediates/pre-dexed/debug/classes-940275501d811231cfd0ff312d3860355066687c.jar" />
+    </item>
+    <item
+        jar="/Users/alex/Documents/git/Dimelo/Dimelo_prod_repos/Dimelo-Android-SampleApp/DimeloSampleApp/app/build/intermediates/exploded-aar/com.dimelo.dimelosdk/dimelosdk/1.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f863cd09f55e6eb801f6283bcfbc6de66f8f3ef8">
+        <dex dex="/Users/alex/Documents/git/Dimelo/Dimelo_prod_repos/Dimelo-Android-SampleApp/DimeloSampleApp/app/build/intermediates/pre-dexed/debug/classes-e8c8c60c49e271d4066c36ebbf2691c2b2760866.jar" />
+    </item>
+    <item
+        jar="/Users/alex/Documents/git/Dimelo/Dimelo-Android-Source/DimeloSdkAndSampleApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="/Users/alex/Documents/git/Dimelo/Dimelo-Android-Source/DimeloSdkAndSampleApp/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-80b2122fcd13fb5cbb63356d8a4974afb58945e0.jar" />
+    </item>
+    <item
+        jar="/Users/alex/Documents/git/Dimelo/Dimelo-Android-Source/DimeloSdkAndSampleApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="8d736fefa22d896e84a268354b3ed48a42663150">
+        <dex dex="/Users/alex/Documents/git/Dimelo/Dimelo-Android-Source/DimeloSdkAndSampleApp/app/build/intermediates/pre-dexed/debug/classes-222fc2bf8c4d548d9ed2301f93335e556ffb517b.jar" />
+    </item>
+    <item
+        jar="/Users/alex/Documents/git/Dimelo/Dimelo_prod_repos/Dimelo-Android-SampleApp/DimeloSampleApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="/Users/alex/Documents/git/Dimelo/Dimelo_prod_repos/Dimelo-Android-SampleApp/DimeloSampleApp/app/build/intermediates/pre-dexed/debug/classes-9f3089753dbc63c8dbac0615dfbdcef8bb7b3e16.jar" />
+    </item>
+    <item
+        jar="/Users/alex/Documents/git/Dimelo/Dimelo_prod_repos/Dimelo-Android-SampleApp/DimeloSampleApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="8d736fefa22d896e84a268354b3ed48a42663150">
+        <dex dex="/Users/alex/Documents/git/Dimelo/Dimelo_prod_repos/Dimelo-Android-SampleApp/DimeloSampleApp/app/build/intermediates/pre-dexed/debug/classes-ae746504d083c30168da37964e43af24b3b65eb2.jar" />
+    </item>
+    <item
+        jar="/Users/alex/Documents/git/Dimelo/Dimelo-Android-Source/DimeloSdkAndSampleApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a78183f30e769a98ab4820794f597763088d3065">
+        <dex dex="/Users/alex/Documents/git/Dimelo/Dimelo-Android-Source/DimeloSdkAndSampleApp/app/build/intermediates/pre-dexed/debug/classes-5256bcd45f519e969028ce085fe7bd96868f1960.jar" />
+    </item>
+    <item
+        jar="/Applications/adt-bundle-mac-x86_64-20140702/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="/Users/alex/Documents/git/Dimelo/Dimelo-Android-Source/DimeloSdkAndSampleApp/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-f851e1f8b356482a10e47e8c7c0986bb5222f709.jar" />
+    </item>
+    <item
+        jar="/Users/alex/Documents/git/Dimelo/Dimelo-Android-Source/DimeloSdkAndSampleApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="/Users/alex/Documents/git/Dimelo/Dimelo-Android-Source/DimeloSdkAndSampleApp/app/build/intermediates/pre-dexed/debug/classes-29797dab1c2b5734b4689a9aac9d38b993bb6c73.jar" />
+    </item>
+    <item
+        jar="/Users/alex/Documents/git/Dimelo/Dimelo-Android-Source/DimeloSdkAndSampleApp/app/build/intermediates/exploded-aar/com.dimelo.dimelosdk/dimelosdk/1.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f863cd09f55e6eb801f6283bcfbc6de66f8f3ef8">
+        <dex dex="/Users/alex/Documents/git/Dimelo/Dimelo-Android-Source/DimeloSdkAndSampleApp/app/build/intermediates/pre-dexed/debug/classes-36be5e95f6878c855addb2698e724c4792849405.jar" />
+    </item>
+    <item
+        jar="/Users/alex/Documents/git/Dimelo/Dimelo-Android-Source/DimeloSdkAndSampleApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="/Users/alex/Documents/git/Dimelo/Dimelo-Android-Source/DimeloSdkAndSampleApp/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-80b2122fcd13fb5cbb63356d8a4974afb58945e0.jar" />
+    </item>
+    <item
+        jar="/Users/alex/Documents/git/Dimelo/Dimelo-Android-Source/DimeloSdkAndSampleApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="/Users/alex/Documents/git/Dimelo/Dimelo-Android-Source/DimeloSdkAndSampleApp/app/build/intermediates/pre-dexed/debug/classes-29797dab1c2b5734b4689a9aac9d38b993bb6c73.jar" />
+    </item>
+    <item
+        jar="/Users/alex/Documents/git/Dimelo/Dimelo_prod_repos/Dimelo-Android-SampleApp/DimeloSampleApp/app/build/intermediates/exploded-aar/com.android/volley/1.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="0c06efd043d6b8ab0428d4ada0c5e33718fbee78">
+        <dex dex="/Users/alex/Documents/git/Dimelo/Dimelo_prod_repos/Dimelo-Android-SampleApp/DimeloSampleApp/app/build/intermediates/pre-dexed/debug/classes-77f8338ad01f8446e7cb62a89ce356f5368ea477.jar" />
+    </item>
+    <item
+        jar="/Applications/adt-bundle-mac-x86_64-20140702/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="/Users/alex/Documents/git/Dimelo/Dimelo-Android-Source/DimeloSdkAndSampleApp/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-f851e1f8b356482a10e47e8c7c0986bb5222f709.jar" />
+    </item>
+    <item
+        jar="/Users/alex/Documents/git/Dimelo/Dimelo-Android-Source/DimeloSdkAndSampleApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="a78183f30e769a98ab4820794f597763088d3065">
+        <dex dex="/Users/alex/Documents/git/Dimelo/Dimelo-Android-Source/DimeloSdkAndSampleApp/app/build/intermediates/pre-dexed/debug/classes-5256bcd45f519e969028ce085fe7bd96868f1960.jar" />
+    </item>
+
+</items>
