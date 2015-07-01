@@ -16,35 +16,40 @@ Follow these steps to integrate the Dimelo Mobile Messaging in your application.
 
 1) Install the Dimelo library via Gradle (see below).
 
-2) Create an instance with `Dimelo.createInstance(Context)`, configure it with your API secret (`dimelo.setApiSecret(secret)`), optional user identifier and other user-specific info. (See **Authentication** following section)
+2) Initialize the SDK with `Dimelo.setup(Context)`, configure it with your API secret (`dimelo.setApiSecret(secret)`), optional user identifier and other user-specific info. (See **Authentication** section)
 
 You can also use the Android resources folder (res) to customize the appearance.
-[See more informations about how to use the Android resources in order to configure Dimelo](AndroidResourcesCustomization.md)
+[See more informations about how to use the Android resources in order to configure Dimelo](ChatCustomization.md)
 
-3) Specify a listener for the `Dimelo` instance with `dimelo.setDimeloListener(listener)`
+3) You can optionally specify a listener for `Dimelo` instance with `dimelo.setDimeloListener(listener)`
 
-To display a chat, get it as a Fragment `Dimelo.newChatFragment()` as an Activity `Dimelo.openChatActivity()`.
-If opening the chat as an Activity is your choice, you must declare it in your AndroidManifest with a name equals to `com.dimelo.dimelosdk.ChatActivity`
+To display a chat, open it either as a Fragment `Dimelo.newChatFragment()` or as an Activity `Dimelo.openChatActivity()`.
+If opening the chat as an Activity is your choice, you must declare it in your AndroidManifest with a name equals to `com.dimelo.dimelosdk.main.ChatActivity`
+(See **Displaying the Mobile Messaging** section)
 
 4) Setup a `Receiver`, a `Service` (Android APIs) and set `deviceToken` property on your `Dimelo` instance with `setDeviceToken()`.
 This will allow your app to receive push notifications from the Dimelo server when your agent replies to a user.
 
 See **Push Notifications** for more detail.
 
-5) Also call `Dimelo.consumeReceivedRemoteNotification()`.
+5) Also call `Dimelo.consumeReceivedRemoteNotification()` from your Service.
 
-These are minimal steps to make chat work in your app. Read on to learn how to customize the appearance and behaviour of the chat to fit perfectly in your app.
+These are minimal steps to make your chat work in your app. Read on to learn how to customize the appearance and behaviour of the chat to fit perfectly in your app.
 
 You can see an example by downloading the [Sample App](https://github.com/dimelo/Dimelo-Android-SampleApp).
 
 Displaying the Mobile Messaging
 -------------------
 
-Dimelo provides two ways to disaply the chat.
+Dimelo provides two ways to display the chat.
 #### As an Activity:
-Achieved by calling `Dimelo.newChatActivity()` (wich will internally call `Context.startActivity`).
-This method will display a full screen chat with an ActionBar containing a title.
-The title and the color of the ActionBar are customizable. The user can close the chat (the Activity) by pressing the back button of his device.
+Achieved by calling `Dimelo.openChatActivity()` (wich will internally call `Context.startActivity`).
+This method will display a full screen chat with a Toolbar containing a title.
+The title and the background (drawable or color) of the Toolbar are customizable.
+The Navigation Icon can be displayed and customized.
+The user can close the chat (the Activity) by pressing the Navigation Icon or the back button of his device.
+
+By default, the app name is used for the title and the primaryColor (appCompat) is used as the background color of the toolbar.
 
 To make it work, you must declare the Activity in your `AndroidManifest.xml` with a name equals to `com.dimelo.dimelosdk.ChatActivity`
 This is the easiest way to display the chat.
@@ -52,6 +57,7 @@ This is the easiest way to display the chat.
 #### As a Fragment:
 Achieved by calling `Dimelo.newChatFragment()` and using the Android `FragmentManager` and `FragmentTransaction`.
 This is the most flexible way to display the chat as you can manually place, open and close it like any Fragment.
+No Toolbar is displayed.
 
 Authentication
 --------------
@@ -110,10 +116,10 @@ Push Notifications
 Dimelo chat can receive push notifications from Dimelo server.
 To make them work, a couple of steps must be done on your part:
 
-1. Register to Google GCM service by using `GoogleCloudMessaging.register(senderId)`
+1. Register to Google GCM service by using for example `GoogleCloudMessaging.register(senderId)`
 2. Set `Dimelo.deviceToken` property with the value returned by the `GoogleCloudMessaging.register(senderId)`
-3. Your app must register for remote notifications by declaring and implementing a `Receiver` and a `Service` (Android APIs).
-4. Implement `Dimelo.BasicNotificationDisplayer` abstract class.
+3. Your app must register for remote notifications for example by declaring and implementing a `Receiver` and a `Service` (Android APIs).
+4. Optionally implement `Dimelo.BasicNotificationDisplayer` abstract class.
    It allows you to specify a title, an icone and how to display the chat when the user click the notification.
    If you want to handle the entire process of displaying notifications you can directly implement `Dimelo.NotificationDisplayer` interface.
 5. Let Dimelo consume the notification using `Dimelo.consumeReceivedRemoteNotification()`.
@@ -129,18 +135,26 @@ Prior to Android 5, the notification will be displayed in Ticker (one line scrol
 
 You may control whether to display this bar or maybe show the notification differently
 using `Dimelo.shouldDisplayNotificationWithText` listener method.
-If you'd like to show your own notification bar, return `false` from this method
-and use `text` argument to present the notification using your own UI.
+If you'd like to show your own notification bar, you can implement Dimelo.NotificationDisplayer` interface.
 
 Customizing Mobile Messaging Appearance
 ---------------------------
 
 [see how to customize Dimelo using the Android Resource folders](AndroidResourcesCustomization.md)
-You can also customize it programmatically in three steps:
-1) Calling `Chat.getCustomization()` and receiving an istance of `Chat.Customization`
-2) Modifiying that instance. 
-3) Calling customization.apply() to register the changes and update the chat.
+You can also customize it programmatically:
+#### As an Activity:
+1) Implementing `Dimelo.OnActivitySetupAppearanceListener(Chat.Customization chatActivityCustomization)` and modifying `chatActivityCustomization` attributes.
+2) Calling Dimelo.setChatCustomizationListener()
 
+The ChatActivity will call the listener back when creating its layout. 
+
+You do not need to call customization.apply() as it will be called for you.
+
+
+#### As a Fragment:
+1) Calling `Chat.getCustomization()` and receiving an istance of `Chat.Customization`
+2) Modifiying its attributes. 
+3) Calling customization.apply() to register the changes and update the chat.
 
 We provide a lot of properties for you to make the chat look native to your application.
 
