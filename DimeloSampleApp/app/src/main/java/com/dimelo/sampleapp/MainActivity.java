@@ -1,43 +1,29 @@
 package com.dimelo.sampleapp;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.dimelo.dimelosdk.main.Dimelo;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GooglePlayServicesUtil;
+import com.dimelo.dimelosdk.main.DimeloConnection;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 
 import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String SENDER_ID = "YOUR_SENDER_ID"; // GCM ID
+    private static final String SENDER_ID = "771374839280"; // GCM ID
 
-    private String mGcmRegistrationId;
-    private Context mContext;
     private SlidingTabFragment mSlidingFragment;
 
     @Override
-    protected void onNewIntent(Intent intent) {
-        super.onNewIntent(intent);
-        Bundle extras = intent.getExtras();
-        if(extras != null){
-            if(extras.containsKey(GcmIntentService.NOTIF_INTENT)){
-                createDimelo();
-                DimeloWrap.getDimelo().openChatActivity(this);
-            }
-        }
-    }
-
-    @Override
     protected void onSaveInstanceState(final Bundle outState) {
-        // super.onSaveInstanceState(outState);
+        // Keep it empty
+        // Prevent super.onSaveInstanceState to affect our fragments
     }
 
     @Override
@@ -45,101 +31,50 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
 
-        mContext = getApplicationContext();
-        if (checkPlayServices()) {
-            mGcmRegistrationId = CacheManager.getRegistrationId(mContext);
+        // Get GCM Token
+        registerInBackground();
 
-            if (mGcmRegistrationId.isEmpty()) {
-                // This method will
-                // 1) Register to gcm
-                // 1) Set mGcmRegistrationId
-                // 2) Call gcmIsReady
-                registerInBackground();
-            }
-            else {
-                Bundle extras = getIntent().getExtras();
-                if(extras != null && extras.containsKey(GcmIntentService.NOTIF_INTENT)){
-                    createDimelo();
-                    DimeloWrap.getDimelo().openChatActivity(this);
-                }
-                gcmIsReady();
-            }
-        } else {
-            Log.d("DimeloSampleApp", "No valid Google Play Services APK found.");
-        }
-    }
+        // Setup Dimelo
+        setupDimelo();
 
-    Dimelo.DimeloListener dimeloListener = new Dimelo.DimeloListener() {
-//        @Override
-//        public void dimeloDisplayChatViewController(Dimelo dimelo) {
-//
-//        }
-
-        @Override
-        public boolean dimeloShouldDisplayNotificationWithText(Dimelo dimelo, String message) {
-            if (mSlidingFragment.isAnyChatDisplayed()){
-                return false;
-            }
-            return true;
-        }
-
-        @Override
-        public void dimeloDidBeginNetworkActivity(Dimelo dimelo) {
-
-        }
-
-        @Override
-        public void dimeloDidEndNetworkActivity(Dimelo dimelo) {
-
-        }
-
-        @Override
-        public void dimeloChatDidSendMessage() {
-
-        }
-
-        @Override
-        public void dimeloChatDidReceiveNewMessages() {
-
-        }
-
-
-    };
-
-    private void createDimelo(){
-        DimeloWrap.newDimeloInstance(this, mGcmRegistrationId, dimeloListener);
-    }
-
-
-    private void gcmIsReady(){
-        createDimelo();
+        // Push Slider Fragment
         mSlidingFragment = new SlidingTabFragment();
-
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.add(R.id.slider_container, mSlidingFragment);
         fragmentTransaction.commit();
     }
 
-    /**
-     * Check the device to make sure it has the Google Play Services APK. If
-     * it doesn't, display a dialog that allows users to download the APK from
-     * the Google Play Store or enable it in the device's system settings.
-     */
-    private boolean checkPlayServices() {
-        int resultCode = GooglePlayServicesUtil.isGooglePlayServicesAvailable(this);
-        if (resultCode != ConnectionResult.SUCCESS) {
-            if (GooglePlayServicesUtil.isUserRecoverableError(resultCode)) {
-                GooglePlayServicesUtil.getErrorDialog(resultCode, this,
-                        9000).show();
-            } else {
-                Log.d("DimeloSampleApp", "This device is not supported.");
-                finish();
-            }
-            return false;
+    Dimelo.DimeloListener dimeloListener = new Dimelo.DimeloListener() {
+        @Override
+        public boolean dimeloShouldDisplayNotificationWithText(Dimelo dimelo, String message) {
+            // When Chat Fragments are pushed in a viewpager, Dimelo Sdk cannot detect if the chats are visible.
+            // Thus, "dimeloShouldDisplayNotificationWithText" will be called.
+            return !mSlidingFragment.isAnyChatDisplayed();
         }
-        return true;
-    }
 
+        @Override
+        public void dimeloChatMessageSendFail(DimeloConnection.DimeloError error) {
+            // Something went wrong
+            // Minimal error management
+
+            String message = "An error occurred";
+            if (error.statusCode == DimeloConnection.DimeloError.NO_CONNECTION_ERROR){
+                message = "Please check your Internet connection and try again later.";
+            }
+            else if (error.statusCode == DimeloConnection.DimeloError.TIMEOUT_ERROR){
+                message = "The server is not responding, please try again later";
+            }
+            Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
+        }
+    };
+
+    private void setupDimelo(){
+        String secret = "YOUR_SECRET";
+        Dimelo.setup(this);
+        Dimelo dimelo = Dimelo.getInstance();
+        dimelo.setApiSecret(secret);
+        dimelo.setDimeloListener(dimeloListener);
+    }
 
     /**
      * Registers the application with GCM servers asynchronously.
@@ -148,20 +83,18 @@ public class MainActivity extends AppCompatActivity {
      * shared preferences.
      */
     private void registerInBackground() {
+        final Context mContext = getApplicationContext();
         AsyncTask<?, ?, ?> task = new AsyncTask<Object, Void, String>() {
 
-            private String mLocalGcmRegistrationId;
+            private String mGcmRegistrationId;
 
             @Override
             protected String doInBackground(Object... params) {
                 String msg;
                 try {
                     GoogleCloudMessaging gcm = GoogleCloudMessaging.getInstance(mContext);
-                    mLocalGcmRegistrationId = gcm.register(SENDER_ID);
-                    msg = "Device registered, registration ID=" + mLocalGcmRegistrationId;
-
-                    // Persist the registration ID - no need to register again.
-                    CacheManager.storeRegistrationId(mContext, mLocalGcmRegistrationId);
+                    mGcmRegistrationId = gcm.register(SENDER_ID);
+                    msg = "Device registered, registration ID=" + mGcmRegistrationId;
                 } catch (IOException ex) {
                     msg = "Error :" + ex.getMessage();
                 }
@@ -171,8 +104,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             protected void onPostExecute(String msg) {
                 Log.d("DimeloSampleApp", msg);
-                mGcmRegistrationId = mLocalGcmRegistrationId;
-                gcmIsReady();
+                Dimelo.getInstance().setDeviceToken(mGcmRegistrationId);
             }
         };
         task.execute(null, null, null);

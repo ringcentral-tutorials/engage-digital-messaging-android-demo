@@ -6,13 +6,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.app.TaskStackBuilder;
 
+import com.dimelo.dimelosdk.main.ChatActivity;
 import com.dimelo.dimelosdk.main.Dimelo;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 
 public class GcmIntentService extends IntentService {
-
-    public static final String NOTIF_INTENT = "from_gcm_intent_service";
 
     public GcmIntentService() {
         super("GcmIntentService");
@@ -22,17 +22,9 @@ public class GcmIntentService extends IntentService {
     protected void onHandleIntent(Intent intent) {
         Bundle extras = intent.getExtras();
         GoogleCloudMessaging gcm = GoogleCloudMessaging.getInstance(this);
-        // The getMessageType() intent parameter must be the intent you received
-        // in your BroadcastReceiver.
         String messageType = gcm.getMessageType(intent);
 
         if (!extras.isEmpty()) {  // has effect of unparcelling Bundle
-            /*
-             * Filter messages based on message type. Since it is likely that GCM
-             * will be extended in the future with new message types, just ignore
-             * any message types you're not interested in, or that you don't
-             * recognize.
-             */
             if (GoogleCloudMessaging.MESSAGE_TYPE_SEND_ERROR.equals(messageType)
                     || GoogleCloudMessaging.MESSAGE_TYPE_DELETED.equals(messageType)){
                 // An error occured
@@ -54,23 +46,12 @@ public class GcmIntentService extends IntentService {
 
         @Override
         public @NonNull PendingIntent createPendingIntent(Context context, String message) {
-            Intent notificationIntent = new Intent(context, MainActivity.class);
-            notificationIntent.putExtra(GcmIntentService.NOTIF_INTENT, true);
-            notificationIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            return PendingIntent.getActivity(context, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-        }
-
-
-
-        @Override
-        public int getSmallIcon(String message) {
-            return R.drawable.support_icon;
-        }
-
-        @Override
-        public String getTitle(Context context, String message) {
-            return context.getResources().getString(R.string.app_name);
+            return TaskStackBuilder.create(GcmIntentService.this)
+                    .addParentStack(ChatActivity.class)
+                    .addNextIntent(new Intent(context, ChatActivity.class).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                    .getPendingIntent(1, PendingIntent.FLAG_CANCEL_CURRENT);
         }
 
     };
+
 }

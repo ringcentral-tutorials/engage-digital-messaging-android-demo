@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ViewFlipper;
 
 import com.dimelo.dimelosdk.main.Chat;
-import com.dimelo.sampleapp.DimeloWrap;
+import com.dimelo.dimelosdk.main.Dimelo;
 import com.dimelo.sampleapp.R;
 
 public class TabTelecom extends Fragment implements SampleDimeloTab {
@@ -20,14 +20,14 @@ public class TabTelecom extends Fragment implements SampleDimeloTab {
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.tab_telecom, container, false);
-        return v;
+        return inflater.inflate(R.layout.tab_telecom, container, false);
     }
 
     @Override
     public void onViewCreated(final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        mDimeloChat = DimeloWrap.getDimelo().newChatFragment();
+
+        mDimeloChat = Dimelo.getInstance().newChatFragment();
         FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
         fragmentTransaction.add(R.id.chat_telecom_container, mDimeloChat);
         fragmentTransaction.commit();
@@ -40,14 +40,12 @@ public class TabTelecom extends Fragment implements SampleDimeloTab {
                 mViewFlipper.setInAnimation(view.getContext(), android.support.v7.appcompat.R.anim.abc_grow_fade_in_from_bottom);
                 mViewFlipper.setOutAnimation(view.getContext(), android.support.v7.appcompat.R.anim.abc_shrink_fade_out_from_bottom);
                 mViewFlipper.setDisplayedChild(1);
-
             }
         });
         customize();
     }
 
     private void customize(){
-
         Chat.Customization customisation = mDimeloChat.getCustomization();
 
         customisation.backgroundColor = getResources().getColor(R.color.orange_400);

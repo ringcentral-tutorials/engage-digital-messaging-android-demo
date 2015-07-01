@@ -51,24 +51,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
-            <!--<TextView-->
-                <!--android:id="@+id/open_chat"-->
-                <!--android:layout_weight="1"-->
-                <!--android:textColor="@color/indigo_A700"-->
-                <!--android:textSize="@dimen/abc_text_size_large_material"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="Open Chat" />-->
-
-            <!--<TextView-->
-                <!--android:layout_weight="1"-->
-                <!--android:textColor="@color/indigo_A700"-->
-                <!--android:id="@+id/open_full_screen"-->
-                <!--android:textSize="@dimen/abc_text_size_large_material"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="Open Full Screen (Soon)" />-->
-
             <TextView
                 android:layout_weight="1"
                 android:textColor="@color/indigo_A700"

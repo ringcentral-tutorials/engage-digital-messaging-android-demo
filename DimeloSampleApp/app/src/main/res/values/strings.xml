@@ -5,8 +5,12 @@
     <string name="telecom_welcome">Thank you for updating to our new app. Here you can upgrade your plan and subscribe to our additional services.</string>
     <string name="bank_welcome">Welcome to your new banking application. Consult your accounts, make transfers and play on the stock market with just a tap.</string>
 
-    <!-- Dimelo library overrides -->
-    <color name="dimelo_toolbar_background_color">@color/green_400</color>
-    <string name="dimelo_toolbar_title">Live Support</string>
+
+    <!-- -->
+    <!-- Examples of Dimelo library override -->
+    <!-- -->
+
+    <!--<color name="dimelo_toolbar_background_color">@color/greesn_400</color>-->
+    <!--<string name="dimelo_toolbar_title">Live Support</string>-->
 
 </resources>
