@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.dimelo.dimelosdk.main.Chat;
-import com.dimelo.sampleapp.DimeloWrap;
+import com.dimelo.dimelosdk.main.Dimelo;
 import com.dimelo.sampleapp.R;
 
 public class TabSupport extends Fragment implements SampleDimeloTab {
@@ -18,15 +18,14 @@ public class TabSupport extends Fragment implements SampleDimeloTab {
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.tab_support,container,false);
-        return v;
+        return inflater.inflate(R.layout.tab_support,container,false);
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        mDimeloChat = DimeloWrap.getDimelo().newChatFragment();
+        mDimeloChat = Dimelo.getInstance().newChatFragment();
         FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
         fragmentTransaction.add(R.id.chat_support_container, mDimeloChat);
         fragmentTransaction.commit();

@@ -5,30 +5,28 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.util.DisplayMetrics;
-import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ViewFlipper;
 
 import com.dimelo.dimelosdk.main.Chat;
-import com.dimelo.sampleapp.DimeloWrap;
+import com.dimelo.dimelosdk.main.Dimelo;
 import com.dimelo.sampleapp.R;
 
 public class TabBank extends Fragment implements SampleDimeloTab {
     private Chat mDimeloChat;
-    ViewFlipper mViewFlipper;
+    private ViewFlipper mViewFlipper;
+
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.tab_bank,container,false);
-        return v;
+        return inflater.inflate(R.layout.tab_bank,container,false);
     }
 
     @Override
     public void onViewCreated(final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        mDimeloChat = DimeloWrap.getDimelo().newChatFragment();
+        mDimeloChat = Dimelo.getInstance().newChatFragment();
         FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
         fragmentTransaction.add(R.id.chat_bank_container, mDimeloChat);
         fragmentTransaction.commit();
@@ -44,11 +42,6 @@ public class TabBank extends Fragment implements SampleDimeloTab {
             }
         });
         customize();
-    }
-
-    public int dpToPixel(float dp){
-        DisplayMetrics displayMetrics = mViewFlipper.getResources().getDisplayMetrics();
-        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, displayMetrics);
     }
 
     private void customize(){
@@ -70,10 +63,9 @@ public class TabBank extends Fragment implements SampleDimeloTab {
 
         customisation.systemMessageBackgroundColor = Color.WHITE;
         customisation.systemMessageTextColor = Color.WHITE;
-
         customisation.dateTextColor = Color.WHITE;
 
-        customisation.apply(); // Always call apply to register your changes
+        customisation.apply();
     }
 
     @Override
