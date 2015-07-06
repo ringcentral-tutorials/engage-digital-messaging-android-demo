@@ -16,7 +16,7 @@ import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String SENDER_ID = "771374839280"; // GCM ID
+    private static final String SENDER_ID = "YOUR_GOOGLE_PROJECT_ID"; // GCM ID
 
     private SlidingTabFragment mSlidingFragment;
 
@@ -45,12 +45,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     Dimelo.DimeloListener dimeloListener = new Dimelo.DimeloListener() {
-        @Override
-        public boolean dimeloShouldDisplayNotificationWithText(Dimelo dimelo, String message) {
-            // When Chat Fragments are pushed in a viewpager, Dimelo Sdk cannot detect if the chats are visible.
-            // Thus, "dimeloShouldDisplayNotificationWithText" will be called.
-            return !mSlidingFragment.isAnyChatDisplayed();
-        }
+//        @Override
+//        public boolean dimeloShouldDisplayNotificationWithText(Dimelo dimelo, String message) {
+//            // When Chat Fragments are pushed in a viewpager, Dimelo Sdk cannot detect if the chats are visible.
+//            // Thus, "dimeloShouldDisplayNotificationWithText" will be called.
+//            return !mSlidingFragment.isAnyChatDisplayed();
+//        }
 
         @Override
         public void dimeloChatMessageSendFail(DimeloConnection.DimeloError error) {
@@ -69,7 +69,8 @@ public class MainActivity extends AppCompatActivity {
     };
 
     private void setupDimelo(){
-        String secret = "YOUR_SECRET";
+        String secret = "e3e5d064186207607a0095a40faa2cfe79cfc756799773f088a37cdc8a804a60";
+        // String secret = "YOUR_SECRET";
         Dimelo.setup(this);
         Dimelo dimelo = Dimelo.getInstance();
         dimelo.setApiSecret(secret);

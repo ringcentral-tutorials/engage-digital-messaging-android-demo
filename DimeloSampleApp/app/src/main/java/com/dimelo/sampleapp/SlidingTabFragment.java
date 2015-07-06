@@ -66,7 +66,7 @@ public class SlidingTabFragment extends Fragment {
 
     public boolean isAnyChatDisplayed(){
         if (mViewPagerAdapter != null) {
-            return mViewPagerAdapter.isAnyChatDisplayed(mViewPager.getCurrentItem());
+            return mViewPagerAdapter.isChatDisplayed(mViewPager.getCurrentItem());
         }
         return false;
     }
@@ -105,7 +105,7 @@ public class SlidingTabFragment extends Fragment {
             }
         }
 
-        boolean isAnyChatDisplayed(int position){
+        boolean isChatDisplayed(int position){
             boolean isAnyChatDisplayed = false;
 
             if (position == 0 && start != null && start.isChatDisplayed()){

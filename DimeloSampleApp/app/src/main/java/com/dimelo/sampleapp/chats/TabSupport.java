@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,7 +27,7 @@ public class TabSupport extends Fragment implements SampleDimeloTab {
         super.onViewCreated(view, savedInstanceState);
 
         mDimeloChat = Dimelo.getInstance().newChatFragment();
-        FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+        FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
         fragmentTransaction.add(R.id.chat_support_container, mDimeloChat);
         fragmentTransaction.commit();
 
@@ -49,11 +50,32 @@ public class TabSupport extends Fragment implements SampleDimeloTab {
         customisation.agentNameColor = Color.GRAY;
 
         customisation.systemMessageTextColor = Color.BLACK;
-        customisation.apply();
     }
 
     @Override
     public boolean isChatDisplayed() {
-        return isVisible();
+        Log.d("alex", "Support: isVisible" + isVisible());
+        Log.d("alex", "Support: userhint" + getUserVisibleHint());
+
+        Log.d("alex", "Support: Chat: " + mDimeloChat + "isVisible" + mDimeloChat.isVisible());
+        Log.d("alex", "Support: Chat: " + mDimeloChat + "userhint" + mDimeloChat.getUserVisibleHint());
+        return isVisible() && getUserVisibleHint();
+    }
+
+
+//    @Override
+//    public void setUserVisibleHint(boolean isVisibleToUser) {
+//        Log.d("alex", "Support:" + this + " setUserVisibleHint: " + isVisibleToUser);
+//        // DimeloChat is a nested Fragment => Propagate setUserVisibleHint
+//        if (mDimeloChat != null) {
+//            mDimeloChat.setUserVisibleHint(isVisibleToUser);
+//        }
+//        super.setUserVisibleHint(isVisibleToUser);
+//    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mDimeloChat = null;
     }
 }

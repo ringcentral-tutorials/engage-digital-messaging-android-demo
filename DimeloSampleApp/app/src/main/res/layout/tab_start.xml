@@ -87,12 +87,5 @@
 
     </LinearLayout>
 
-
-    <!-- Chat Layout -->
-    <FrameLayout
-        android:id="@+id/chat_start_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
 </ViewFlipper>
 

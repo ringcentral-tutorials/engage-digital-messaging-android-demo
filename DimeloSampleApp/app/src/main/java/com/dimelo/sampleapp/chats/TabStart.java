@@ -3,7 +3,6 @@ package com.dimelo.sampleapp.chats;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,14 +29,7 @@ public class TabStart extends Fragment implements SampleDimeloTab {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         random = new Random();
-
-        Fragment dimeloChat = Dimelo.getInstance().newChatFragment();
-
-        FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.add(R.id.chat_start_container, dimeloChat);
-        fragmentTransaction.commit();
 
         setListeners(view);
     }
@@ -59,7 +51,6 @@ public class TabStart extends Fragment implements SampleDimeloTab {
         payload.putString("alert", message);
         Dimelo.consumeReceivedRemoteNotification(getActivity(), payload, null);
     }
-
 
     private void setListeners(final View root){
         root.findViewById(R.id.open_full_screen).setOnClickListener(new View.OnClickListener() {

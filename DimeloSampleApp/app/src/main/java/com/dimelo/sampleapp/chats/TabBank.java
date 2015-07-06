@@ -27,7 +27,8 @@ public class TabBank extends Fragment implements SampleDimeloTab {
     public void onViewCreated(final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         mDimeloChat = Dimelo.getInstance().newChatFragment();
-        FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+        mDimeloChat.setUserVisibleHint(false);
+        FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
         fragmentTransaction.add(R.id.chat_bank_container, mDimeloChat);
         fragmentTransaction.commit();
 
@@ -39,6 +40,7 @@ public class TabBank extends Fragment implements SampleDimeloTab {
                 mViewFlipper.setInAnimation(view.getContext(), android.support.v7.appcompat.R.anim.abc_grow_fade_in_from_bottom);
                 mViewFlipper.setOutAnimation(view.getContext(), android.support.v7.appcompat.R.anim.abc_shrink_fade_out_from_bottom);
                 mViewFlipper.setDisplayedChild(1);
+                mDimeloChat.setUserVisibleHint(true);
             }
         });
         customize();
@@ -73,5 +75,20 @@ public class TabBank extends Fragment implements SampleDimeloTab {
         return isVisible() && (mViewFlipper.getDisplayedChild() == 1);
     }
 
+//    @Override
+//    public void setUserVisibleHint(boolean isVisibleToUser) {
+//        // DimeloChat is a nested Fragment => Propagate setUserVisibleHint
+//        if (mDimeloChat != null) {
+//            mDimeloChat.setUserVisibleHint(isVisibleToUser);
+//        }
+//        super.setUserVisibleHint(isVisibleToUser);
+//    }
 
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mDimeloChat = null;
+        mViewFlipper = null;
+    }
 }

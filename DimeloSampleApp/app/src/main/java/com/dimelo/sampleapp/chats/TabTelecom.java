@@ -28,11 +28,12 @@ public class TabTelecom extends Fragment implements SampleDimeloTab {
         super.onViewCreated(view, savedInstanceState);
 
         mDimeloChat = Dimelo.getInstance().newChatFragment();
-        FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+        mDimeloChat.setUserVisibleHint(false);
+        FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
         fragmentTransaction.add(R.id.chat_telecom_container, mDimeloChat);
         fragmentTransaction.commit();
 
-        mViewFlipper = (ViewFlipper)  view.findViewById(R.id.viewflipper);
+        mViewFlipper = (ViewFlipper) view.findViewById(R.id.viewflipper);
         view.findViewById(R.id.live_support).setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -40,6 +41,7 @@ public class TabTelecom extends Fragment implements SampleDimeloTab {
                 mViewFlipper.setInAnimation(view.getContext(), android.support.v7.appcompat.R.anim.abc_grow_fade_in_from_bottom);
                 mViewFlipper.setOutAnimation(view.getContext(), android.support.v7.appcompat.R.anim.abc_shrink_fade_out_from_bottom);
                 mViewFlipper.setDisplayedChild(1);
+                mDimeloChat.setUserVisibleHint(true);
             }
         });
         customize();
@@ -71,4 +73,10 @@ public class TabTelecom extends Fragment implements SampleDimeloTab {
         return isVisible() && (mViewFlipper.getDisplayedChild() == 1);
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mDimeloChat = null;
+        mViewFlipper = null;
+    }
 }
