@@ -8,15 +8,56 @@ This file shows a list of attributes you can override in order to customize the 
 Attributes < string />
 ----
 
-### title
+### Toolbar Title String
 Title of the conversation window (ChatActiviy only)
 
 Xml attribute name: dimelo\_toolbar\_title
 
 Programmatically: None
 
+Attributes < bool />
+----
+### Toolbar Title display
+Specify if the title of the toolbar must be displayed (ChatActiviy only)
+
+Xml attribute name: dimelo\_toolbar\_display\_title
+
+Programmatically: None
+
+Attributes < drawable />
+----
+### Toolbar Navigation Icon drawable
+Specify a drawable to use for the navigation icon of the toolbar(ChatActiviy only)
+
+Xml attribute name: dimelo\_navigation\_icon
+
+Programmatically: None
+
+
+### Toolbar Background drawable
+Specify a drawable to use for the toolbar. (ChatActiviy only)  
+The drawable can be tinted with dimelo\_toolbar\_background\_drawable\_tint.
+
+Xml attribute name: dimelo\_toolbar\_background\_drawable
+
+Programmatically: None
+
 Attributes < color />
 ----
+
+### Toolbar Background drawable tint
+Specify a tint for the drawable used as a background for the toolbar.(ChatActiviy only)
+
+Xml attribute name: dimelo\_toolbar\_background\_drawable\_tint
+
+Programmatically: None
+
+### Toolbar Background color
+Background color of toolbar (ChatActiviy only)
+
+Xml attribute name: dimelo\_toolbar\_background\_color
+
+Programmatically: None
 
 ### InputBar background color
 Background color for the input bar
