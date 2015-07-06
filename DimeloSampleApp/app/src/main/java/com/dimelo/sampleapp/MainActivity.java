@@ -69,8 +69,7 @@ public class MainActivity extends AppCompatActivity {
     };
 
     private void setupDimelo(){
-        String secret = "e3e5d064186207607a0095a40faa2cfe79cfc756799773f088a37cdc8a804a60";
-        // String secret = "YOUR_SECRET";
+         String secret = ""; // YOUR_SECRET
         Dimelo.setup(this);
         Dimelo dimelo = Dimelo.getInstance();
         dimelo.setApiSecret(secret);
