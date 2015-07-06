@@ -23,8 +23,8 @@ repositories {
     maven {
         url "https://raw.github.com/dimelo/Dimelo-Android/master"
         credentials {
-            username ''
-            password ''
+            username 'your_github_username'
+            password 'your_github_password'
         }
     }
 }
