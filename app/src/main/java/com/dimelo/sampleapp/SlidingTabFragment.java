@@ -28,17 +28,17 @@ public class SlidingTabFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
 
-            String[] tabTitles = {"Start", "Bank", "Telecom", "Support"};
+            String[] tabTitles = {"Bank", "Telecom", "Support", "Test"};
             int[] iconIds = {
-                    R.drawable.start_icon,
                     R.drawable.bank_icon,
                     R.drawable.telco_icon,
-                    R.drawable.support_icon};
+                    R.drawable.support_icon,
+                    R.drawable.start_icon};
             int[] selectedIconIds = {
-                    R.drawable.start_icon_selected,
                     R.drawable.bank_icon_selected,
                     R.drawable.telco_icon_selected,
-                    R.drawable.support_icon_selected};
+                    R.drawable.support_icon_selected,
+                    R.drawable.start_icon_selected};
 
             // Creating The ViewPagerAdapter and Passing Fragment Manager, Titles fot the Tabs and Number Of Tabs.
             mViewPagerAdapter = new ViewPagerAdapter(getActivity().getSupportFragmentManager(), tabTitles, iconIds, selectedIconIds);
@@ -73,10 +73,10 @@ public class SlidingTabFragment extends Fragment {
 
     public class ViewPagerAdapter extends ViewPagerIconAndTextAdapter {
 
-        TabStart start;
         TabBank bank;
         TabTelecom telecom;
         TabSupport support;
+        TabStart start;
 
         public ViewPagerAdapter(FragmentManager fm, String titles[], int iconIds[], int selectedIconIds[]) {
             super(fm, titles, iconIds, selectedIconIds);
@@ -85,39 +85,39 @@ public class SlidingTabFragment extends Fragment {
         @Override
         public Fragment getItem(int position) {
             if(position == 0) {
-                start = new TabStart();
-                return start;
-            }
-            else if(position == 1) {
                 bank = new TabBank();
                 return bank;
             }
-            else if(position == 2) {
+            else if(position == 1) {
                 telecom = new TabTelecom();
                 return telecom;
             }
-            else if(position == 3) {
+            else if(position == 2) {
                 support = new TabSupport();
                 return support;
             }
+            else if (position == 3) {
+                start = new TabStart();
+                return start;
+            }
             else{ // Not suppose to happen
-                return new TabStart();
+                return new TabBank();
             }
         }
 
         boolean isChatDisplayed(int position){
             boolean isAnyChatDisplayed = false;
 
-            if (position == 0 && start != null && start.isChatDisplayed()){
+            if (position == 0 && bank != null && bank.isChatDisplayed()){
                 isAnyChatDisplayed = true;
             }
-            else if (position == 1 && bank != null && bank.isChatDisplayed()){
+            else if (position == 1 && telecom != null && telecom.isChatDisplayed()){
                 isAnyChatDisplayed = true;
             }
-            else if (position == 2 && telecom != null && telecom.isChatDisplayed()){
+            else if (position == 2 && support != null && support.isChatDisplayed()){
                 isAnyChatDisplayed = true;
             }
-            else if (position == 3 && support != null && support.isChatDisplayed()){
+            else if (position == 3 && start != null && start.isChatDisplayed()){
                 isAnyChatDisplayed = true;
             }
             return isAnyChatDisplayed;
