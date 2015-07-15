@@ -18,9 +18,9 @@ This sample shows how to
 - Customize the Chats (programmatically & Xml).
 - Integrate push notification support
 
-To built a fully functional version please :
- - replace YOUR_GOOGLE_PROJECT_ID with your own GCM id (for notification)
- - replace YOUR_SECRET by your own Dimelo Mobile SDK API secret (ask your
+To built a fully functional version please edit `gradle.properties` :
+ - replace GCM_API_KEY with your own GCM id (for notification)
+ - replace DIMELO_SDK_SECRET by your own Dimelo Mobile SDK API secret (ask your
    Dimelo project manager)
 
 For more informations checkout the
