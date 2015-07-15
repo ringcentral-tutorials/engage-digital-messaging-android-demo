@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DimeloSdkSampleApp</string>
+    <string name="app_name">Demo App</string>
     <string name="welcome_to_dimelo">Welcome to Dimelo Test App</string>
     <string name="how_to">Tap the button below to open the chat. Select or scroll to another tab to open a chat in the tab view.</string>
     <string name="telecom_welcome">Thank you for updating to our new app. Here you can upgrade your plan and subscribe to our additional services.</string>
@@ -10,7 +10,7 @@
     <!-- Examples of Dimelo library override -->
     <!-- -->
 
-    <!--<color name="dimelo_toolbar_background_color">@color/greesn_400</color>-->
-    <!--<string name="dimelo_toolbar_title">Live Support</string>-->
+    <!--<color name="dimelo_toolbar_background_color">@color/green_400</color>-->
+    <string name="dimelo_toolbar_title">Mobile Support</string>
 
 </resources>
