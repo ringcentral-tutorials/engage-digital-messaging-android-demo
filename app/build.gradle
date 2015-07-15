@@ -19,8 +19,15 @@ android {
     }
 }
 
+//Edit those values in gradle.properties
+android.buildTypes.each { type ->
+    type.buildConfigField 'String', 'GCM_API_KEY', GCM_API_KEY
+    type.buildConfigField 'String', 'DIMELO_SDK_SECRET', DIMELO_SDK_SECRET
+}
+
 repositories {
     maven {
+        //url "../../Dimelo-Android-Source/Dimelo-Android/"
         url "https://raw.github.com/dimelo/Dimelo-Android/master"
     }
 }

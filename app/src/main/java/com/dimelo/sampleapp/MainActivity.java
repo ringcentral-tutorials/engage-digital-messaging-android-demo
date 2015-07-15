@@ -16,7 +16,7 @@ import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String SENDER_ID = "YOUR_GOOGLE_PROJECT_ID"; // GCM ID
+    private static final String SENDER_ID = BuildConfig.GCM_API_KEY; // GCM ID to be defined in gradle.properties
 
     private SlidingTabFragment mSlidingFragment;
 
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
     };
 
     private void setupDimelo(){
-        String secret = ""; // YOUR_SECRET
+        String secret = BuildConfig.DIMELO_SDK_SECRET; //edit in gradle.properties
         Dimelo.setup(this);
         Dimelo dimelo = Dimelo.getInstance();
         dimelo.setApiSecret(secret);
