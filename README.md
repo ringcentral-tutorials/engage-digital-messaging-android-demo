@@ -11,11 +11,10 @@ This Android Studio Project is a Sample App showing how to use the [Dimelo](http
 	the chat through Fragment or Activity and has rich customization options to fit
 	perfectly in your application.
 
-
 This sample shows how to
 - Add Dimelo repository and dependency.
-- Display a chat in two different ways (Activity & Fragments)
-- Customize the Chats (programmatically & Xml).
+- Display a Dimelo Mobile Chat session in two different ways (simple SDK built-in activity & complex custom nested fragments)
+- Customize the Dimelo Mobile Chat UI (programmatically & Xml).
 - Integrate push notification support
 
 To built a fully functional version please edit `gradle.properties` :
