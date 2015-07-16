@@ -8,7 +8,7 @@ android {
         applicationId "dimelo.com.dimelosdksampleapp"
         minSdkVersion 15
         targetSdkVersion 22
-        versionCode 1
+        versionCode 5
         versionName "1.0"
     }
     buildTypes {

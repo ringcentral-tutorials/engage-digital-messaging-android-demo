@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Demo App</string>
-    <string name="welcome_to_dimelo">Welcome to Dimelo Test App</string>
-    <string name="how_to">Tap the button below to open the chat. Select or scroll to another tab to open a chat in the tab view.</string>
-    <string name="telecom_welcome">Thank you for updating to our new app. Here you can upgrade your plan and subscribe to our additional services.</string>
-    <string name="bank_welcome">Welcome to your new banking application. Consult your accounts, make transfers and play on the stock market with just a tap.</string>
+    <string name="welcome_to_dimelo">Dimelo Mobile demo App</string>
+    <string name="how_to">Tap "Open Full Screen" to see the default Dimelo Mobile integration.</string>
+    <string name="telecom_welcome">Upgrade your plan, subscribe to services and contact us with just a tap.</string>
+    <string name="bank_welcome">Consult your accounts, transfer money and get in touch with just a tap.</string>
 
 
     <!-- -->
