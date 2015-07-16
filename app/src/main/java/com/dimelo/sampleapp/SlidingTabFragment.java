@@ -64,9 +64,10 @@ public class SlidingTabFragment extends Fragment {
             mSlidingTabLayout.setViewPager(mViewPager);
     }
 
-    public boolean isAnyChatDisplayed(){
+    // delegate management of back to tab if need be
+    public boolean isHandlingBack(){
         if (mViewPagerAdapter != null) {
-            return mViewPagerAdapter.isChatDisplayed(mViewPager.getCurrentItem());
+            return mViewPagerAdapter.isHandlingBack(mViewPager.getCurrentItem());
         }
         return false;
     }
@@ -105,22 +106,22 @@ public class SlidingTabFragment extends Fragment {
             }
         }
 
-        boolean isChatDisplayed(int position){
-            boolean isAnyChatDisplayed = false;
+        boolean isHandlingBack(int position){
+            boolean isHandlingBack = false;
 
-            if (position == 0 && bank != null && bank.isChatDisplayed()){
-                isAnyChatDisplayed = true;
+            if (position == 0 && bank != null && bank.isHandlingBack()){
+                isHandlingBack = true;
             }
-            else if (position == 1 && telecom != null && telecom.isChatDisplayed()){
-                isAnyChatDisplayed = true;
+            else if (position == 1 && telecom != null && telecom.isHandlingBack()){
+                isHandlingBack = true;
             }
-            else if (position == 2 && support != null && support.isChatDisplayed()){
-                isAnyChatDisplayed = true;
+            else if (position == 2 && support != null && support.isHandlingBack()){
+                isHandlingBack = true;
             }
-            else if (position == 3 && start != null && start.isChatDisplayed()){
-                isAnyChatDisplayed = true;
+            else if (position == 3 && start != null && start.isHandlingBack()){
+                isHandlingBack = true;
             }
-            return isAnyChatDisplayed;
+            return isHandlingBack;
         }
 
     }

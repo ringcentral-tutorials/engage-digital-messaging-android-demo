@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,25 +52,9 @@ public class TabSupport extends Fragment implements SampleDimeloTab {
     }
 
     @Override
-    public boolean isChatDisplayed() {
-        Log.d("alex", "Support: isVisible" + isVisible());
-        Log.d("alex", "Support: userhint" + getUserVisibleHint());
-
-        Log.d("alex", "Support: Chat: " + mDimeloChat + "isVisible" + mDimeloChat.isVisible());
-        Log.d("alex", "Support: Chat: " + mDimeloChat + "userhint" + mDimeloChat.getUserVisibleHint());
-        return isVisible() && getUserVisibleHint();
+    public boolean isHandlingBack() {
+        return false;
     }
-
-
-//    @Override
-//    public void setUserVisibleHint(boolean isVisibleToUser) {
-//        Log.d("alex", "Support:" + this + " setUserVisibleHint: " + isVisibleToUser);
-//        // DimeloChat is a nested Fragment => Propagate setUserVisibleHint
-//        if (mDimeloChat != null) {
-//            mDimeloChat.setUserVisibleHint(isVisibleToUser);
-//        }
-//        super.setUserVisibleHint(isVisibleToUser);
-//    }
 
     @Override
     public void onDestroy() {

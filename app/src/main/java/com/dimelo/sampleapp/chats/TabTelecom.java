@@ -69,8 +69,12 @@ public class TabTelecom extends Fragment implements SampleDimeloTab {
     }
 
     @Override
-    public boolean isChatDisplayed(){
-        return isVisible() && (mViewFlipper.getDisplayedChild() == 1);
+    public boolean isHandlingBack(){
+        if (isVisible() && (mViewFlipper.getDisplayedChild() == 1)) {
+            mViewFlipper.setDisplayedChild(0);
+            return true;
+        }
+        return false;
     }
 
     @Override

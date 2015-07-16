@@ -82,7 +82,7 @@ public class TabStart extends Fragment implements SampleDimeloTab {
     }
 
     @Override
-    public boolean isChatDisplayed(){
+    public boolean isHandlingBack(){
         return false;
     }
 

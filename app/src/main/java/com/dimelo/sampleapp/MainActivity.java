@@ -76,6 +76,13 @@ public class MainActivity extends AppCompatActivity {
         dimelo.setDimeloListener(dimeloListener);
     }
 
+    @Override
+    public void onBackPressed() {
+        if (mSlidingFragment.isHandlingBack())
+            return;
+        super.onBackPressed();
+    }
+
     /**
      * Registers the application with GCM servers asynchronously.
      * <p>
