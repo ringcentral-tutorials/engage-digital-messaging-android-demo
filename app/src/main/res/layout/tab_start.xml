@@ -15,7 +15,9 @@
             android:layout_height="0px"
             android:background="@color/white"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingLeft="25px"
+            android:paddingRight="25px">
 
             <TextView
                 android:layout_width="wrap_content"

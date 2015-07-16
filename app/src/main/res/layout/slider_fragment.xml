@@ -5,7 +5,7 @@
 
     <com.dimelo.sampleapp.google.IconSlidingTabLayout
         android:id="@+id/sliding_tabs"
-        android:background="#AAAAAA"
+        android:background="?attr/colorPrimary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
