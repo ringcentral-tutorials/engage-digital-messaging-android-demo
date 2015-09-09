@@ -1,5 +1,6 @@
 package com.dimelo.sampleapp.chats;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -83,4 +84,12 @@ public class TabTelecom extends Fragment implements SampleDimeloTab {
         mDimeloChat = null;
         mViewFlipper = null;
     }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        // DimeloChat is a nested Fragment, we must notify it about onActivityResult
+        mDimeloChat.onActivityResult(requestCode, resultCode, data);
+    }
+
 }
