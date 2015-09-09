@@ -4,8 +4,9 @@ android {
     compileSdkVersion 22
     buildToolsVersion '22.0.1'
 
+
     defaultConfig {
-        applicationId "dimelo.com.dimelosdksampleapp"
+        applicationId "com.dimelo.sampleapp"
         minSdkVersion 15
         targetSdkVersion 22
         versionCode 6
@@ -27,13 +28,12 @@ android.buildTypes.each { type ->
 
 repositories {
     maven {
-        //url "../../Dimelo-Android-Source/Dimelo-Android/"
-        url "https://raw.github.com/dimelo/Dimelo-Android/master"
+        url "https://raw.github.com/dimelo/Dimelo-Android/dev"
     }
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:22.2.0'
+    compile 'com.android.support:appcompat-v7:22.2.1'
     compile 'com.google.android.gms:play-services-gcm:7.5.0'
-    compile 'com.dimelo.dimelosdk:dimelosdk:1.0.0'
+    compile 'com.dimelo.dimelosdk:dimelosdk:1.1.0'
 }
