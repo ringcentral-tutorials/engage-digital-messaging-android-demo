@@ -1,6 +1,8 @@
 package com.dimelo.sampleapp;
 
 import android.content.Context;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
@@ -12,11 +14,15 @@ import com.dimelo.dimelosdk.main.Dimelo;
 import com.dimelo.dimelosdk.main.DimeloConnection;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final String SENDER_ID = BuildConfig.GCM_API_KEY; // GCM ID to be defined in gradle.properties
+    private static final String TAG = "MainActivity";
 
     private SlidingTabFragment mSlidingFragment;
 
@@ -68,11 +74,28 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-    private void setupDimelo(){
+    private void setupDimelo() {
         String secret = BuildConfig.DIMELO_SDK_SECRET; //edit in gradle.properties
         Dimelo.setup(this);
         Dimelo dimelo = Dimelo.getInstance();
         dimelo.setApiSecret(secret);
+//        dimelo.setUserIdentifier("42");
+        dimelo.setUserName("John Doe");
+
+        JSONObject authInfo = new JSONObject();
+        PackageInfo pInfo = null;
+        try {
+            pInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
+        } catch(PackageManager.NameNotFoundException e) {
+            Log.v(TAG, "Could not get package version");
+        }
+
+        try {
+            authInfo.put("AppVersion", pInfo.versionName);
+            authInfo.put("Dimelo", "Rocks!");
+        } catch(JSONException e) {}
+
+        dimelo.setAuthenticationInfo(authInfo);
         dimelo.setDimeloListener(dimeloListener);
     }
 
@@ -91,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private void registerInBackground() {
         final Context mContext = getApplicationContext();
-        AsyncTask<?, ?, ?> task = new AsyncTask<Object, Void, String>() {
+        AsyncTask<Object, Void, String> task = new AsyncTask<Object, Void, String>() {
 
             private String mGcmRegistrationId;
 
