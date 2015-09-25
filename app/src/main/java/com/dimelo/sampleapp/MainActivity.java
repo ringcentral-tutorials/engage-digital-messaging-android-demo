@@ -22,7 +22,6 @@ import java.io.IOException;
 public class MainActivity extends AppCompatActivity {
 
     private static final String SENDER_ID = BuildConfig.GCM_API_KEY; // GCM ID to be defined in gradle.properties
-    private static final String TAG = "MainActivity";
 
     private SlidingTabFragment mSlidingFragment;
 
@@ -83,15 +82,8 @@ public class MainActivity extends AppCompatActivity {
         dimelo.setUserName("John Doe");
 
         JSONObject authInfo = new JSONObject();
-        PackageInfo pInfo = null;
         try {
-            pInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
-        } catch(PackageManager.NameNotFoundException e) {
-            Log.v(TAG, "Could not get package version");
-        }
-
-        try {
-            authInfo.put("AppVersion", pInfo.versionName);
+            authInfo.put("CustomerId", "0123456789");
             authInfo.put("Dimelo", "Rocks!");
         } catch(JSONException e) {}
 
