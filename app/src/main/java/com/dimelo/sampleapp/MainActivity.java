@@ -12,6 +12,9 @@ import com.dimelo.dimelosdk.main.Dimelo;
 import com.dimelo.dimelosdk.main.DimeloConnection;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
@@ -68,11 +71,21 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-    private void setupDimelo(){
+    private void setupDimelo() {
         String secret = BuildConfig.DIMELO_SDK_SECRET; //edit in gradle.properties
         Dimelo.setup(this);
         Dimelo dimelo = Dimelo.getInstance();
         dimelo.setApiSecret(secret);
+//        dimelo.setUserIdentifier("42");
+        dimelo.setUserName("John Doe");
+
+        JSONObject authInfo = new JSONObject();
+        try {
+            authInfo.put("CustomerId", "0123456789");
+            authInfo.put("Dimelo", "Rocks!");
+        } catch(JSONException e) {}
+
+        dimelo.setAuthenticationInfo(authInfo);
         dimelo.setDimeloListener(dimeloListener);
     }
 
@@ -91,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private void registerInBackground() {
         final Context mContext = getApplicationContext();
-        AsyncTask<?, ?, ?> task = new AsyncTask<Object, Void, String>() {
+        AsyncTask<Object, Void, String> task = new AsyncTask<Object, Void, String>() {
 
             private String mGcmRegistrationId;
 
