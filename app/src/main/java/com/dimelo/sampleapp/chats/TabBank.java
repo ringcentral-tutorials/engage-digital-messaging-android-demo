@@ -82,6 +82,7 @@ public class TabBank extends Fragment implements SampleDimeloTab {
     public boolean isHandlingBack(){
         if (isVisible() && (mViewFlipper.getDisplayedChild() == 1)) {
             mViewFlipper.setDisplayedChild(0);
+            mDimeloChat.setUserVisibleHint(false);
             return true;
         }
         return false;
