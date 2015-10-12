@@ -11,6 +11,10 @@ android {
         targetSdkVersion 23
         versionCode 6
         versionName "1.0"
+
+        renderscriptTargetApi 22
+        renderscriptSupportModeEnabled true
+
     }
     buildTypes {
         release {
