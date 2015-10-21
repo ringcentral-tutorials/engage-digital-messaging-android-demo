@@ -1,11 +1,14 @@
 package com.dimelo.sampleapp.chats;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -68,7 +71,18 @@ public class TabBank extends Fragment implements SampleDimeloTab {
         customisation.systemMessageTextColor = Color.WHITE;
         customisation.dateTextColor = Color.WHITE;
 
+        customisation.userMessageBubblePadding = new Chat.Customization.Padding(convertDpToPixel(8), 0, convertDpToPixel(24), 0);
+        customisation.agentMessageBubblePadding = new Chat.Customization.Padding(convertDpToPixel(24), 0, convertDpToPixel(8), 0);
+        customisation.systemMessageBubblePadding = new Chat.Customization.Padding(convertDpToPixel(24), convertDpToPixel(4), convertDpToPixel(8), convertDpToPixel(4));
+
         customisation.apply();
+    }
+
+    public int convertDpToPixel(int dp){
+        Resources resources = getActivity().getResources();
+        DisplayMetrics metrics = resources.getDisplayMetrics();
+        float px = dp * (metrics.densityDpi / 160f);
+        return (int)px;
     }
 
     @Override
@@ -76,6 +90,13 @@ public class TabBank extends Fragment implements SampleDimeloTab {
         super.onActivityResult(requestCode, resultCode, data);
         // DimeloChat is a nested Fragment, we must notify it about onActivityResult
         mDimeloChat.onActivityResult(requestCode, resultCode, data);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        // DimeloChat is a nested Fragment, we must notify it about onRequestPermissionsResult
+        mDimeloChat.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
     @Override

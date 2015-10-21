@@ -70,4 +70,12 @@ public class TabSupport extends Fragment implements SampleDimeloTab {
         mDimeloChat.onActivityResult(requestCode, resultCode, data);
     }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        // DimeloChat is a nested Fragment, we must notify it about onRequestPermissionsResult
+        mDimeloChat.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
+
+
 }

@@ -3,6 +3,7 @@ package com.dimelo.sampleapp.chats;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -91,6 +92,13 @@ public class TabTelecom extends Fragment implements SampleDimeloTab {
         super.onActivityResult(requestCode, resultCode, data);
         // DimeloChat is a nested Fragment, we must notify it about onActivityResult
         mDimeloChat.onActivityResult(requestCode, resultCode, data);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        // DimeloChat is a nested Fragment, we must notify it about onRequestPermissionsResult
+        mDimeloChat.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
 }
