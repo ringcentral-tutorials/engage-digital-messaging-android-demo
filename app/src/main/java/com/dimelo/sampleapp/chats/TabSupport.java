@@ -58,8 +58,8 @@ public class TabSupport extends Fragment implements SampleDimeloTab {
         customisation.systemMessageTextColor = Color.WHITE;
         customisation.dateTextColor = Color.WHITE;
 
-        customisation.userMessageBubblePadding = new Chat.Customization.Padding(convertDpToPixel(8), 0, convertDpToPixel(24), 0);
-        customisation.agentMessageBubblePadding = new Chat.Customization.Padding(convertDpToPixel(24), 0, convertDpToPixel(8), 0);
+        customisation.userMessageBubblePadding = new Chat.Customization.Padding(convertDpToPixel(8), convertDpToPixel(4), convertDpToPixel(24), convertDpToPixel(4));
+        customisation.agentMessageBubblePadding = new Chat.Customization.Padding(convertDpToPixel(24), convertDpToPixel(4), convertDpToPixel(8), convertDpToPixel(4));
         customisation.systemMessageBubblePadding = new Chat.Customization.Padding(convertDpToPixel(24), convertDpToPixel(4), convertDpToPixel(8), convertDpToPixel(4));
 
         customisation.apply();
