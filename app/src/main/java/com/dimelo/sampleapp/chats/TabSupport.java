@@ -1,11 +1,13 @@
 package com.dimelo.sampleapp.chats;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,20 +38,38 @@ public class TabSupport extends Fragment implements SampleDimeloTab {
 
 
     private void customize(){
+
         Chat.Customization customisation = mDimeloChat.getCustomization();
+        customisation.backgroundColor = getResources().getColor(R.color.blue_400);
+        customisation.inputbarBackgroundColor = getResources().getColor(R.color.blue_50);
 
-        customisation.backgroundColor = getResources().getColor(R.color.white);
+        customisation.setUserMessageBubbleDrawable(R.drawable.bank_user_bubble, Color.WHITE);
+        customisation.setAgentMessageBubbleDrawable(R.drawable.bank_agent_bubble, Color.WHITE);
+        customisation.setSystemMessageBubbleDrawable(R.drawable.bank_system_bubble, Color.WHITE);
 
-        customisation.setUserMessageBubbleDrawable(R.drawable.row_user_message_bubble, getResources().getColor(R.color.blue_500));
-        customisation.setAgentMessageBubbleDrawable(R.drawable.row_agent_message_bubble, Color.LTGRAY);
-        customisation.setSystemMessageBubbleDrawable(R.drawable.row_system_message_bubble, Color.LTGRAY);
+        customisation.userMessageBackgroundColor = Color.WHITE;
+        customisation.userMessageTextColor = Color.BLACK;
 
-        customisation.userMessageTextColor = Color.WHITE;
-
+        customisation.agentMessageBackgroundColor = Color.WHITE;
         customisation.agentMessageTextColor = Color.BLACK;
-        customisation.agentNameColor = Color.GRAY;
+        customisation.agentNameColor = Color.WHITE;
 
-        customisation.systemMessageTextColor = Color.BLACK;
+        customisation.systemMessageBackgroundColor = Color.WHITE;
+        customisation.systemMessageTextColor = Color.WHITE;
+        customisation.dateTextColor = Color.WHITE;
+
+        customisation.userMessageBubblePadding = new Chat.Customization.Padding(convertDpToPixel(8), 0, convertDpToPixel(24), 0);
+        customisation.agentMessageBubblePadding = new Chat.Customization.Padding(convertDpToPixel(24), 0, convertDpToPixel(8), 0);
+        customisation.systemMessageBubblePadding = new Chat.Customization.Padding(convertDpToPixel(24), convertDpToPixel(4), convertDpToPixel(8), convertDpToPixel(4));
+
+        customisation.apply();
+    }
+
+    public int convertDpToPixel(int dp){
+        Resources resources = getActivity().getResources();
+        DisplayMetrics metrics = resources.getDisplayMetrics();
+        float px = dp * (metrics.densityDpi / 160f);
+        return (int)px;
     }
 
     @Override

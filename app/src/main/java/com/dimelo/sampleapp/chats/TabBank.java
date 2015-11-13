@@ -51,39 +51,23 @@ public class TabBank extends Fragment implements SampleDimeloTab {
     }
 
     private void customize(){
-
         Chat.Customization customisation = mDimeloChat.getCustomization();
-        customisation.backgroundColor = getResources().getColor(R.color.blue_400);
-        customisation.inputbarBackgroundColor = getResources().getColor(R.color.blue_50);
 
-        customisation.setUserMessageBubbleDrawable(R.drawable.bank_user_bubble, Color.WHITE);
-        customisation.setAgentMessageBubbleDrawable(R.drawable.bank_agent_bubble, Color.WHITE);
-        customisation.setSystemMessageBubbleDrawable(R.drawable.bank_system_bubble, Color.WHITE);
+        customisation.backgroundColor = getResources().getColor(R.color.white);
 
-        customisation.userMessageBackgroundColor = Color.WHITE;
-        customisation.userMessageTextColor = Color.BLACK;
+        customisation.setUserMessageBubbleDrawable(R.drawable.row_user_message_bubble, getResources().getColor(R.color.blue_500));
+        customisation.setAgentMessageBubbleDrawable(R.drawable.row_agent_message_bubble, Color.LTGRAY);
+        customisation.setSystemMessageBubbleDrawable(R.drawable.row_system_message_bubble, Color.LTGRAY);
 
-        customisation.agentMessageBackgroundColor = Color.WHITE;
+        customisation.userMessageTextColor = Color.WHITE;
+
         customisation.agentMessageTextColor = Color.BLACK;
-        customisation.agentNameColor = Color.WHITE;
+        customisation.agentNameColor = Color.GRAY;
 
-        customisation.systemMessageBackgroundColor = Color.WHITE;
-        customisation.systemMessageTextColor = Color.WHITE;
-        customisation.dateTextColor = Color.WHITE;
-
-        customisation.userMessageBubblePadding = new Chat.Customization.Padding(convertDpToPixel(8), 0, convertDpToPixel(24), 0);
-        customisation.agentMessageBubblePadding = new Chat.Customization.Padding(convertDpToPixel(24), 0, convertDpToPixel(8), 0);
-        customisation.systemMessageBubblePadding = new Chat.Customization.Padding(convertDpToPixel(24), convertDpToPixel(4), convertDpToPixel(8), convertDpToPixel(4));
-
-        customisation.apply();
+        customisation.systemMessageTextColor = Color.BLACK;
     }
 
-    public int convertDpToPixel(int dp){
-        Resources resources = getActivity().getResources();
-        DisplayMetrics metrics = resources.getDisplayMetrics();
-        float px = dp * (metrics.densityDpi / 160f);
-        return (int)px;
-    }
+
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
