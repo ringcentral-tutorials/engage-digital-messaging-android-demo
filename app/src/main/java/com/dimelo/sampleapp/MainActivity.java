@@ -3,6 +3,7 @@ package com.dimelo.sampleapp;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -18,39 +19,30 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String SENDER_ID = BuildConfig.GCM_API_KEY; // GCM ID to be defined in gradle.properties
 
-    private SlidingTabFragment mSlidingFragment;
-
-    @Override
-    protected void onSaveInstanceState(final Bundle outState) {
-        // Keep it empty
-        // Prevent super.onSaveInstanceState to affect our fragments
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
 
-        // Get GCM Token
+//        // Get GCM Token
         registerInBackground();
 
         // Setup Dimelo
         setupDimelo();
 
-        // Push Slider Fragment
-        mSlidingFragment = new SlidingTabFragment();
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.add(R.id.slider_container, mSlidingFragment);
-        fragmentTransaction.commit();
+        FragmentManager supportFragmentManager = getSupportFragmentManager();
+        SlidingTabFragment mSlidingFragment = (SlidingTabFragment) supportFragmentManager.findFragmentByTag("mSlidingFragment");
+        if (mSlidingFragment == null){
+            mSlidingFragment = new SlidingTabFragment();
+            mSlidingFragment.setRetainInstance(true);
+            FragmentTransaction fragmentTransaction = supportFragmentManager.beginTransaction();
+            fragmentTransaction.add(R.id.slider_container, mSlidingFragment, "mSlidingFragment");
+            fragmentTransaction.commit();
+        }
+
     }
 
     Dimelo.DimeloListener dimeloListener = new Dimelo.DimeloListener() {
-//        @Override
-//        public boolean dimeloShouldDisplayNotificationWithText(Dimelo dimelo, String message) {
-//            // When Chat Fragments are pushed in a viewpager, Dimelo Sdk cannot detect if the chats are visible.
-//            // Thus, "dimeloShouldDisplayNotificationWithText" will be called.
-//            return !mSlidingFragment.isAnyChatDisplayed();
-//        }
 
         @Override
         public void dimeloChatMessageSendFail(DimeloConnection.DimeloError error) {
@@ -73,12 +65,14 @@ public class MainActivity extends AppCompatActivity {
         Dimelo.setup(this);
         Dimelo dimelo = Dimelo.getInstance();
         dimelo.setApiSecret(secret);
+        dimelo.setDebug(true);
         dimelo.setDimeloListener(dimeloListener);
     }
 
     @Override
     public void onBackPressed() {
-        if (mSlidingFragment.isHandlingBack())
+        SlidingTabFragment mSlidingFragment = (SlidingTabFragment) getSupportFragmentManager().findFragmentByTag("mSlidingFragment");
+        if (mSlidingFragment != null && mSlidingFragment.isHandlingBack())
             return;
         super.onBackPressed();
     }
@@ -116,6 +110,10 @@ public class MainActivity extends AppCompatActivity {
         };
         task.execute(null, null, null);
     }
-
+// Vous pouvez modifier les autorisations sous Paramètres > Applications > {Application Name} > Autorisations
 
 }
+
+
+
+

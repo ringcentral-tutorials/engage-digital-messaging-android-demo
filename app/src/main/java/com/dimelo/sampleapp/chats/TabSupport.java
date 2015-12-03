@@ -78,7 +78,7 @@ public class TabSupport extends Fragment implements SampleDimeloTab {
     }
 
     @Override
-    public void onDestroy() {
+    public void onDestroyView() {
         super.onDestroy();
         mDimeloChat = null;
     }
