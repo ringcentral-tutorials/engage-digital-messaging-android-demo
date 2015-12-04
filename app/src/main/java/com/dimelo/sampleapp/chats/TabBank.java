@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,11 +40,15 @@ public class TabBank extends Fragment implements SampleDimeloTab {
     @Override
     public void onViewCreated(final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        mDimeloChat = Dimelo.getInstance().newChatFragment();
+        FragmentManager childFragmentManager = getChildFragmentManager();
+        mDimeloChat = (Chat)childFragmentManager.findFragmentByTag("dimelo_bank_chat");
+        if (mDimeloChat == null) {
+            mDimeloChat = Dimelo.getInstance().newChatFragment();
+            FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
+            fragmentTransaction.add(R.id.chat_bank_container, mDimeloChat, "dimelo_bank_chat");
+            fragmentTransaction.commit();
+        }
         mDimeloChat.setUserVisibleHint(false);
-        FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
-        fragmentTransaction.add(R.id.chat_bank_container, mDimeloChat);
-        fragmentTransaction.commit();
 
         mViewFlipper = (ViewFlipper) view.findViewById(R.id.viewflipper);
         mViewFlipper.setInAnimation(view.getContext(), android.support.v7.appcompat.R.anim.abc_grow_fade_in_from_bottom);

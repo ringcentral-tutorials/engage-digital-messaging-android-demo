@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
@@ -28,10 +29,15 @@ public class TabSupport extends Fragment implements SampleDimeloTab {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        mDimeloChat = Dimelo.getInstance().newChatFragment();
-        FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
-        fragmentTransaction.add(R.id.chat_support_container, mDimeloChat);
-        fragmentTransaction.commit();
+
+        FragmentManager childFragmentManager = getChildFragmentManager();
+        mDimeloChat = (Chat)childFragmentManager.findFragmentByTag("dimelo_support_chat");
+        if (mDimeloChat == null) {
+            mDimeloChat = Dimelo.getInstance().newChatFragment();
+            FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
+            fragmentTransaction.add(R.id.chat_support_container, mDimeloChat, "dimelo_support_chat");
+            fragmentTransaction.commit();
+        }
 
         customize();
     }
