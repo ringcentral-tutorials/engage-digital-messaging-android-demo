@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -46,8 +47,9 @@ public class TabSupport extends Fragment implements SampleDimeloTab {
     private void customize(){
 
         Chat.Customization customisation = mDimeloChat.getCustomization();
-        customisation.backgroundColor = getResources().getColor(R.color.blue_400);
-        customisation.inputbarBackgroundColor = getResources().getColor(R.color.blue_50);
+
+        customisation.backgroundColor = ContextCompat.getColor(getContext(), R.color.blue_400);
+        customisation.inputbarBackgroundColor = ContextCompat.getColor(getContext(), R.color.blue_50);
 
         customisation.setUserMessageBubbleDrawable(R.drawable.bank_user_bubble, Color.WHITE);
         customisation.setAgentMessageBubbleDrawable(R.drawable.bank_agent_bubble, Color.WHITE);

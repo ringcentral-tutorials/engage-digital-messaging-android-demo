@@ -51,12 +51,12 @@ public class TabBank extends Fragment implements SampleDimeloTab {
         mDimeloChat.setUserVisibleHint(false);
 
         mViewFlipper = (ViewFlipper) view.findViewById(R.id.viewflipper);
-        mViewFlipper.setInAnimation(view.getContext(), android.support.v7.appcompat.R.anim.abc_grow_fade_in_from_bottom);
         mViewFlipper.setOutAnimation(view.getContext(), android.support.v7.appcompat.R.anim.abc_shrink_fade_out_from_bottom);
         view.findViewById(R.id.live_support).setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
+                mViewFlipper.setInAnimation(view.getContext(), android.support.v7.appcompat.R.anim.abc_grow_fade_in_from_bottom);
                 openChat();
             }
         });
