@@ -35,4 +35,5 @@ public abstract class ViewPagerIconAndTextAdapter extends FragmentPagerAdapter {
     public int getCount() {
         return mTitles.length;
     }
+
 }

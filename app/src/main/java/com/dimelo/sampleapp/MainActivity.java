@@ -1,8 +1,11 @@
 package com.dimelo.sampleapp;
 
 import android.content.Context;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -10,6 +13,9 @@ import android.widget.Toast;
 
 import com.dimelo.dimelosdk.main.Dimelo;
 import com.dimelo.dimelosdk.main.DimeloConnection;
+import com.google.android.gms.appindexing.Action;
+import com.google.android.gms.appindexing.AppIndex;
+import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 
 import org.json.JSONException;
@@ -20,40 +26,40 @@ import java.io.IOException;
 public class MainActivity extends AppCompatActivity {
 
     private static final String SENDER_ID = BuildConfig.GCM_API_KEY; // GCM ID to be defined in gradle.properties
-
-    private SlidingTabFragment mSlidingFragment;
-
-    @Override
-    protected void onSaveInstanceState(final Bundle outState) {
-        // Keep it empty
-        // Prevent super.onSaveInstanceState to affect our fragments
-    }
+    private Handler mHandler;
+    /**
+     * ATTENTION: This was auto-generated to implement the App Indexing API.
+     * See https://g.co/AppIndexing/AndroidStudio for more information.
+     */
+    private GoogleApiClient client;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
 
-        // Get GCM Token
+//        // Get GCM Token
         registerInBackground();
 
         // Setup Dimelo
         setupDimelo();
 
-        // Push Slider Fragment
-        mSlidingFragment = new SlidingTabFragment();
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.add(R.id.slider_container, mSlidingFragment);
-        fragmentTransaction.commit();
+        FragmentManager supportFragmentManager = getSupportFragmentManager();
+        SlidingTabFragment mSlidingFragment = (SlidingTabFragment) supportFragmentManager.findFragmentByTag("mSlidingFragment");
+        if (mSlidingFragment == null) {
+            mSlidingFragment = new SlidingTabFragment();
+            mSlidingFragment.setRetainInstance(true);
+            FragmentTransaction fragmentTransaction = supportFragmentManager.beginTransaction();
+            fragmentTransaction.add(R.id.slider_container, mSlidingFragment, "mSlidingFragment");
+            fragmentTransaction.commit();
+        }
+
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
     Dimelo.DimeloListener dimeloListener = new Dimelo.DimeloListener() {
-//        @Override
-//        public boolean dimeloShouldDisplayNotificationWithText(Dimelo dimelo, String message) {
-//            // When Chat Fragments are pushed in a viewpager, Dimelo Sdk cannot detect if the chats are visible.
-//            // Thus, "dimeloShouldDisplayNotificationWithText" will be called.
-//            return !mSlidingFragment.isAnyChatDisplayed();
-//        }
 
         @Override
         public void dimeloChatMessageSendFail(DimeloConnection.DimeloError error) {
@@ -61,10 +67,9 @@ public class MainActivity extends AppCompatActivity {
             // Minimal error management
 
             String message = "An error occurred";
-            if (error.statusCode == DimeloConnection.DimeloError.NO_CONNECTION_ERROR){
+            if (error.statusCode == DimeloConnection.DimeloError.NO_CONNECTION_ERROR) {
                 message = "Please check your Internet connection and try again later.";
-            }
-            else if (error.statusCode == DimeloConnection.DimeloError.TIMEOUT_ERROR){
+            } else if (error.statusCode == DimeloConnection.DimeloError.TIMEOUT_ERROR) {
                 message = "The server is not responding, please try again later";
             }
             Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
@@ -76,7 +81,6 @@ public class MainActivity extends AppCompatActivity {
         Dimelo.setup(this);
         Dimelo dimelo = Dimelo.getInstance();
         dimelo.setApiSecret(secret);
-//        dimelo.setUserIdentifier("42");
         dimelo.setUserName("John Doe");
 
         JSONObject authInfo = new JSONObject();
@@ -91,14 +95,15 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if (mSlidingFragment.isHandlingBack())
+        SlidingTabFragment mSlidingFragment = (SlidingTabFragment) getSupportFragmentManager().findFragmentByTag("mSlidingFragment");
+        if (mSlidingFragment != null && mSlidingFragment.isHandlingBack())
             return;
         super.onBackPressed();
     }
 
     /**
      * Registers the application with GCM servers asynchronously.
-     * <p>
+     * <p/>
      * Stores the registration ID and app versionCode in the application's
      * shared preferences.
      */
@@ -130,5 +135,49 @@ public class MainActivity extends AppCompatActivity {
         task.execute(null, null, null);
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        client.connect();
+        Action viewAction = Action.newAction(
+                Action.TYPE_VIEW, // TODO: choose an action type.
+                "Main Page", // TODO: Define a title for the content shown.
+                // TODO: If you have web page content that matches this app activity's content,
+                // make sure this auto-generated web page URL is correct.
+                // Otherwise, set the URL to null.
+                Uri.parse("http://host/path"),
+                // TODO: Make sure this auto-generated app deep link URI is correct.
+                Uri.parse("android-app://com.dimelo.sampleapp/http/host/path")
+        );
+        AppIndex.AppIndexApi.start(client, viewAction);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        Action viewAction = Action.newAction(
+                Action.TYPE_VIEW, // TODO: choose an action type.
+                "Main Page", // TODO: Define a title for the content shown.
+                // TODO: If you have web page content that matches this app activity's content,
+                // make sure this auto-generated web page URL is correct.
+                // Otherwise, set the URL to null.
+                Uri.parse("http://host/path"),
+                // TODO: Make sure this auto-generated app deep link URI is correct.
+                Uri.parse("android-app://com.dimelo.sampleapp/http/host/path")
+        );
+        AppIndex.AppIndexApi.end(client, viewAction);
+        client.disconnect();
+    }
+// Vous pouvez modifier les autorisations sous Paramètres > Applications > {Application Name} > Autorisations
 
 }
+
+
+
+
