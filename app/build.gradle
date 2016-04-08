@@ -12,7 +12,7 @@ android {
         versionCode 6
         versionName "1.0"
 
-        renderscriptTargetApi 23
+        renderscriptTargetApi 20
         renderscriptSupportModeEnabled true
 
     }
