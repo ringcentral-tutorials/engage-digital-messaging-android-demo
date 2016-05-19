@@ -44,7 +44,6 @@
 
         <!-- Host Application Activities -->
         <activity
-            android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize"
             android:name=".MainActivity"
             android:label="@string/app_name" >
