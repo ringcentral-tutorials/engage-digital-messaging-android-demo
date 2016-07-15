@@ -42,7 +42,8 @@ public class MainActivity extends AppCompatActivity {
         registerInBackground();
 
         // Setup Dimelo
-        setupDimelo();
+        Dimelo dimelo = setupDimelo(this);
+        dimelo.setDimeloListener(dimeloListener);
 
         FragmentManager supportFragmentManager = getSupportFragmentManager();
         SlidingTabFragment mSlidingFragment = (SlidingTabFragment) supportFragmentManager.findFragmentByTag("mSlidingFragment");
@@ -76,9 +77,9 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-    private void setupDimelo() {
+    static Dimelo setupDimelo(Context context) {
         String secret = BuildConfig.DIMELO_SDK_SECRET; //edit in gradle.properties
-        Dimelo.setup(this);
+        Dimelo.setup(context);
         Dimelo dimelo = Dimelo.getInstance();
         dimelo.setApiSecret(secret);
         dimelo.setUserName("John Doe");
@@ -87,10 +88,11 @@ public class MainActivity extends AppCompatActivity {
         try {
             authInfo.put("CustomerId", "0123456789");
             authInfo.put("Dimelo", "Rocks!");
-        } catch(JSONException e) {}
+        } catch (JSONException e) {
+        }
 
         dimelo.setAuthenticationInfo(authInfo);
-        dimelo.setDimeloListener(dimeloListener);
+        return dimelo;
     }
 
     @Override

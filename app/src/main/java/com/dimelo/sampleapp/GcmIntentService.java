@@ -7,6 +7,9 @@ import android.os.Bundle;
 import com.dimelo.dimelosdk.main.Dimelo;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class GcmIntentService extends IntentService {
 
     public GcmIntentService() {
@@ -23,7 +26,9 @@ public class GcmIntentService extends IntentService {
                     || GoogleCloudMessaging.MESSAGE_TYPE_DELETED.equals(messageType)){
                 // An error occured
             }
+
             else if (GoogleCloudMessaging.MESSAGE_TYPE_MESSAGE.equals(messageType)) {
+                MainActivity.setupDimelo(this);
                 if (Dimelo.consumeReceivedRemoteNotification(this, extras, null)){
                     // Cool !
                 }
