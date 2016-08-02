@@ -2,8 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion '23.0.2'
-
+    buildToolsVersion '23.0.3'
 
     defaultConfig {
         applicationId "com.dimelo.sampleapp"
@@ -34,12 +33,15 @@ android.buildTypes.each { type ->
 repositories {
     maven {
         url "https://raw.github.com/dimelo/Dimelo-Android/dev"
-
+//        url "https://raw.github.com/dimelo/Dimelo-Android/master"
     }
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:23.1.0'
     compile 'com.google.android.gms:play-services-gcm:8.1.0'
-    compile 'com.dimelo.dimelosdk:dimelosdk:1.1.0'
+    compile 'com.dimelo.dimelosdk:dimelosdk:1.2.2'
+    compile 'com.android.support:appcompat-v7:23.3.0'
+    compile 'com.android.support:design:23.3.0'
+    compile 'com.android.support:support-v4:23.3.0'
+    compile 'com.android.support:recyclerview-v7:23.3.0'
 }

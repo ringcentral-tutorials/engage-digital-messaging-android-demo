@@ -23,7 +23,9 @@ public class GcmIntentService extends IntentService {
                     || GoogleCloudMessaging.MESSAGE_TYPE_DELETED.equals(messageType)){
                 // An error occured
             }
+
             else if (GoogleCloudMessaging.MESSAGE_TYPE_MESSAGE.equals(messageType)) {
+                MainActivity.setupDimelo(this);
                 if (Dimelo.consumeReceivedRemoteNotification(this, extras, null)){
                     // Cool !
                 }

@@ -12,6 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ViewFlipper;
+import android.util.Log;
+
 
 import com.dimelo.dimelosdk.main.Chat;
 import com.dimelo.dimelosdk.main.Dimelo;
@@ -34,6 +36,7 @@ public class TabBank extends Fragment implements SampleDimeloTab {
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        Log.i("UnreadCount", String.valueOf(Dimelo.getInstance().getUnreadCount()));
         return inflater.inflate(R.layout.tab_bank,container,false);
     }
 
