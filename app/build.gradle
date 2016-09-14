@@ -32,7 +32,7 @@ android.buildTypes.each { type ->
 
 repositories {
     maven {
-       url "file:///Users/elhu/Workspace/dimelo/Dimelo-Android-Source/Dimelo-Android"
+       url "https://raw.github.com/dimelo/Dimelo-Android/master"
     }
 }
 
