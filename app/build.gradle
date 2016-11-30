@@ -11,6 +11,9 @@ android {
         versionCode 6
         versionName "1.0"
 
+        //! If you want a smaller APK, you can disable this
+        //! However, this will disable the blur feature of the SDK
+        //! The blur feature is the feature that blurs an image that is currently being sent
         renderscriptTargetApi 23
         renderscriptSupportModeEnabled true
 
@@ -37,7 +40,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.dimelo.dimelosdk:dimelosdk:1.4.0'
+    compile 'com.dimelo.dimelosdk:dimelosdk:1.4.2'
     compile 'com.google.android.gms:play-services-gcm:8.1.0'
     compile 'com.android.support:appcompat-v7:23.3.0'
     compile 'com.android.support:design:23.3.0'
