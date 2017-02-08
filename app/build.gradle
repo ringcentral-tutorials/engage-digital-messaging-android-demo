@@ -33,11 +33,18 @@ repositories {
 }
 
 dependencies {
-    compile 'com.dimelo.dimelosdk:dimelosdk:1.4.4'
+    //! compile 'com.dimelo.dimelosdk:dimelosdk:1.4.4'
     compile 'com.google.android.gms:play-services-gcm:9.8.0'
-
     compile 'com.android.support:appcompat-v7:23.3.0'
     compile 'com.android.support:design:23.3.0'
     compile 'com.android.support:support-v4:23.3.0'
     compile 'com.android.support:recyclerview-v7:23.3.0'
+
+    //! Deps are non-transitive for local development
+    //! Have to list explicitly transitive deps
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.google.android.gms:play-services-location:9.8.0'
+    compile 'com.google.android.gms:play-services-places:9.8.0'
+    compile project(':dimelosdk-debug')
+    compile project(':volley-debug')
 }
