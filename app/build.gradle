@@ -1,15 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 23
+    compileSdkVersion 25
     buildToolsVersion '24.0.3'
 
     defaultConfig {
         applicationId "com.dimelo.sampleapp"
         minSdkVersion 15
-        targetSdkVersion 23
+        targetSdkVersion 25
         versionCode 6
-        versionName "1.0"
+        versionName "1.1"
     }
     buildTypes {
         release {
@@ -33,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.dimelo.dimelosdk:dimelosdk:1.4.4'
+    compile 'com.dimelo.dimelosdk:dimelosdk:1.6.0'
     compile 'com.google.android.gms:play-services-gcm:9.8.0'
 
     compile 'com.android.support:appcompat-v7:23.3.0'
