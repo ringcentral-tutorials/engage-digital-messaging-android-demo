@@ -9,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.dimelo.dimelosdk.Models.UserDatas;
+import com.dimelo.dimelosdk.main.Chat;
 import com.dimelo.dimelosdk.main.Dimelo;
 import com.dimelo.dimelosdk.main.DimeloConnection;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
@@ -46,6 +48,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     Dimelo.DimeloListener dimeloListener = new Dimelo.DimeloListener() {
+
+        @Override
+        public void onOpen(JSONObject authenticationData, Chat.Customization customization) {
+
+        }
+
+        @Override
+        public void onClose(JSONObject authenticationData) {
+
+        }
 
         @Override
         public void dimeloChatMessageSendFail(DimeloConnection.DimeloError error) {
