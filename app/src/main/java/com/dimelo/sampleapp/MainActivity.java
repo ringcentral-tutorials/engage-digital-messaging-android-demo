@@ -50,27 +50,15 @@ public class MainActivity extends AppCompatActivity {
     Dimelo.DimeloListener dimeloListener = new Dimelo.DimeloListener() {
 
         @Override
-        public void onOpen(JSONObject authenticationData, Chat.Customization customization) {
-
+        public void onOpen(Dimelo dimelo) {
+            super.onOpen(dimelo);
+            Log.e("on open : ", "userIdentifier : " + dimelo.getUserIdentifier() + ", userName :" + dimelo.getUserName() + ", authenticationInfo :"+ dimelo.getAuthenticationInfo());
         }
 
         @Override
-        public void onClose(JSONObject authenticationData) {
-
-        }
-
-        @Override
-        public void dimeloChatMessageSendFail(DimeloConnection.DimeloError error) {
-            // Something went wrong
-            // Minimal error management
-
-            String message = "An error occurred";
-            if (error.statusCode == DimeloConnection.DimeloError.NO_CONNECTION_ERROR) {
-                message = "Please check your Internet connection and try again later.";
-            } else if (error.statusCode == DimeloConnection.DimeloError.TIMEOUT_ERROR) {
-                message = "The server is not responding, please try again later";
-            }
-            Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
+        public void onClose(Dimelo dimelo) {
+            super.onClose(dimelo);
+            Log.e("on open : ", "userIdentifier : " + dimelo.getUserIdentifier() + ", userName :" + dimelo.getUserName() + ", authenticationInfo :"+ dimelo.getAuthenticationInfo());
         }
     };
 
