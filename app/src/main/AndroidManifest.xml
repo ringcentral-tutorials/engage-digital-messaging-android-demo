@@ -70,7 +70,7 @@
         <!-- Bugsnag API_KEY for Dimelo -->
         <meta-data
             android:name="com.bugsnag.android.API_KEY"
-            android:value="a57a18efe9a25850fdbad8c56c744a1a" />
+            android:value="5f7160ae904d332495d1899e0da8955e" />
 
     </application>
 
