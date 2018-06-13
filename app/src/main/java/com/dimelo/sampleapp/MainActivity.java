@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import com.dimelo.dimelosdk.main.Dimelo;
 import com.dimelo.dimelosdk.main.DimeloConnection;
-import com.google.android.gms.gcm.GoogleCloudMessaging;
+//import com.google.android.gms.gcm.GoogleCloudMessaging;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -20,7 +20,7 @@ import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String SENDER_ID = BuildConfig.GCM_API_KEY; // GCM ID to be defined in gradle.properties
+//    private static final String SENDER_ID = BuildConfig.GCM_API_KEY; // GCM ID to be defined in gradle.properties
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.main_activity);
 
 //        // Get GCM Token
-        registerInBackground();
+//        registerInBackground();
 
         // Setup Dimelo
         Dimelo dimelo = setupDimelo(this);
@@ -89,39 +89,39 @@ public class MainActivity extends AppCompatActivity {
         super.onBackPressed();
     }
 
-    /**
-     * Registers the application with GCM servers asynchronously.
-     * <p/>
-     * Stores the registration ID and app versionCode in the application's
-     * shared preferences.
-     */
-    private void registerInBackground() {
-        final Context mContext = getApplicationContext();
-        AsyncTask<Object, Void, String> task = new AsyncTask<Object, Void, String>() {
-
-            private String mGcmRegistrationId;
-
-            @Override
-            protected String doInBackground(Object... params) {
-                String msg;
-                try {
-                    GoogleCloudMessaging gcm = GoogleCloudMessaging.getInstance(mContext);
-                    mGcmRegistrationId = gcm.register(SENDER_ID);
-                    msg = "Device registered, registration ID=" + mGcmRegistrationId;
-                } catch (IOException ex) {
-                    msg = "Error :" + ex.getMessage();
-                }
-                return msg;
-            }
-
-            @Override
-            protected void onPostExecute(String msg) {
-                Log.d("DimeloSampleApp", msg);
-                Dimelo.getInstance().setDeviceToken(mGcmRegistrationId);
-            }
-        };
-        task.execute(null, null, null);
-    }
+//    /**
+//     * Registers the application with GCM servers asynchronously.
+//     * <p/>
+//     * Stores the registration ID and app versionCode in the application's
+//     * shared preferences.
+//     */
+//    private void registerInBackground() {
+//        final Context mContext = getApplicationContext();
+//        AsyncTask<Object, Void, String> task = new AsyncTask<Object, Void, String>() {
+//
+//            private String mGcmRegistrationId;
+//
+//            @Override
+//            protected String doInBackground(Object... params) {
+//                String msg;
+//                try {
+//                    GoogleCloudMessaging gcm = GoogleCloudMessaging.getInstance(mContext);
+//                    mGcmRegistrationId = gcm.register(SENDER_ID);
+//                    msg = "Device registered, registration ID=" + mGcmRegistrationId;
+//                } catch (IOException ex) {
+//                    msg = "Error :" + ex.getMessage();
+//                }
+//                return msg;
+//            }
+//
+//            @Override
+//            protected void onPostExecute(String msg) {
+//                Log.d("DimeloSampleApp", msg);
+//                Dimelo.getInstance().setDeviceToken(mGcmRegistrationId);
+//            }
+//        };
+//        task.execute(null, null, null);
+//    }
 
 }
 
