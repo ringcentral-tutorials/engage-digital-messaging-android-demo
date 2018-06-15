@@ -48,6 +48,16 @@ public class MainActivity extends AppCompatActivity {
     Dimelo.DimeloListener dimeloListener = new Dimelo.DimeloListener() {
 
         @Override
+        public void dimeloChatDidSendMessage() {
+            JSONObject messageContextInfo = new JSONObject();
+            try {
+                messageContextInfo.put("extra", "1234");
+            } catch (JSONException e) {
+            }
+            Dimelo.getInstance().setMessageContextInfo(messageContextInfo);
+        }
+
+        @Override
         public void dimeloChatMessageSendFail(DimeloConnection.DimeloError error) {
             // Something went wrong
             // Minimal error management
