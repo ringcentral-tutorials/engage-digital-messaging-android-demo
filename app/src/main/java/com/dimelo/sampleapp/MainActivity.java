@@ -9,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.bugsnag.android.BeforeNotify;
+import com.bugsnag.android.Bugsnag;
 import com.dimelo.dimelosdk.main.Dimelo;
 import com.dimelo.dimelosdk.main.DimeloConnection;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
@@ -31,8 +33,20 @@ public class MainActivity extends AppCompatActivity {
         registerInBackground();
 
         // Setup Dimelo
-        Dimelo dimelo = setupDimelo(this);
+        final Dimelo dimelo = setupDimelo(this);
         dimelo.setDimeloListener(dimeloListener);
+
+        // Add Dimelo datas to Bugsnag
+        Bugsnag.beforeNotify(new BeforeNotify() {
+            @Override
+            public boolean run(com.bugsnag.android.Error error) {
+                // Attach customer information to every error report
+                error.addToTab("Dimelo", "X-Dimelo-Version", com.dimelo.dimelosdk.BuildConfig.VERSION_NAME);
+                error.addToTab("Dimelo", "X-Dml-Jwt", dimelo.getJwt());
+                error.addToTab("Dimelo", "X-Dimelo-HostName", dimelo.getHostname());
+                return true;
+            }
+        });
 
         FragmentManager supportFragmentManager = getSupportFragmentManager();
         SlidingTabFragment mSlidingFragment = (SlidingTabFragment) supportFragmentManager.findFragmentByTag("mSlidingFragment");
