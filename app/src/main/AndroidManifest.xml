@@ -34,15 +34,27 @@
         android:theme="@style/Theme.MyTheme">
 
         <!-- Push Notifs -->
-        <receiver
-            android:name=".GcmBroadcastReceiver"
-            android:permission="com.google.android.c2dm.permission.SEND">
+        <!--GCM configuration-->
+        <!--<receiver-->
+            <!--android:name=".GcmBroadcastReceiver"-->
+            <!--android:permission="com.google.android.c2dm.permission.SEND">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="com.google.android.c2dm.intent.RECEIVE" />-->
+                <!--<category android:name="com.dimelo.sampleapp" />-->
+            <!--</intent-filter>-->
+        <!--</receiver>-->
+        <!--<service android:name=".GcmIntentService" />-->
+        <service android:name=".MyFirebaseMessagingService">
             <intent-filter>
-                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-                <category android:name="com.dimelo.sampleapp" />
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
-        </receiver>
-        <service android:name=".GcmIntentService" />
+        </service>
+        <service android:name=".MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
 
         <!-- Host Application Activities -->
         <activity

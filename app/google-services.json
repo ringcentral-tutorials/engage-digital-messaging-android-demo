@@ -1,0 +1,66 @@
+{
+  "project_info": {
+    "project_number": "312879262005",
+    "firebase_url": "https://dimeloo-15583.firebaseio.com",
+    "project_id": "dimeloo-15583",
+    "storage_bucket": "dimeloo-15583.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:312879262005:android:66c5556f50c3c846",
+        "android_client_info": {
+          "package_name": "com.dimelo.sampleapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "312879262005-gmd8a9tpbepnh4757e7qvcvsvvd4qd4d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dimelo.sampleapp",
+            "certificate_hash": "966c824c979313ab3d416e1b6a87a91836de2de3"
+          }
+        },
+        {
+          "client_id": "312879262005-ji2dcqq35uclvs57p11ku0ljru43aev2.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "312879262005-ji2dcqq35uclvs57p11ku0ljru43aev2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLHF1RhCjxwrCf1QfIGkjn2XpUBrwac2s"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "312879262005-ji2dcqq35uclvs57p11ku0ljru43aev2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "312879262005-ff6kt98ghdthei4eg2pe6aivc9p6oukh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.pierlis.dimelo.Dimelo-Sample-App"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

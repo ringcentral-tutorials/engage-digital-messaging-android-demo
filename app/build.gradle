@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion '24.0.3'
+    buildToolsVersion '25.0.2'
 
     defaultConfig {
         applicationId "com.dimelo.sampleapp"
@@ -22,7 +22,8 @@ android {
 
 //Edit those values in gradle.properties
 android.buildTypes.each { type ->
-    type.buildConfigField 'String', 'GCM_API_KEY', GCM_API_KEY
+//    GCM configuration
+//    type.buildConfigField 'String', 'GCM_API_KEY', GCM_API_KEY
     type.buildConfigField 'String', 'DIMELO_SDK_SECRET', DIMELO_SDK_SECRET
 }
 
@@ -33,19 +34,25 @@ repositories {
 }
 
 dependencies {
-    compile 'com.google.android.gms:play-services-gcm:9.8.0'
-    compile 'com.android.support:appcompat-v7:23.3.0'
-    compile 'com.android.support:design:23.3.0'
-    compile 'com.android.support:support-v4:23.3.0'
-    compile 'com.android.support:recyclerview-v7:23.3.0'
+    //    GCM configuration
+    //    compile 'com.google.android.gms:play-services-gcm:9.8.0'
+
+    compile 'com.google.firebase:firebase-messaging:11.0.4'
+    compile 'com.google.firebase:firebase-core:11.0.4'
+    compile 'com.android.support:appcompat-v7:25.2.0'
+    compile 'com.android.support:design:25.2.0'
+    compile 'com.android.support:support-v4:25.2.0'
+    compile 'com.android.support:recyclerview-v7:25.2.0'
     compile 'com.bugsnag:bugsnag-android:4.+'
 
     //! Deps are non-transitive for local development
     //! Have to list explicitly transitive deps
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.github.bumptech.glide:glide:3.6.0'
-    compile 'com.google.android.gms:play-services-location:9.8.0'
-    compile 'com.google.android.gms:play-services-places:9.8.0'
+    compile 'com.google.android.gms:play-services-location:11.0.4'
+    compile 'com.google.android.gms:play-services-places:11.0.4'
     compile project(':dimelosdk-debug')
     compile project(':volley-debug')
 }
+
+apply plugin: 'com.google.gms.google-services'
