@@ -43,6 +43,7 @@ dependencies {
     compile 'com.android.support:design:25.2.0'
     compile 'com.android.support:support-v4:25.2.0'
     compile 'com.android.support:recyclerview-v7:25.2.0'
+    compile 'com.bugsnag:bugsnag-android:4.+'
 
     //! Deps are non-transitive for local development
     //! Have to list explicitly transitive deps
