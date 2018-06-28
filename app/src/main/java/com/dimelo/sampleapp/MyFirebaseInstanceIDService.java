@@ -17,6 +17,7 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
     public void onTokenRefresh() {
         // Get updated InstanceID token.
         String refreshedToken = FirebaseInstanceId.getInstance().getToken();
-        Dimelo.getInstance().setDeviceToken(refreshedToken);
+        if (Dimelo.isInstantiated())
+            Dimelo.getInstance().setDeviceToken(refreshedToken);
     }
 }
