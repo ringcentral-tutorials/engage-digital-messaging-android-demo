@@ -9,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.dimelo.dimelosdk.Models.UserDatas;
+import com.dimelo.dimelosdk.main.Chat;
 import com.bugsnag.android.BeforeNotify;
 import com.bugsnag.android.Bugsnag;
 import com.dimelo.dimelosdk.main.Dimelo;
@@ -61,6 +63,18 @@ public class MainActivity extends AppCompatActivity {
 
     Dimelo.DimeloListener dimeloListener = new Dimelo.DimeloListener() {
 
+        @Override
+        public void onOpen(Dimelo dimelo) {
+            super.onOpen(dimelo);
+            Log.e("on open : ", "userIdentifier : " + dimelo.getUserIdentifier() + ", userName :" + dimelo.getUserName() + ", authenticationInfo :"+ dimelo.getAuthenticationInfo());
+        }
+
+        @Override
+        public void onClose(Dimelo dimelo) {
+            super.onClose(dimelo);
+            Log.e("on open : ", "userIdentifier : " + dimelo.getUserIdentifier() + ", userName :" + dimelo.getUserName() + ", authenticationInfo :"+ dimelo.getAuthenticationInfo());
+        }
+        
         @Override
         public void dimeloChatDidSendMessage() {
             JSONObject messageContextInfo = new JSONObject();
