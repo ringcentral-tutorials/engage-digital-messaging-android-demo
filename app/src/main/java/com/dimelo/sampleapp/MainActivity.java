@@ -11,9 +11,11 @@ import android.widget.Toast;
 
 import com.dimelo.dimelosdk.Models.UserDatas;
 import com.dimelo.dimelosdk.main.Chat;
+import com.bugsnag.android.BeforeNotify;
+import com.bugsnag.android.Bugsnag;
 import com.dimelo.dimelosdk.main.Dimelo;
 import com.dimelo.dimelosdk.main.DimeloConnection;
-import com.google.android.gms.gcm.GoogleCloudMessaging;
+//import com.google.android.gms.gcm.GoogleCloudMessaging;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -22,7 +24,7 @@ import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String SENDER_ID = BuildConfig.GCM_API_KEY; // GCM ID to be defined in gradle.properties
+//    private static final String SENDER_ID = BuildConfig.GCM_API_KEY; // GCM ID to be defined in gradle.properties
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -30,11 +32,23 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.main_activity);
 
 //        // Get GCM Token
-        registerInBackground();
+//        registerInBackground();
 
         // Setup Dimelo
-        Dimelo dimelo = setupDimelo(this);
+        final Dimelo dimelo = setupDimelo(this);
         dimelo.setDimeloListener(dimeloListener);
+
+        // Add Dimelo datas to Bugsnag
+        Bugsnag.beforeNotify(new BeforeNotify() {
+            @Override
+            public boolean run(com.bugsnag.android.Error error) {
+                // Attach customer information to every error report
+                error.addToTab("Dimelo", "X-Dimelo-Version", com.dimelo.dimelosdk.BuildConfig.VERSION_NAME);
+                error.addToTab("Dimelo", "X-Dml-Jwt", dimelo.getJwt());
+                error.addToTab("Dimelo", "X-Dimelo-HostName", dimelo.getHostname());
+                return true;
+            }
+        });
 
         FragmentManager supportFragmentManager = getSupportFragmentManager();
         SlidingTabFragment mSlidingFragment = (SlidingTabFragment) supportFragmentManager.findFragmentByTag("mSlidingFragment");
@@ -59,6 +73,30 @@ public class MainActivity extends AppCompatActivity {
         public void onClose(Dimelo dimelo) {
             super.onClose(dimelo);
             Log.e("on open : ", "userIdentifier : " + dimelo.getUserIdentifier() + ", userName :" + dimelo.getUserName() + ", authenticationInfo :"+ dimelo.getAuthenticationInfo());
+        }
+        
+        @Override
+        public void dimeloChatDidSendMessage() {
+            JSONObject messageContextInfo = new JSONObject();
+            try {
+                messageContextInfo.put("extra", "1234");
+            } catch (JSONException e) {
+            }
+            Dimelo.getInstance().setMessageContextInfo(messageContextInfo);
+        }
+
+        @Override
+        public void dimeloChatMessageSendFail(DimeloConnection.DimeloError error) {
+            // Something went wrong
+            // Minimal error management
+
+            String message = "An error occurred";
+            if (error.statusCode == DimeloConnection.DimeloError.NO_CONNECTION_ERROR) {
+                message = "Please check your Internet connection and try again later.";
+            } else if (error.statusCode == DimeloConnection.DimeloError.TIMEOUT_ERROR) {
+                message = "The server is not responding, please try again later";
+            }
+            Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
         }
     };
 
@@ -89,39 +127,39 @@ public class MainActivity extends AppCompatActivity {
         super.onBackPressed();
     }
 
-    /**
-     * Registers the application with GCM servers asynchronously.
-     * <p/>
-     * Stores the registration ID and app versionCode in the application's
-     * shared preferences.
-     */
-    private void registerInBackground() {
-        final Context mContext = getApplicationContext();
-        AsyncTask<Object, Void, String> task = new AsyncTask<Object, Void, String>() {
-
-            private String mGcmRegistrationId;
-
-            @Override
-            protected String doInBackground(Object... params) {
-                String msg;
-                try {
-                    GoogleCloudMessaging gcm = GoogleCloudMessaging.getInstance(mContext);
-                    mGcmRegistrationId = gcm.register(SENDER_ID);
-                    msg = "Device registered, registration ID=" + mGcmRegistrationId;
-                } catch (IOException ex) {
-                    msg = "Error :" + ex.getMessage();
-                }
-                return msg;
-            }
-
-            @Override
-            protected void onPostExecute(String msg) {
-                Log.d("DimeloSampleApp", msg);
-                Dimelo.getInstance().setDeviceToken(mGcmRegistrationId);
-            }
-        };
-        task.execute(null, null, null);
-    }
+//    /**
+//     * Registers the application with GCM servers asynchronously.
+//     * <p/>
+//     * Stores the registration ID and app versionCode in the application's
+//     * shared preferences.
+//     */
+//    private void registerInBackground() {
+//        final Context mContext = getApplicationContext();
+//        AsyncTask<Object, Void, String> task = new AsyncTask<Object, Void, String>() {
+//
+//            private String mGcmRegistrationId;
+//
+//            @Override
+//            protected String doInBackground(Object... params) {
+//                String msg;
+//                try {
+//                    GoogleCloudMessaging gcm = GoogleCloudMessaging.getInstance(mContext);
+//                    mGcmRegistrationId = gcm.register(SENDER_ID);
+//                    msg = "Device registered, registration ID=" + mGcmRegistrationId;
+//                } catch (IOException ex) {
+//                    msg = "Error :" + ex.getMessage();
+//                }
+//                return msg;
+//            }
+//
+//            @Override
+//            protected void onPostExecute(String msg) {
+//                Log.d("DimeloSampleApp", msg);
+//                Dimelo.getInstance().setDeviceToken(mGcmRegistrationId);
+//            }
+//        };
+//        task.execute(null, null, null);
+//    }
 
 }
 
