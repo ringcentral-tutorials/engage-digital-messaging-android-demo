@@ -48,10 +48,10 @@ dependencies {
     //! Deps are non-transitive for local development
     //! Have to list explicitly transitive deps
     compile 'com.squareup.picasso:picasso:2.5.2'
-    compile 'com.github.bumptech.glide:glide:3.6.0'
     compile 'com.google.android.gms:play-services-location:11.0.4'
     compile 'com.google.android.gms:play-services-places:11.0.4'
     compile project(':dimelosdk-debug')
+    compile project(':glide-debug')
     compile project(':volley-debug')
 }
 
