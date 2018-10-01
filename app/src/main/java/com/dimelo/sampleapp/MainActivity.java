@@ -13,6 +13,7 @@ import com.dimelo.dimelosdk.Models.UserDatas;
 import com.dimelo.dimelosdk.main.Chat;
 import com.dimelo.dimelosdk.main.Dimelo;
 import com.dimelo.dimelosdk.main.DimeloConnection;
+import com.google.firebase.iid.FirebaseInstanceId;
 //import com.google.android.gms.gcm.GoogleCloudMessaging;
 
 import org.json.JSONException;
@@ -94,6 +95,9 @@ public class MainActivity extends AppCompatActivity {
         dimelo.setDebug(true);
         dimelo.setUserName("John Doe");
 
+        String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+        if (refreshedToken != null)
+            dimelo.setDeviceToken(refreshedToken);
         JSONObject authInfo = new JSONObject();
         try {
             authInfo.put("CustomerId", "0123456789");
