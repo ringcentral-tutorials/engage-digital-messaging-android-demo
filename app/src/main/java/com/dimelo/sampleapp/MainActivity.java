@@ -88,9 +88,10 @@ public class MainActivity extends AppCompatActivity {
 
     static Dimelo setupDimelo(Context context) {
         String secret = BuildConfig.DIMELO_SDK_SECRET; //edit in gradle.properties
+        String domainName = BuildConfig.DIMELO_SDK_DOMAIN_NAME; //edit in gradle.properties
         Dimelo.setup(context);
         Dimelo dimelo = Dimelo.getInstance();
-        dimelo.setApiSecret(secret);
+        dimelo.initWithApiSecret(secret, domainName, null);
         dimelo.setDebug(true);
         dimelo.setUserName("John Doe");
 

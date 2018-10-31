@@ -25,6 +25,7 @@ android.buildTypes.each { type ->
 //    GCM configuration
 //    type.buildConfigField 'String', 'GCM_API_KEY', GCM_API_KEY
     type.buildConfigField 'String', 'DIMELO_SDK_SECRET', DIMELO_SDK_SECRET
+    type.buildConfigField 'String', 'DIMELO_SDK_DOMAIN_NAME', DIMELO_SDK_DOMAIN_NAME
 }
 
 repositories {

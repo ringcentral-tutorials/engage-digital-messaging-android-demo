@@ -21,6 +21,8 @@ To built a fully functional version please edit `gradle.properties` :
  - replace GCM_API_KEY with your own GCM id (for notification)
  - replace DIMELO_SDK_SECRET by your own Dimelo Mobile SDK API secret (ask your
    Dimelo project manager)
+- replace DIMELO_SDK_DOMAIN_NAME by your own Dimelo domain name (ask your
+   Dimelo project manager)
 
 For more informations checkout the
 [documentation reference](http://mobile-messaging.dimelo.com)
