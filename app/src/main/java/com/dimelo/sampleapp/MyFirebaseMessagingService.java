@@ -1,12 +1,11 @@
 package com.dimelo.sampleapp;
 
 import com.dimelo.dimelosdk.main.Dimelo;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
-
-    private static final String TAG = "MyFirebaseMsgService";
 
     /**
      * Called when message is received.
@@ -22,5 +21,12 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         else {
             // Not a dimelo Notification.
         }
+    }
+
+    @Override
+    public void onNewToken(String s) {
+        super.onNewToken(s);
+        if (Dimelo.isInstantiated())
+            Dimelo.getInstance().setDeviceToken(s);
     }
 }
