@@ -1,1 +1,1 @@
-include ':app', ':dimelosdk-debug', ':volley-debug', ':glide-debug'
+include ':app', ':dimelosdk-debug', ':volley-debug', ':glide-debug', ':picasso-debug'

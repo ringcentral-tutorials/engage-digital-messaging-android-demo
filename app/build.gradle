@@ -45,7 +45,7 @@ dependencies {
 
     //! Deps are non-transitive for local development
     //! Have to list explicitly transitive deps
-    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation project(':picasso-debug')
     implementation 'com.google.android.gms:play-services-location:16.0.0'
     implementation 'com.google.android.gms:play-services-places:16.0.0'
     implementation project(':dimelosdk-debug')
