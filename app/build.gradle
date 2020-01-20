@@ -47,7 +47,7 @@ dependencies {
     //! Have to list explicitly transitive deps
     implementation project(':picasso-debug')
     implementation 'com.google.android.gms:play-services-location:16.0.0'
-    implementation 'com.google.android.gms:play-services-places:16.0.0'
+    implementation 'com.google.android.libraries.places:places-compat:1.1.0'
     implementation project(':dimelosdk-debug')
     implementation project(':glide-debug')
     implementation project(':volley-debug')
