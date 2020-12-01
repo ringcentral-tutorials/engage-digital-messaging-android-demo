@@ -78,22 +78,15 @@ public class TabTelecom extends Fragment implements SampleDimeloTab {
 
     private void customize(){
         Chat.Customization customisation = mDimeloChat.getCustomization();
-
         customisation.backgroundColor = getResources().getColor(R.color.purple_500);
         customisation.inputbarBackgroundColor = getResources().getColor(R.color.purple_50);
-
-        customisation.setUserMessageBubbleDrawable(R.drawable.row_user_message_bubble, getResources().getColor(R.color.purple_800));
-        customisation.setAgentMessageBubbleDrawable(R.drawable.row_agent_message_bubble, Color.WHITE);
-        customisation.setSystemMessageBubbleDrawable(R.drawable.row_system_message_bubble, Color.rgb(0xd0, 0xd3, 0xd9));
-
         customisation.userMessageTextColor = Color.WHITE;
-
         customisation.agentMessageTextColor = Color.BLACK;
         customisation.agentNameColor = Color.BLACK;
-
+        customisation.agentTimeColor = Color.BLACK;
         customisation.systemMessageTextColor = Color.BLACK;
         customisation.dateTextColor = Color.WHITE;
-
+        customisation.hourTimeTextColor = Color.WHITE;
         customisation.apply();
     }
 

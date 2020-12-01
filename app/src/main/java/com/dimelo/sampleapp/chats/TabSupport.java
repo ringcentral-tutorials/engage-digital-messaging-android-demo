@@ -45,39 +45,21 @@ public class TabSupport extends Fragment implements SampleDimeloTab {
 
 
     private void customize(){
-
         Chat.Customization customisation = mDimeloChat.getCustomization();
-
         customisation.backgroundColor = ContextCompat.getColor(getContext(), R.color.blue_400);
         customisation.inputbarBackgroundColor = ContextCompat.getColor(getContext(), R.color.blue_50);
-
-        customisation.setUserMessageBubbleDrawable(R.drawable.bank_user_bubble, Color.WHITE);
-        customisation.setAgentMessageBubbleDrawable(R.drawable.bank_agent_bubble, Color.WHITE);
-        customisation.setSystemMessageBubbleDrawable(R.drawable.bank_system_bubble, Color.WHITE);
-
         customisation.userMessageBackgroundColor = Color.WHITE;
         customisation.userMessageTextColor = Color.BLACK;
-
         customisation.agentMessageBackgroundColor = Color.WHITE;
         customisation.agentMessageTextColor = Color.BLACK;
         customisation.agentNameColor = Color.WHITE;
-
+        customisation.agentTimeColor = Color.WHITE;
         customisation.systemMessageBackgroundColor = Color.WHITE;
-        customisation.systemMessageTextColor = Color.WHITE;
+        customisation.systemMessageTextColor = Color.BLACK;
+        customisation.welcomeMessageTextColor = Color.RED;
         customisation.dateTextColor = Color.WHITE;
-
-        customisation.userMessageBubblePadding = new Chat.Customization.Padding(convertDpToPixel(8), convertDpToPixel(4), convertDpToPixel(24), convertDpToPixel(4));
-        customisation.agentMessageBubblePadding = new Chat.Customization.Padding(convertDpToPixel(24), convertDpToPixel(4), convertDpToPixel(8), convertDpToPixel(4));
-        customisation.systemMessageBubblePadding = new Chat.Customization.Padding(convertDpToPixel(24), convertDpToPixel(4), convertDpToPixel(8), convertDpToPixel(4));
-
+        customisation.hourTimeTextColor = Color.WHITE;
         customisation.apply();
-    }
-
-    public int convertDpToPixel(int dp){
-        Resources resources = getActivity().getResources();
-        DisplayMetrics metrics = resources.getDisplayMetrics();
-        float px = dp * (metrics.densityDpi / 160f);
-        return (int)px;
     }
 
     @Override

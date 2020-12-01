@@ -108,6 +108,15 @@ public class SlidingTabFragment extends Fragment {
         return false;
     }
 
+
+    public boolean onBackPressed() {
+        if (bank != null) {
+            return bank.onBackPressed();
+        }
+
+        return false;
+    }
+
     public class ViewPagerAdapter extends ViewPagerIconAndTextAdapter {
 
         public ViewPagerAdapter(FragmentManager fm, String titles[], int iconIds[], int selectedIconIds[]) {

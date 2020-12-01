@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
         // Setup Dimelo
         final Dimelo dimelo = setupDimelo(this);
         dimelo.setDimeloListener(dimeloListener);
-
         FragmentManager supportFragmentManager = getSupportFragmentManager();
         SlidingTabFragment mSlidingFragment = (SlidingTabFragment) supportFragmentManager.findFragmentByTag("mSlidingFragment");
         if (mSlidingFragment == null) {
@@ -113,8 +112,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         SlidingTabFragment mSlidingFragment = (SlidingTabFragment) getSupportFragmentManager().findFragmentByTag("mSlidingFragment");
-        if (mSlidingFragment != null && mSlidingFragment.isHandlingBack())
-            return;
+
+        if (mSlidingFragment != null) {
+            if (mSlidingFragment.onBackPressed() || mSlidingFragment.isHandlingBack()) {
+                return;
+            }
+        }
+
         super.onBackPressed();
     }
 

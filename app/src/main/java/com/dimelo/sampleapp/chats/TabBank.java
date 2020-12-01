@@ -34,6 +34,14 @@ public class TabBank extends Fragment implements SampleDimeloTab {
         outState.putInt(CHAT_STATE_KEY, mViewFlipper.getDisplayedChild() == 0 ? CLOSED : OPEN);
     }
 
+    public boolean onBackPressed() {
+        if (mDimeloChat != null) {
+            return mDimeloChat.onBackPressed();
+        }
+
+        return false;
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         Log.i("UnreadCount", String.valueOf(Dimelo.getInstance().getUnreadCount()));
@@ -69,32 +77,12 @@ public class TabBank extends Fragment implements SampleDimeloTab {
                 openChat();
             }
         }
-        customize();
     }
 
     private void openChat(){
         mViewFlipper.setDisplayedChild(1);
         mDimeloChat.setUserVisibleHint(true);
     }
-
-    private void customize(){
-        Chat.Customization customisation = mDimeloChat.getCustomization();
-
-        customisation.backgroundColor = getResources().getColor(R.color.white);
-
-        customisation.setUserMessageBubbleDrawable(R.drawable.row_user_message_bubble, getResources().getColor(R.color.blue_500));
-        customisation.setAgentMessageBubbleDrawable(R.drawable.row_agent_message_bubble, Color.LTGRAY);
-        customisation.setSystemMessageBubbleDrawable(R.drawable.row_system_message_bubble, Color.LTGRAY);
-
-        customisation.userMessageTextColor = Color.WHITE;
-
-        customisation.agentMessageTextColor = Color.BLACK;
-        customisation.agentNameColor = Color.GRAY;
-
-        customisation.systemMessageTextColor = Color.BLACK;
-    }
-
-
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
