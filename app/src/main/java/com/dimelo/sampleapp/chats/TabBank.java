@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -77,6 +78,8 @@ public class TabBank extends Fragment implements SampleDimeloTab {
                 openChat();
             }
         }
+
+        customize();
     }
 
     private void openChat(){
@@ -117,6 +120,11 @@ public class TabBank extends Fragment implements SampleDimeloTab {
 //        super.setUserVisibleHint(isVisibleToUser);
 //    }
 
+    private void customize(){
+        Chat.Customization customisation = mDimeloChat.getCustomization();
+        customisation.backgroundColor = Color.WHITE;
+        customisation.apply();
+    }
 
     @Override
     public void onDestroy() {
