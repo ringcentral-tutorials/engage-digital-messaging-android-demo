@@ -63,12 +63,6 @@ public class MainActivity extends AppCompatActivity {
         
         @Override
         public void dimeloChatDidSendMessage() {
-            JSONObject messageContextInfo = new JSONObject();
-            try {
-                messageContextInfo.put("extra", "1234");
-            } catch (JSONException e) {
-            }
-            Dimelo.getInstance().setMessageContextInfo(messageContextInfo);
         }
 
         @Override
@@ -94,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
         dimelo.initWithApiSecret(secret, domainName, null);
         dimelo.setDebug(true);
         dimelo.setUserName("John Doe");
+        dimelo.setThreadsEnabled(true);
 
         String refreshedToken = FirebaseInstanceId.getInstance().getToken();
         if (refreshedToken != null)
@@ -104,6 +99,14 @@ public class MainActivity extends AppCompatActivity {
             authInfo.put("Dimelo", "Rocks!");
         } catch (JSONException e) {
         }
+
+        JSONObject messageContextInfo = new JSONObject();
+        try {
+            messageContextInfo.put("extra", "1234");
+        } catch (JSONException e) {
+        }
+
+        Dimelo.getInstance().setMessageContextInfo(messageContextInfo);
 
         dimelo.setAuthenticationInfo(authInfo);
         return dimelo;

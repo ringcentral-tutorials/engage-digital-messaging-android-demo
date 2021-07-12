@@ -10,16 +10,17 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.dimelo.dimelosdk.main.Chat;
+import com.dimelo.dimelosdk.main.RcFragment;
 import com.dimelo.dimelosdk.main.Dimelo;
 import com.dimelo.sampleapp.R;
 
 public class TabSupport extends Fragment implements SampleDimeloTab {
-    Chat mDimeloChat;
+    RcFragment mDimeloChat;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -32,9 +33,9 @@ public class TabSupport extends Fragment implements SampleDimeloTab {
 
 
         FragmentManager childFragmentManager = getChildFragmentManager();
-        mDimeloChat = (Chat)childFragmentManager.findFragmentByTag("dimelo_support_chat");
+        mDimeloChat = (RcFragment)childFragmentManager.findFragmentByTag("dimelo_support_chat");
         if (mDimeloChat == null) {
-            mDimeloChat = Dimelo.getInstance().newChatFragment();
+            mDimeloChat = Dimelo.getInstance().newRcFragment();
             FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
             fragmentTransaction.add(R.id.chat_support_container, mDimeloChat, "dimelo_support_chat");
             fragmentTransaction.commit();
@@ -45,7 +46,7 @@ public class TabSupport extends Fragment implements SampleDimeloTab {
 
 
     private void customize(){
-        Chat.Customization customisation = mDimeloChat.getCustomization();
+        RcFragment.Customization customisation = mDimeloChat.getCustomization();
         customisation.backgroundColor = ContextCompat.getColor(getContext(), R.color.blue_400);
         customisation.inputbarBackgroundColor = ContextCompat.getColor(getContext(), R.color.blue_50);
         customisation.userMessageBackgroundColor = Color.WHITE;

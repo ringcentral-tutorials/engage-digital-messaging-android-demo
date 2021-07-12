@@ -1,5 +1,7 @@
 package com.dimelo.sampleapp;
 
+import android.util.Log;
+
 import com.dimelo.dimelosdk.main.Dimelo;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.messaging.FirebaseMessagingService;
@@ -15,6 +17,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
         MainActivity.setupDimelo(MyFirebaseMessagingService.this);
+        Log.e("hhhh", remoteMessage.getData() + "");
         if (Dimelo.consumeReceivedRemoteNotification(MyFirebaseMessagingService.this, remoteMessage.getData(), null)){
             // Cool !
         }

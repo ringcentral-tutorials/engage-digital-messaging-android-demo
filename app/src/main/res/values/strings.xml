@@ -11,6 +11,5 @@
     <!-- -->
 
     <!--<color name="dimelo_toolbar_background_color">@color/green_400</color>-->
-    <string name="dimelo_toolbar_title">Mobile Support</string>
-
+<!--    <string name="dimelo_toolbar_title">Mobile Support</string>-->
 </resources>

@@ -1,5 +1,6 @@
 package com.dimelo.sampleapp.chats;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.dimelo.dimelosdk.main.Dimelo;
+import com.dimelo.dimelosdk.main.RcFragment;
 import com.dimelo.sampleapp.R;
 
 import org.json.JSONException;
@@ -41,6 +43,8 @@ public class TabStart extends Fragment implements SampleDimeloTab {
             notif.put("uuid", UUID.randomUUID().toString());
             notif.put("d", new Date().getTime() / 1000);
             notif.put("tr", true);
+            notif.put("t_uuid", "e0c723a5-b4a8-4830-af97-06650a77e195");
+            notif.put("avatar_url","https://i.picsum.photos/id/834/200/200.jpg?hmac=vcoSQ7O6i2vxWANscm-9EGrw0MNqLzU3X0pQZ1o5ovI");
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -56,7 +60,7 @@ public class TabStart extends Fragment implements SampleDimeloTab {
         root.findViewById(R.id.open_full_screen).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            Dimelo.getInstance().openChatActivity(getActivity());
+                Dimelo.getInstance().openRcActivity(getActivity());
             }
         });
         root.findViewById(R.id.short_notif).setOnClickListener(new View.OnClickListener() {

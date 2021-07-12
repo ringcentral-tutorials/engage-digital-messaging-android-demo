@@ -13,7 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ViewFlipper;
 
-import com.dimelo.dimelosdk.main.Chat;
+import com.dimelo.dimelosdk.main.RcFragment;
 import com.dimelo.dimelosdk.main.Dimelo;
 import com.dimelo.sampleapp.R;
 
@@ -23,7 +23,7 @@ public class TabTelecom extends Fragment implements SampleDimeloTab {
     static private int OPEN = 1;
 
     private ViewFlipper mViewFlipper;
-    private Chat mDimeloChat;
+    private RcFragment mDimeloChat;
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
@@ -41,9 +41,9 @@ public class TabTelecom extends Fragment implements SampleDimeloTab {
         super.onViewCreated(view, savedInstanceState);
 
         FragmentManager childFragmentManager = getChildFragmentManager();
-        mDimeloChat = (Chat)childFragmentManager.findFragmentByTag("dimelo_telecom_chat");
+        mDimeloChat = (RcFragment)childFragmentManager.findFragmentByTag("dimelo_telecom_chat");
         if (mDimeloChat == null) {
-            mDimeloChat = Dimelo.getInstance().newChatFragment();
+            mDimeloChat = Dimelo.getInstance().newRcFragment();
             FragmentTransaction fragmentTransaction = childFragmentManager.beginTransaction();
             fragmentTransaction.add(R.id.chat_telecom_container, mDimeloChat, "dimelo_telecom_chat");
             fragmentTransaction.commit();
@@ -77,7 +77,7 @@ public class TabTelecom extends Fragment implements SampleDimeloTab {
 
 
     private void customize(){
-        Chat.Customization customisation = mDimeloChat.getCustomization();
+        RcFragment.Customization customisation = mDimeloChat.getCustomization();
         customisation.backgroundColor = getResources().getColor(R.color.purple_500);
         customisation.inputbarBackgroundColor = getResources().getColor(R.color.purple_50);
         customisation.userMessageTextColor = Color.WHITE;
@@ -87,6 +87,7 @@ public class TabTelecom extends Fragment implements SampleDimeloTab {
         customisation.systemMessageTextColor = Color.BLACK;
         customisation.dateTextColor = Color.WHITE;
         customisation.hourTimeTextColor = Color.WHITE;
+        customisation.createNewThreadBackgroundColor = Color.RED;
         customisation.apply();
     }
 

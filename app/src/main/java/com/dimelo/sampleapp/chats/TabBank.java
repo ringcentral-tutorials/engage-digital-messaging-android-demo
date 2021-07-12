@@ -1,3 +1,4 @@
+
 package com.dimelo.sampleapp.chats;
 
 import android.content.Intent;
@@ -16,7 +17,7 @@ import android.widget.ViewFlipper;
 import android.util.Log;
 
 
-import com.dimelo.dimelosdk.main.Chat;
+import com.dimelo.dimelosdk.main.RcFragment;
 import com.dimelo.dimelosdk.main.Dimelo;
 import com.dimelo.sampleapp.R;
 
@@ -26,7 +27,7 @@ public class TabBank extends Fragment implements SampleDimeloTab {
     static private int CLOSED = 0;
     static private int OPEN = 1;
 
-    private Chat mDimeloChat;
+    private RcFragment mDimeloChat;
     private ViewFlipper mViewFlipper;
 
     @Override
@@ -53,9 +54,9 @@ public class TabBank extends Fragment implements SampleDimeloTab {
     public void onViewCreated(final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         FragmentManager childFragmentManager = getChildFragmentManager();
-        mDimeloChat = (Chat)childFragmentManager.findFragmentByTag("dimelo_bank_chat");
+        mDimeloChat = (RcFragment)childFragmentManager.findFragmentByTag("dimelo_bank_chat");
         if (mDimeloChat == null) {
-            mDimeloChat = Dimelo.getInstance().newChatFragment();
+            mDimeloChat = Dimelo.getInstance().newRcFragment();
             FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
             fragmentTransaction.add(R.id.chat_bank_container, mDimeloChat, "dimelo_bank_chat");
             fragmentTransaction.commit();
@@ -121,7 +122,7 @@ public class TabBank extends Fragment implements SampleDimeloTab {
 //    }
 
     private void customize(){
-        Chat.Customization customisation = mDimeloChat.getCustomization();
+        RcFragment.Customization customisation = mDimeloChat.getCustomization();
         customisation.backgroundColor = Color.WHITE;
         customisation.apply();
     }
