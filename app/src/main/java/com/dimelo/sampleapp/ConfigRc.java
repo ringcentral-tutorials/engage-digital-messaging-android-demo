@@ -46,6 +46,5 @@ public class ConfigRc {
         } catch (JSONException e) {}
 
         Dimelo.getInstance().setMessageContextInfo(messageContextInfo);
-
     }
 }
