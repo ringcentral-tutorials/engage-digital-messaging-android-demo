@@ -18,9 +18,6 @@ import com.dimelo.dimelosdk.main.Dimelo;
 import com.dimelo.sampleapp.ConfigDimelo;
 import com.dimelo.sampleapp.R;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 public class TabTelecom extends Fragment implements SampleDimeloTab {
     static private String CHAT_STATE_KEY = "tab_telecom_chat_state";
     static private int CLOSED = 0;

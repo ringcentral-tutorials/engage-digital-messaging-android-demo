@@ -22,8 +22,6 @@ import com.dimelo.dimelosdk.main.Dimelo;
 import com.dimelo.sampleapp.ConfigDimelo;
 import com.dimelo.sampleapp.R;
 
-import org.json.JSONException;
-import org.json.JSONObject;
 
 public class TabBank extends Fragment implements SampleDimeloTab {
 

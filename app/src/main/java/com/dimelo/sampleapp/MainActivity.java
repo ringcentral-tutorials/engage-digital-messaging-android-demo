@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.main_activity);
 
 //        // Get GCM Token
-        //    registerInBackground();
+//        registerInBackground();
 
         // Setup Dimelo
         final Dimelo dimelo = ConfigDimelo.setupDimelo(this);
@@ -52,16 +52,13 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onOpen(Dimelo dimelo) {
             super.onOpen(dimelo);
-            Log.e("on open : ", "userIdentifier : " + dimelo.getUserIdentifier() +
-                    ", userName :" + dimelo.getUserName()
-                    + ", authenticationInfo :" + dimelo.getAuthenticationInfo()
-                    + " device key ==> " + dimelo.getDeviceToken());
+            Log.e("on open : ", "userIdentifier : " + dimelo.getUserIdentifier() + ", userName :" + dimelo.getUserName() + ", authenticationInfo :"+ dimelo.getAuthenticationInfo());
         }
 
         @Override
         public void onClose(Dimelo dimelo) {
             super.onClose(dimelo);
-            Log.e("on open : ", "userIdentifier : " + dimelo.getUserIdentifier() + ", userName :" + dimelo.getUserName() + ", authenticationInfo :" + dimelo.getAuthenticationInfo());
+            Log.e("on open : ", "userIdentifier : " + dimelo.getUserIdentifier() + ", userName :" + dimelo.getUserName() + ", authenticationInfo :"+ dimelo.getAuthenticationInfo());
         }
 
         @Override
