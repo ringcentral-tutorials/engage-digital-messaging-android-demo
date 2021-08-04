@@ -15,7 +15,7 @@ import android.widget.ViewFlipper;
 
 import com.dimelo.dimelosdk.main.RcFragment;
 import com.dimelo.dimelosdk.main.Dimelo;
-import com.dimelo.sampleapp.ConfigDimelo;
+import com.dimelo.sampleapp.ConfigRc;
 import com.dimelo.sampleapp.R;
 
 public class TabTelecom extends Fragment implements SampleDimeloTab {
@@ -74,7 +74,7 @@ public class TabTelecom extends Fragment implements SampleDimeloTab {
     private void openChat(){
         mViewFlipper.setDisplayedChild(1);
         mDimeloChat.setUserVisibleHint(true);
-        ConfigDimelo.setConfigMessage("telecom", "1234");
+        ConfigRc.setConfigMessage("telecom", "1234");
     }
 
 

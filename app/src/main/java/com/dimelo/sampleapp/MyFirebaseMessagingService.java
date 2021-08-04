@@ -1,15 +1,12 @@
 package com.dimelo.sampleapp;
 
 import android.annotation.SuppressLint;
-import android.util.Log;
 
 import com.dimelo.dimelosdk.main.Dimelo;
-import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
-    public static final String TAG = "MyFirebaseMessagingService";
     /**
      * Called when message is received.
      *
@@ -19,8 +16,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     @SuppressLint("LongLogTag")
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
-        Log.e(TAG, remoteMessage.getData() + "");
-        ConfigDimelo.setupDimelo(MyFirebaseMessagingService.this);
+        ConfigRc.setupDimelo(MyFirebaseMessagingService.this);
         if (Dimelo.consumeReceivedRemoteNotification(MyFirebaseMessagingService.this, remoteMessage.getData(), null)){
             // Cool !
         }

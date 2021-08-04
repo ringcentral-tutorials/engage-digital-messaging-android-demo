@@ -1,7 +1,5 @@
 package com.dimelo.sampleapp;
 
-import android.content.Context;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -9,17 +7,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.dimelo.dimelosdk.Models.UserDatas;
-import com.dimelo.dimelosdk.main.Chat;
 import com.dimelo.dimelosdk.main.Dimelo;
 import com.dimelo.dimelosdk.main.DimeloConnection;
-import com.google.firebase.iid.FirebaseInstanceId;
 //import com.google.android.gms.gcm.GoogleCloudMessaging;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 //        registerInBackground();
 
         // Setup Dimelo
-        final Dimelo dimelo = ConfigDimelo.setupDimelo(this);
+        final Dimelo dimelo = ConfigRc.setupDimelo(this);
         dimelo.setDimeloListener(dimeloListener);
         FragmentManager supportFragmentManager = getSupportFragmentManager();
         SlidingTabFragment mSlidingFragment = (SlidingTabFragment) supportFragmentManager.findFragmentByTag("mSlidingFragment");

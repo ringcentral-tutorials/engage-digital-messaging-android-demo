@@ -1,6 +1,5 @@
 package com.dimelo.sampleapp.chats;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,8 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.dimelo.dimelosdk.main.Dimelo;
-import com.dimelo.dimelosdk.main.RcFragment;
-import com.dimelo.sampleapp.ConfigDimelo;
+import com.dimelo.sampleapp.ConfigRc;
 import com.dimelo.sampleapp.R;
 
 import org.json.JSONException;
@@ -62,7 +60,7 @@ public class TabStart extends Fragment implements SampleDimeloTab {
             @Override
             public void onClick(View v) {
                 Dimelo.getInstance().openRcActivity(getActivity());
-                ConfigDimelo.setConfigMessage("full screen", "1234");
+                ConfigRc.setConfigMessage("full screen", "1234");
             }
         });
         root.findViewById(R.id.short_notif).setOnClickListener(new View.OnClickListener() {
