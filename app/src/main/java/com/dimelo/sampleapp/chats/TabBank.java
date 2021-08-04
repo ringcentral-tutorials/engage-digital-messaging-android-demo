@@ -21,7 +21,6 @@ import com.dimelo.dimelosdk.main.Dimelo;
 import com.dimelo.sampleapp.ConfigRc;
 import com.dimelo.sampleapp.R;
 
-
 public class TabBank extends Fragment implements SampleDimeloTab {
 
     static private String CHAT_STATE_KEY = "tab_bank_chat_state";
