@@ -19,7 +19,11 @@ import android.util.Log;
 
 import com.dimelo.dimelosdk.main.RcFragment;
 import com.dimelo.dimelosdk.main.Dimelo;
+import com.dimelo.sampleapp.ConfigDimelo;
 import com.dimelo.sampleapp.R;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class TabBank extends Fragment implements SampleDimeloTab {
 
@@ -86,6 +90,7 @@ public class TabBank extends Fragment implements SampleDimeloTab {
     private void openChat(){
         mViewFlipper.setDisplayedChild(1);
         mDimeloChat.setUserVisibleHint(true);
+        ConfigDimelo.setConfigMessage("bank", "1234");
     }
 
     @Override

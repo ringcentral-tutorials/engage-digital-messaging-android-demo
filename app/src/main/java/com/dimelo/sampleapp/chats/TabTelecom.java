@@ -15,7 +15,11 @@ import android.widget.ViewFlipper;
 
 import com.dimelo.dimelosdk.main.RcFragment;
 import com.dimelo.dimelosdk.main.Dimelo;
+import com.dimelo.sampleapp.ConfigDimelo;
 import com.dimelo.sampleapp.R;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class TabTelecom extends Fragment implements SampleDimeloTab {
     static private String CHAT_STATE_KEY = "tab_telecom_chat_state";
@@ -73,6 +77,7 @@ public class TabTelecom extends Fragment implements SampleDimeloTab {
     private void openChat(){
         mViewFlipper.setDisplayedChild(1);
         mDimeloChat.setUserVisibleHint(true);
+        ConfigDimelo.setConfigMessage("telecom", "1234");
     }
 
 

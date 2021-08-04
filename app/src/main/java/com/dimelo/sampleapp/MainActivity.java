@@ -31,10 +31,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.main_activity);
 
 //        // Get GCM Token
-//        registerInBackground();
+        //    registerInBackground();
 
         // Setup Dimelo
-        final Dimelo dimelo = setupDimelo(this);
+        final Dimelo dimelo = ConfigDimelo.setupDimelo(this);
         dimelo.setDimeloListener(dimeloListener);
         FragmentManager supportFragmentManager = getSupportFragmentManager();
         SlidingTabFragment mSlidingFragment = (SlidingTabFragment) supportFragmentManager.findFragmentByTag("mSlidingFragment");
@@ -52,15 +52,18 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onOpen(Dimelo dimelo) {
             super.onOpen(dimelo);
-            Log.e("on open : ", "userIdentifier : " + dimelo.getUserIdentifier() + ", userName :" + dimelo.getUserName() + ", authenticationInfo :"+ dimelo.getAuthenticationInfo());
+            Log.e("on open : ", "userIdentifier : " + dimelo.getUserIdentifier() +
+                    ", userName :" + dimelo.getUserName()
+                    + ", authenticationInfo :" + dimelo.getAuthenticationInfo()
+                    + " device key ==> " + dimelo.getDeviceToken());
         }
 
         @Override
         public void onClose(Dimelo dimelo) {
             super.onClose(dimelo);
-            Log.e("on open : ", "userIdentifier : " + dimelo.getUserIdentifier() + ", userName :" + dimelo.getUserName() + ", authenticationInfo :"+ dimelo.getAuthenticationInfo());
+            Log.e("on open : ", "userIdentifier : " + dimelo.getUserIdentifier() + ", userName :" + dimelo.getUserName() + ", authenticationInfo :" + dimelo.getAuthenticationInfo());
         }
-        
+
         @Override
         public void dimeloChatDidSendMessage() {
         }
@@ -79,38 +82,6 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
         }
     };
-
-    static Dimelo setupDimelo(Context context) {
-        String secret = BuildConfig.DIMELO_SDK_SECRET; //edit in gradle.properties
-        String domainName = BuildConfig.DIMELO_SDK_DOMAIN_NAME; //edit in gradle.properties
-        Dimelo.setup(context);
-        Dimelo dimelo = Dimelo.getInstance();
-        dimelo.initWithApiSecret(secret, domainName, null);
-        dimelo.setDebug(true);
-        dimelo.setUserName("John Doe");
-        dimelo.setThreadsEnabled(true);
-
-        String refreshedToken = FirebaseInstanceId.getInstance().getToken();
-        if (refreshedToken != null)
-            dimelo.setDeviceToken(refreshedToken);
-        JSONObject authInfo = new JSONObject();
-        try {
-            authInfo.put("CustomerId", "0123456789");
-            authInfo.put("Dimelo", "Rocks!");
-        } catch (JSONException e) {
-        }
-
-        JSONObject messageContextInfo = new JSONObject();
-        try {
-            messageContextInfo.put("extra", "1234");
-        } catch (JSONException e) {
-        }
-
-        Dimelo.getInstance().setMessageContextInfo(messageContextInfo);
-
-        dimelo.setAuthenticationInfo(authInfo);
-        return dimelo;
-    }
 
     @Override
     public void onBackPressed() {
