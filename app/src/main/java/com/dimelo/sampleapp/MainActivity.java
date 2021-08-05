@@ -17,7 +17,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
 
-
         // Setup Dimelo
         final Dimelo dimelo = RcConfig.setupDimelo(this);
         dimelo.setDimeloListener(dimeloListener);
@@ -113,7 +112,6 @@ public class MainActivity extends AppCompatActivity {
 //    }
 
 }
-
 
 
 
