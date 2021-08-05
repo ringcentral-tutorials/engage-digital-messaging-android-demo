@@ -8,12 +8,11 @@ import com.google.firebase.iid.FirebaseInstanceId;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class ConfigRc {
+public class RcConfig {
     public static Dimelo setupDimelo(Context context) {
-        String secret = BuildConfig.DIMELO_SDK_SECRET; //edit in gradle.properties
-        String domainName = BuildConfig.DIMELO_SDK_DOMAIN_NAME; //edit in gradle.properties
+        String secret = BuildConfig.ENGAGE_DIGITAL_MESSAGING_SECRET; //edit in gradle.properties
+        String domainName = BuildConfig.ENGAGE_DIGITAL_DOMAIN_NAME; //edit in gradle.properties
         Dimelo.setup(context);
-        Dimelo.interactiveNotification = true;
 
         Dimelo dimelo = Dimelo.getInstance();
         dimelo.initWithApiSecret(secret, domainName, null);

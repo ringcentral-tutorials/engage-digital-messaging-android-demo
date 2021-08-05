@@ -9,23 +9,17 @@ import android.widget.Toast;
 
 import com.dimelo.dimelosdk.main.Dimelo;
 import com.dimelo.dimelosdk.main.DimeloConnection;
-//import com.google.android.gms.gcm.GoogleCloudMessaging;
-
 
 public class MainActivity extends AppCompatActivity {
-
-//    private static final String SENDER_ID = BuildConfig.GCM_API_KEY; // GCM ID to be defined in gradle.properties
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
 
-//        // Get GCM Token
-//        registerInBackground();
 
         // Setup Dimelo
-        final Dimelo dimelo = ConfigRc.setupDimelo(this);
+        final Dimelo dimelo = RcConfig.setupDimelo(this);
         dimelo.setDimeloListener(dimeloListener);
         FragmentManager supportFragmentManager = getSupportFragmentManager();
         SlidingTabFragment mSlidingFragment = (SlidingTabFragment) supportFragmentManager.findFragmentByTag("mSlidingFragment");
