@@ -18,7 +18,7 @@ android {
 
 }
 
-//Edit those values in gradle.properties
+// Edit those values in gradle.properties
 android.buildTypes.each { type ->
     type.buildConfigField 'String', 'ENGAGE_DIGITAL_MESSAGING_SECRET', ENGAGE_DIGITAL_MESSAGING_SECRET
     type.buildConfigField 'String', 'ENGAGE_DIGITAL_DOMAIN_NAME', ENGAGE_DIGITAL_DOMAIN_NAME
