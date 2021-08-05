@@ -10,7 +10,7 @@ import org.json.JSONObject;
 
 public class RcConfig {
     public static Dimelo setupDimelo(Context context) {
-        String secret = BuildConfig.ENGAGE_DIGITAL_MESSAGING_SECRET; //edit in gradle.properties
+        String secret = BuildConfig.ENGAGE_DIGITAL_MESSAGING_SECRET; // Edit in gradle.properties
         String domainName = BuildConfig.ENGAGE_DIGITAL_DOMAIN_NAME; //edit in gradle.properties
         Dimelo.setup(context);
 
