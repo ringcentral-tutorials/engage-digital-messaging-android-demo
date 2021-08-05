@@ -11,7 +11,6 @@ import com.dimelo.dimelosdk.main.Dimelo;
 import com.dimelo.dimelosdk.main.DimeloConnection;
 
 public class MainActivity extends AppCompatActivity {
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -112,6 +111,5 @@ public class MainActivity extends AppCompatActivity {
 //    }
 
 }
-
 
 
