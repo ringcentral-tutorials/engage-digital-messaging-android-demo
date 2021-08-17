@@ -1,7 +1,5 @@
 package com.dimelo.sampleapp;
 
-import android.content.Context;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -9,32 +7,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.dimelo.dimelosdk.Models.UserDatas;
-import com.dimelo.dimelosdk.main.Chat;
 import com.dimelo.dimelosdk.main.Dimelo;
 import com.dimelo.dimelosdk.main.DimeloConnection;
-import com.google.firebase.iid.FirebaseInstanceId;
-//import com.google.android.gms.gcm.GoogleCloudMessaging;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
-
-//    private static final String SENDER_ID = BuildConfig.GCM_API_KEY; // GCM ID to be defined in gradle.properties
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
 
-//        // Get GCM Token
-//        registerInBackground();
-
         // Setup Dimelo
-        final Dimelo dimelo = setupDimelo(this);
+        final Dimelo dimelo = RcConfig.setupDimelo(this);
         dimelo.setDimeloListener(dimeloListener);
         FragmentManager supportFragmentManager = getSupportFragmentManager();
         SlidingTabFragment mSlidingFragment = (SlidingTabFragment) supportFragmentManager.findFragmentByTag("mSlidingFragment");
@@ -60,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
             super.onClose(dimelo);
             Log.e("on open : ", "userIdentifier : " + dimelo.getUserIdentifier() + ", userName :" + dimelo.getUserName() + ", authenticationInfo :"+ dimelo.getAuthenticationInfo());
         }
-        
+
         @Override
         public void dimeloChatDidSendMessage() {
         }
@@ -79,38 +62,6 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
         }
     };
-
-    static Dimelo setupDimelo(Context context) {
-        String secret = BuildConfig.DIMELO_SDK_SECRET; //edit in gradle.properties
-        String domainName = BuildConfig.DIMELO_SDK_DOMAIN_NAME; //edit in gradle.properties
-        Dimelo.setup(context);
-        Dimelo dimelo = Dimelo.getInstance();
-        dimelo.initWithApiSecret(secret, domainName, null);
-        dimelo.setDebug(true);
-        dimelo.setUserName("John Doe");
-        dimelo.setThreadsEnabled(true);
-
-        String refreshedToken = FirebaseInstanceId.getInstance().getToken();
-        if (refreshedToken != null)
-            dimelo.setDeviceToken(refreshedToken);
-        JSONObject authInfo = new JSONObject();
-        try {
-            authInfo.put("CustomerId", "0123456789");
-            authInfo.put("Dimelo", "Rocks!");
-        } catch (JSONException e) {
-        }
-
-        JSONObject messageContextInfo = new JSONObject();
-        try {
-            messageContextInfo.put("extra", "1234");
-        } catch (JSONException e) {
-        }
-
-        Dimelo.getInstance().setMessageContextInfo(messageContextInfo);
-
-        dimelo.setAuthenticationInfo(authInfo);
-        return dimelo;
-    }
 
     @Override
     public void onBackPressed() {
@@ -160,7 +111,5 @@ public class MainActivity extends AppCompatActivity {
 //    }
 
 }
-
-
 
 

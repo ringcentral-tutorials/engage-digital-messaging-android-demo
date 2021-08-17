@@ -9,7 +9,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +18,7 @@ import android.util.Log;
 
 import com.dimelo.dimelosdk.main.RcFragment;
 import com.dimelo.dimelosdk.main.Dimelo;
+import com.dimelo.sampleapp.RcConfig;
 import com.dimelo.sampleapp.R;
 
 public class TabBank extends Fragment implements SampleDimeloTab {
@@ -86,6 +86,7 @@ public class TabBank extends Fragment implements SampleDimeloTab {
     private void openChat(){
         mViewFlipper.setDisplayedChild(1);
         mDimeloChat.setUserVisibleHint(true);
+        RcConfig.setConfigMessage("tab", "bank");
     }
 
     @Override

@@ -18,12 +18,10 @@ android {
 
 }
 
-//Edit those values in gradle.properties
+// Edit those values in gradle.properties
 android.buildTypes.each { type ->
-//    GCM configuration
-//    type.buildConfigField 'String', 'GCM_API_KEY', GCM_API_KEY
-    type.buildConfigField 'String', 'DIMELO_SDK_SECRET', DIMELO_SDK_SECRET
-    type.buildConfigField 'String', 'DIMELO_SDK_DOMAIN_NAME', DIMELO_SDK_DOMAIN_NAME
+    type.buildConfigField 'String', 'ENGAGE_DIGITAL_MESSAGING_SECRET', ENGAGE_DIGITAL_MESSAGING_SECRET
+    type.buildConfigField 'String', 'ENGAGE_DIGITAL_DOMAIN_NAME', ENGAGE_DIGITAL_DOMAIN_NAME
 }
 
 repositories {
