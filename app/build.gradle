@@ -1,19 +1,55 @@
+project.ext.set('usesGms', false)
+project.ext.set('usesHms', false)
+
 apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 29
     defaultConfig {
         applicationId "com.dimelo.sampleapp"
-        minSdkVersion 16
+        minSdkVersion 17
         targetSdkVersion 29
         versionCode 6
         versionName "1.1"
     }
+
+    /*signingConfigs {
+        config {
+            storeFile file('xxx.jks')
+            keyAlias 'xxx'
+            keyPassword 'xxx'
+            storePassword 'xxx'
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }*/
+
+    flavorDimensions "vendor"
+    productFlavors {
+        google {
+            dimension "vendor"
+            versionNameSuffix "-google"
+//            apply plugin: "com.google.gms.google-services"
+            project.ext.set('usesGms', true)
+        }
+        huawei {
+            dimension "vendor"
+            versionNameSuffix "-huawei"
+            apply plugin: "com.huawei.agconnect"
+            project.ext.set('usesHms', true)
+        }
+    }
+
     buildTypes {
         release {
+//            signingConfig signingConfigs.config
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+
+        /*debug {
+            signingConfig signingConfigs.config
+        }*/
     }
 
 }
@@ -48,6 +84,6 @@ dependencies {
     implementation project(':dimelosdk-debug')
     implementation project(':glide-debug')
     implementation project(':volley-debug')
+    implementation 'com.huawei.agconnect:agconnect-core:1.3.1.300'
+    implementation 'com.huawei.hms:push:5.3.0.304'
 }
-
-apply plugin: 'com.google.gms.google-services'

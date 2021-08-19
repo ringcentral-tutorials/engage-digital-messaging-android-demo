@@ -19,11 +19,12 @@ public class RcConfig {
         dimelo.setDebug(true);
         dimelo.setUserName("John Doe");
         dimelo.setThreadsEnabled(true);
+        // dimelo.setPushNotificationService("hms");
 
-        String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+       /* String refreshedToken = FirebaseInstanceId.getInstance().getToken();
         if (refreshedToken != null) {
             dimelo.setDeviceToken(refreshedToken);
-        }
+        }*/
 
         JSONObject authInfo = new JSONObject();
 
