@@ -38,6 +38,7 @@
             </intent-filter>
         </service>
 
+        <!-- Push Notifs -->
         <!--HMS configuration-->
         <service
             android:name=".MyHmsMessageService"
