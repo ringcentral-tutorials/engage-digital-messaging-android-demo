@@ -1,5 +1,5 @@
-project.ext.set('usesGms', false)
-project.ext.set('usesHms', false)
+project.ext.set('useFCM', false)
+project.ext.set('useHMS', false)
 
 apply plugin: 'com.android.application'
 
@@ -30,13 +30,13 @@ android {
             dimension "vendor"
             versionNameSuffix "-google"
 //            apply plugin: "com.google.gms.google-services"
-            project.ext.set('usesGms', true)
+            project.ext.set('useFCM', true)
         }
         huawei {
             dimension "vendor"
             versionNameSuffix "-huawei"
             apply plugin: "com.huawei.agconnect"
-            project.ext.set('usesHms', true)
+            project.ext.set('useHMS', true)
         }
     }
 
