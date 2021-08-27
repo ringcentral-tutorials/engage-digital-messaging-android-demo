@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
-//apply plugin: "com.google.gms.google-services"
-//apply plugin: "com.huawei.agconnect"
+// apply plugin: "com.google.gms.google-services"
+// apply plugin: "com.huawei.agconnect"
 
 android {
     compileSdkVersion 29
@@ -21,11 +21,11 @@ android {
             v1SigningEnabled true
             v2SigningEnabled true
         }
-    }
+    }*/
 
     buildTypes {
         release {
-//            signingConfig signingConfigs.config
+//          signingConfig signingConfigs.config
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -33,6 +33,7 @@ android {
         /*debug {
             signingConfig signingConfigs.config
         }*/
+    }
 }
 
 // Edit those values in gradle.properties
