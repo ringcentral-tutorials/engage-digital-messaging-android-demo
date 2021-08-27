@@ -45,7 +45,7 @@ public class RcConfig {
     private static boolean isHmsAvailable(Context context) {
         boolean isAvailable = false;
 
-        if (null != context) {
+        if (context != null) {
             int result = HuaweiApiAvailability.getInstance().isHuaweiMobileServicesAvailable(context);
             isAvailable = (com.huawei.hms.api.ConnectionResult.SUCCESS == result);
         }
