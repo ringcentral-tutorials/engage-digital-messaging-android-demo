@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
-apply plugin: "com.google.gms.google-services"
-apply plugin: "com.huawei.agconnect"
+//apply plugin: "com.google.gms.google-services"
+//apply plugin: "com.huawei.agconnect"
 
 android {
     compileSdkVersion 29
@@ -33,8 +33,6 @@ android {
         /*debug {
             signingConfig signingConfigs.config
         }*/
-    }
-
 }
 
 // Edit those values in gradle.properties
