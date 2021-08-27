@@ -1,7 +1,6 @@
-project.ext.set('useFCM', false)
-project.ext.set('useHMS', false)
-
 apply plugin: 'com.android.application'
+apply plugin: "com.google.gms.google-services"
+apply plugin: "com.huawei.agconnect"
 
 android {
     compileSdkVersion 29
@@ -21,22 +20,6 @@ android {
             storePassword 'xxx'
             v1SigningEnabled true
             v2SigningEnabled true
-        }
-    }*/
-
-    flavorDimensions "vendor"
-    productFlavors {
-        google {
-            dimension "vendor"
-            versionNameSuffix "-google"
-//            apply plugin: "com.google.gms.google-services"
-            project.ext.set('useFCM', true)
-        }
-        huawei {
-            dimension "vendor"
-            versionNameSuffix "-huawei"
-            apply plugin: "com.huawei.agconnect"
-            project.ext.set('useHMS', true)
         }
     }
 
