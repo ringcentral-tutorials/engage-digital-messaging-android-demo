@@ -55,6 +55,16 @@
                 android:textSize="@dimen/abc_text_size_large_material"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/update_config"
+                android:text="Update configuration"
+                android:clickable="true"
+                android:onClick="updateConfig"/>
+
+            <TextView
+                android:layout_weight="1"
+                android:textSize="@dimen/abc_text_size_large_material"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="My Account" />
 
             <TextView

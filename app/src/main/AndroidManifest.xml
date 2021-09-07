@@ -68,6 +68,9 @@
                 android:value="com.dimelo.sampleapp.MainActivity" />
         </activity>
 
+        <!-- update userId -->
+        <activity android:name=".RcConfigurationActivity"></activity>
+
         <!-- Map API_KEY for Dimelo -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
