@@ -10,7 +10,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class RcConfig {
-      static final String  RC_USER_ID = "rc_user_id";
+      static final String RC_USER_ID = "rc_user_id";
       static final String RC_THREAD_ENABLED = "rc_thread_enabled";
 
      static Dimelo setupDimelo(Context context) {
