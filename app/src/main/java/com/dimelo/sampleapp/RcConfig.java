@@ -60,7 +60,7 @@ public class RcConfig {
          SharedPreferences sharedPref = context.getSharedPreferences("RCSHAREDPREF",Context.MODE_PRIVATE);
          SharedPreferences.Editor editor = sharedPref.edit();
          editor.putBoolean(key, value).commit();
-        Dimelo.getInstance().setThreadsEnabled(value);
+         Dimelo.getInstance().setThreadsEnabled(value);
      }
 
      static void savedStringInsharedPreference(Context context, String key, String value) {
