@@ -22,7 +22,7 @@ public class RcConfig {
         dimelo.initWithApiSecret(secret, domainName, null);
         dimelo.setDebug(true);
         dimelo.setUserName("John Doe");
-        boolean isThreadEnabled = RcConfig.getBooleanValueFromSharedPreference(context,RC_THREAD_ENABLED);
+        boolean isThreadEnabled = RcConfig.getBooleanValueFromSharedPreference(context, RC_THREAD_ENABLED);
         setThreadsEnabled( context, RC_THREAD_ENABLED, isThreadEnabled);
         String userIdVal = RcConfig.getStringValueFromSharedPreference(context,RC_USER_ID);
         if (userIdVal != null) {
