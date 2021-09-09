@@ -25,6 +25,7 @@ public class RcConfig {
         boolean isThreadEnabled = RcConfig.getBooleanValueFromSharedPreference(context, RC_THREAD_ENABLED);
         setThreadsEnabled(context, RC_THREAD_ENABLED, isThreadEnabled);
         String userIdVal = RcConfig.getStringValueFromSharedPreference(context, RC_USER_ID);
+
         if (userIdVal != null) {
             dimelo.setUserIdentifier(userIdVal);
         }
