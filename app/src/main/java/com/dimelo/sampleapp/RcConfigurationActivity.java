@@ -10,7 +10,7 @@ import android.widget.Switch;
 import com.dimelo.dimelosdk.main.Dimelo;
 
 public class RcConfigurationActivity extends AppCompatActivity {
-    Dimelo dimelo;
+    private Dimelo dimelo;
     private Switch switchCompat;
     private TextInputLayout textInputLayout;
 
