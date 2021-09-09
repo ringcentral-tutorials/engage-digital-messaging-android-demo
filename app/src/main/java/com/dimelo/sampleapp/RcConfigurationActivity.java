@@ -12,7 +12,7 @@ import com.dimelo.dimelosdk.main.Dimelo;
 public class RcConfigurationActivity extends AppCompatActivity {
     Dimelo dimelo;
     private Switch switchCompat;
-    TextInputLayout textInputLayout;
+    private TextInputLayout textInputLayout;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
