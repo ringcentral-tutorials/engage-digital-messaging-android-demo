@@ -69,7 +69,7 @@
         </activity>
 
         <!-- update userId and threading -->
-        <activity android:name=".RcConfigurationActivity"></activity>
+        <activity android:name=".RcConfigurationActivity" />
 
         <!-- Map API_KEY for Dimelo -->
         <meta-data
