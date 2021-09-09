@@ -39,8 +39,11 @@ public class RcConfigurationActivity extends AppCompatActivity {
     public void update(View v) {
         RcConfig.savedBooleanInsharedPreference(this, RcConfig.RC_THREAD_ENABLED, switchCompat.isChecked());
         Dimelo.getInstance().setThreadsEnabled(switchCompat.isChecked());
-        RcConfig.savedStringInSharedPreference(this, RcConfig.RC_USER_ID, textInputLayout.getEditText().getText().toString());
-        dimelo.setUserIdentifier(textInputLayout.getEditText().getText().toString());
+
+        if (textInputLayout.getEditText().getText().toString() != null) {
+            RcConfig.savedStringInSharedPreference(this, RcConfig.RC_USER_ID, textInputLayout.getEditText().getText().toString());
+            dimelo.setUserIdentifier(textInputLayout.getEditText().getText().toString());
+        }
         finishAffinity();
         System.exit(1);
     }

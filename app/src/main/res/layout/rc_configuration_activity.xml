@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="@string/enable_thread"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black" />
 
         <TextView
             android:layout_width="match_parent"
@@ -41,17 +41,17 @@
             android:id="@+id/user_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
-            android:textColorHighlight="#000000"
-            android:textColorLink="#000000">
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            local:boxStrokeColor="@color/blue_grey_200"
+            android:textColorHint="@color/blue_grey_200">
 
             <android.support.design.widget.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="user id"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey_400"
+                style="@style/TextInputLayoutTheme" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -59,7 +59,6 @@
             android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:clickable="true"
             android:onClick="update"
             android:text="@string/update" />
 
