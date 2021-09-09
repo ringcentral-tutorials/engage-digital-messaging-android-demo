@@ -18,7 +18,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/blue_300"
+        android:background="@color/white"
         android:fitsSystemWindows="true"
         android:orientation="vertical"
         android:padding="10dp">
@@ -28,22 +28,30 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="@string/enable_thread" />
+            android:text="@string/enable_thread"
+            android:textColor="@color/black"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="32dp"
-            android:text="@string/user_identifier_text" />
+            android:text="@string/user_identifier_text"
+            android:textColor="@color/black"/>
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/user_id"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textColorHighlight="#000000"
+            android:textColorLink="#000000">
 
             <android.support.design.widget.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="user id" />
+                android:hint="user id"
+                android:textColor="@color/black" />
 
         </android.support.design.widget.TextInputLayout>
 
