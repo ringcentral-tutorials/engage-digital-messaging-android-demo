@@ -11,7 +11,7 @@ import com.dimelo.dimelosdk.main.Dimelo;
 
 public class RcConfigurationActivity extends AppCompatActivity {
     Dimelo dimelo;
-    Switch switchCompat;
+    private Switch switchCompat;
     TextInputLayout textInputLayout;
 
     @Override
