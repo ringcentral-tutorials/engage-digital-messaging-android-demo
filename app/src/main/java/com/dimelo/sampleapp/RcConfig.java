@@ -58,31 +58,31 @@ public class RcConfig {
     }
 
      static void setThreadsEnabled(Context context, String key, boolean value) {
-         SharedPreferences sharedPref = context.getSharedPreferences("RCSHAREDPREF",Context.MODE_PRIVATE);
+         SharedPreferences sharedPref = context.getSharedPreferences("RCSHAREDPREF", Context.MODE_PRIVATE);
          SharedPreferences.Editor editor = sharedPref.edit();
          editor.putBoolean(key, value).commit();
          Dimelo.getInstance().setThreadsEnabled(value);
      }
 
      static void savedStringInSharedPreference(Context context, String key, String value) {
-         SharedPreferences sharedPref = context.getSharedPreferences("RCSHAREDPREF",Context.MODE_PRIVATE);
+         SharedPreferences sharedPref = context.getSharedPreferences("RCSHAREDPREF", Context.MODE_PRIVATE);
          SharedPreferences.Editor editor = sharedPref.edit();
          editor.putString(key, value).commit();
      }
 
      static String getStringValueFromSharedPreference(Context context, String key) {
-        SharedPreferences sharedPref = context.getSharedPreferences("RCSHAREDPREF",Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = context.getSharedPreferences("RCSHAREDPREF", Context.MODE_PRIVATE);
         return sharedPref.getString(key, null);
     }
 
     static void savedBooleanInsharedPreference(Context context, String key, boolean value) {
-        SharedPreferences sharedPref = context.getSharedPreferences("RCSHAREDPREF",Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = context.getSharedPreferences("RCSHAREDPREF", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putBoolean(key, value).commit();
     }
 
     static boolean getBooleanValueFromSharedPreference(Context context, String key) {
-        SharedPreferences sharedPref = context.getSharedPreferences("RCSHAREDPREF",Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = context.getSharedPreferences("RCSHAREDPREF", Context.MODE_PRIVATE);
         return sharedPref.getBoolean(key, false);
     }
 }
