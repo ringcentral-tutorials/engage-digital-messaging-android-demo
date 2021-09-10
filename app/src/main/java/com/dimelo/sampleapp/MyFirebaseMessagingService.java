@@ -39,7 +39,8 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         boolean ret = false;
         ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
         List<ActivityManager.RunningAppProcessInfo> appProcesses = activityManager.getRunningAppProcesses();
-        if(appProcesses != null) {
+    
+        if (appProcesses != null) {
             String packageName = context.getPackageName();
      
             for (ActivityManager.RunningAppProcessInfo appProcess : appProcesses) {
