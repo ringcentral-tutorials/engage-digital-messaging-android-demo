@@ -13,6 +13,7 @@ import com.dimelo.dimelosdk.main.Dimelo;
 import com.dimelo.dimelosdk.main.DimeloConnection;
 
 public class MainActivity extends AppCompatActivity {
+    public static int RESULT_CODE =100;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -114,7 +115,16 @@ public class MainActivity extends AppCompatActivity {
 
     public void updateConfig(View v) {
         Intent intent = new Intent(this, RcConfigurationActivity.class);
-        startActivity(intent);
+        startActivityForResult(intent, RESULT_CODE);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+       if (requestCode == RESULT_CODE && resultCode == RESULT_CANCELED) {
+            finishAffinity();
+            System.exit(1);
+       }
     }
 }
 

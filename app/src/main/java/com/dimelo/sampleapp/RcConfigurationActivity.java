@@ -32,7 +32,8 @@ public class RcConfigurationActivity extends AppCompatActivity {
 
     @Override
     public boolean onSupportNavigateUp() {
-        onBackPressed();
+        setResult(RESULT_OK);
+        finish();
         return true;
     }
 
@@ -44,7 +45,7 @@ public class RcConfigurationActivity extends AppCompatActivity {
             RcConfig.savedStringInSharedPreference(this, RcConfig.RC_USER_ID, textInputLayout.getEditText().getText().toString());
             dimelo.setUserIdentifier(textInputLayout.getEditText().getText().toString());
         }
-        finishAffinity();
-        System.exit(1);
+        setResult(RESULT_CANCELED);
+        finish();
     }
 }
