@@ -13,7 +13,7 @@ import com.dimelo.dimelosdk.main.Dimelo;
 import com.dimelo.dimelosdk.main.DimeloConnection;
 
 public class MainActivity extends AppCompatActivity {
-    public static int RESULT_CODE =100;
+    public static int RESULT_CODE = 100;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
