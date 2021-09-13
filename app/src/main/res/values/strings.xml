@@ -4,6 +4,9 @@
     <string name="how_to">Tap "Open Full Screen" to see the default Dimelo Mobile integration.</string>
     <string name="telecom_welcome">Upgrade your plan, subscribe to services and contact us with just a tap.</string>
     <string name="bank_welcome">Consult your accounts, transfer money and get in touch with just a tap.</string>
+    <string name="enable_thread">Enable Threads:</string>
+    <string name="user_identifier_text">Choose a user identifier:</string>
+    <string name="update">Update</string>
 
 
     <!-- -->
