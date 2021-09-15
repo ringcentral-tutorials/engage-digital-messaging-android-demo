@@ -1,15 +1,18 @@
 package com.dimelo.sampleapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 import com.dimelo.dimelosdk.main.Dimelo;
 import com.dimelo.dimelosdk.main.DimeloConnection;
 
 public class MainActivity extends AppCompatActivity {
+    public static int RESULT_CODE = 100;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,6 +76,21 @@ public class MainActivity extends AppCompatActivity {
         }
 
         super.onBackPressed();
+    }
+
+    public void updateConfig(View v) {
+        Intent intent = new Intent(this, RcConfigurationActivity.class);
+        startActivityForResult(intent, RESULT_CODE);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == RESULT_CODE && resultCode == RESULT_CANCELED) {
+            finishAffinity();
+            System.exit(1);
+       }
     }
 }
 
