@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 
 import com.dimelo.dimelosdk.main.Dimelo;
 import com.google.firebase.iid.FirebaseInstanceId;
+import com.huawei.hms.api.HuaweiApiAvailability;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -30,10 +31,14 @@ public class RcConfig {
             dimelo.setUserIdentifier(userIdVal);
         }
 
-        String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+        /*if (isHmsAvailable(context)) {
+            dimelo.setPushNotificationService("hms");
+        }*/
+
+       /* String refreshedToken = FirebaseInstanceId.getInstance().getToken();
         if (refreshedToken != null) {
             dimelo.setDeviceToken(refreshedToken);
-        }
+        }*/
 
         JSONObject authInfo = new JSONObject();
 
@@ -45,6 +50,17 @@ public class RcConfig {
         dimelo.setAuthenticationInfo(authInfo);
 
         return dimelo;
+    }
+
+    private static boolean isHmsAvailable(Context context) {
+        boolean isAvailable = false;
+
+        if (context != null) {
+            int result = HuaweiApiAvailability.getInstance().isHuaweiMobileServicesAvailable(context);
+            isAvailable = (com.huawei.hms.api.ConnectionResult.SUCCESS == result);
+        }
+
+        return isAvailable;
     }
 
     public static void setConfigMessage(String name, String value){

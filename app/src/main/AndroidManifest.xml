@@ -33,19 +33,19 @@
         android:theme="@style/Theme.MyTheme">
 
         <!-- Push Notifs -->
-        <!--GCM configuration-->
-        <!--<receiver-->
-            <!--android:name=".GcmBroadcastReceiver"-->
-            <!--android:permission="com.google.android.c2dm.permission.SEND">-->
-            <!--<intent-filter>-->
-                <!--<action android:name="com.google.android.c2dm.intent.RECEIVE" />-->
-                <!--<category android:name="com.dimelo.sampleapp" />-->
-            <!--</intent-filter>-->
-        <!--</receiver>-->
-        <!--<service android:name=".GcmIntentService" />-->
+        <!--FCM configuration-->
         <service android:name=".MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <!--HMS configuration-->
+        <service
+            android:name=".MyHmsMessageService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.huawei.push.action.MESSAGING_EVENT" />
             </intent-filter>
         </service>
 
@@ -76,6 +76,9 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="ADD_YOUR_OWN_GEO_API_KEY" />
 
+        <meta-data
+            android:name="push_kit_auto_init_enabled"
+            android:value="true" />
     </application>
 
 

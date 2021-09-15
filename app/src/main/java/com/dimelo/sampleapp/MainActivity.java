@@ -8,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
-
 import com.dimelo.dimelosdk.main.Dimelo;
 import com.dimelo.dimelosdk.main.DimeloConnection;
 
@@ -78,40 +77,6 @@ public class MainActivity extends AppCompatActivity {
 
         super.onBackPressed();
     }
-
-//    /**
-//     * Registers the application with GCM servers asynchronously.
-//     * <p/>
-//     * Stores the registration ID and app versionCode in the application's
-//     * shared preferences.
-//     */
-//    private void registerInBackground() {
-//        final Context mContext = getApplicationContext();
-//        AsyncTask<Object, Void, String> task = new AsyncTask<Object, Void, String>() {
-//
-//            private String mGcmRegistrationId;
-//
-//            @Override
-//            protected String doInBackground(Object... params) {
-//                String msg;
-//                try {
-//                    GoogleCloudMessaging gcm = GoogleCloudMessaging.getInstance(mContext);
-//                    mGcmRegistrationId = gcm.register(SENDER_ID);
-//                    msg = "Device registered, registration ID=" + mGcmRegistrationId;
-//                } catch (IOException ex) {
-//                    msg = "Error :" + ex.getMessage();
-//                }
-//                return msg;
-//            }
-//
-//            @Override
-//            protected void onPostExecute(String msg) {
-//                Log.d("DimeloSampleApp", msg);
-//                Dimelo.getInstance().setDeviceToken(mGcmRegistrationId);
-//            }
-//        };
-//        task.execute(null, null, null);
-//    }
 
     public void updateConfig(View v) {
         Intent intent = new Intent(this, RcConfigurationActivity.class);
