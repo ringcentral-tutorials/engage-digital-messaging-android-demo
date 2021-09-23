@@ -2,25 +2,28 @@ package com.dimelo.sampleapp;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import com.dimelo.dimelosdk.main.Dimelo;
-import com.google.firebase.iid.FirebaseInstanceId;
 import com.huawei.hms.api.HuaweiApiAvailability;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.InputStream;
+
 public class RcConfig {
       static final String RC_USER_ID = "rc_user_id";
       static final String RC_THREAD_ENABLED = "rc_thread_enabled";
+      static final String RC_CONF_NAME = "rc_conf_name";
 
      static Dimelo setupDimelo(Context context) {
-        String secret = BuildConfig.ENGAGE_DIGITAL_MESSAGING_SECRET; // Edit in gradle.properties
-        String domainName = BuildConfig.ENGAGE_DIGITAL_DOMAIN_NAME; // Edit in gradle.properties
+        RcSourceModel rcConf = new RcSourceModel().getSelectedObject(context);
+        String secret = rcConf.domaineSecret;
+        String domainName = rcConf.domaineName;
         Dimelo.setup(context);
-
         Dimelo dimelo = Dimelo.getInstance();
-        dimelo.initWithApiSecret(secret, domainName, null);
+        dimelo.initializeWithApiSecretAndHostName(secret, domainName+rcConf.hostname, null);
         dimelo.setDebug(true);
         dimelo.setUserName("John Doe");
         boolean isThreadEnabled = RcConfig.getBooleanValueFromSharedPreference(context, RC_THREAD_ENABLED);
@@ -100,5 +103,20 @@ public class RcConfig {
     static boolean getBooleanValueFromSharedPreference(Context context, String key) {
         SharedPreferences sharedPref = context.getSharedPreferences("RCSHAREDPREF", Context.MODE_PRIVATE);
         return sharedPref.getBoolean(key, false);
+    }
+
+    static String readJsonFile (Context context) {
+        String resp = "";
+        try {
+            InputStream is = context.getAssets().open("RcConfigSource.json");
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            resp = new String(buffer, "UTF-8");
+        }catch (Exception e) {
+            Log.e("RcConfiguration", e.toString());
+        }
+        return  resp;
     }
 }

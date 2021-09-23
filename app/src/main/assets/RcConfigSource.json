@@ -1,0 +1,23 @@
+[
+  {
+    "name": "CHANGE_HERE",
+    "description": "CHANGE_HERE",
+    "domaineName": "CHANGE_HERE",
+    "domaineSecret": "CHANGE_HERE",
+    "hostname": "CHANGE_HERE"
+  },
+  {
+    "name": "CHANGE_HERE",
+    "description": "CHANGE_HERE",
+    "domaineName": "CHANGE_HERE",
+    "domaineSecret": "CHANGE_HERE",
+    "hostname": "CHANGE_HERE"
+  },
+  {
+    "name": "CHANGE_HERE",
+    "description": "CHANGE_HERE",
+    "domaineName": "CHANGE_HERE",
+    "domaineSecret": "CHANGE_HERE",
+    "hostname": "CHANGE_HERE"
+  }
+]
