@@ -25,6 +25,7 @@ public class RcSourceModel {
         String dataFromJson = RcConfig.readJsonFile(context);
         String rcSourceValue = RcConfig.getStringValueFromSharedPreference(context, RcConfig.RC_SOURCE_NAME);
         listData = jsonToArrayList(dataFromJson, RcSourceModel.class);
+
         if (rcSourceValue == null) {
             selectedObject = listData.get(index);
         } else {
