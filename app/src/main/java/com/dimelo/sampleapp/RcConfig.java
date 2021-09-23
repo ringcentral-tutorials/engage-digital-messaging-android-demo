@@ -107,6 +107,7 @@ public class RcConfig {
 
     static String readJsonFile (Context context) {
         String resp = "";
+
         try {
             InputStream is = context.getAssets().open("RcConfigSource.json");
             int size = is.available();
