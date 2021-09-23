@@ -61,7 +61,11 @@
         </activity>
 
         <!-- Dimelo SDK Activity -->
-        <activity android:name="com.dimelo.dimelosdk.main.ChatActivity" />
+        <activity android:name="com.dimelo.dimelosdk.main.ChatActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.dimelo.sampleapp.MainActivity" />
+        </activity>
         <activity android:name="com.dimelo.dimelosdk.main.ThreadsListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
