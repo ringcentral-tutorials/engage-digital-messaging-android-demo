@@ -66,6 +66,7 @@ public class RcSourceAdaptater extends RecyclerView.Adapter<RcSourceAdaptater.Vi
             description.setText(rcConf.description);
             checkBox.setChecked(rcConf.isSelected);
             checkBox.setTag(new Integer(position));
+
             if (rcConf.isSelected) {
                 rcSourceModel = rcConf;
             }
