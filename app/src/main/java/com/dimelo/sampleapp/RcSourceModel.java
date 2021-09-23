@@ -23,12 +23,12 @@ public class RcSourceModel {
     public RcSourceModel getSelectedObject(Context context) {
         int index = 0;
         String dataFromJson = RcConfig.readJsonFile(context);
-        String rcConfigValue = RcConfig.getStringValueFromSharedPreference(context, RcConfig.RC_CONF_NAME);
+        String rcSourceValue = RcConfig.getStringValueFromSharedPreference(context, RcConfig.RC_SOURCE_NAME);
         listData = jsonToArrayList(dataFromJson, RcSourceModel.class);
-        if (rcConfigValue == null) {
+        if (rcSourceValue == null) {
             selectedObject = listData.get(index);
         } else {
-            selectedObject = objectFromString(rcConfigValue);
+            selectedObject = objectFromString(rcSourceValue);
             index = findRcSourceBySecret(selectedObject.domaineSecret);
         }
         listData.get(index).isSelected = true;
@@ -60,13 +60,13 @@ public class RcSourceModel {
         return arrayList;
     }
 
-    public static <RcConf> String objectToJson(RcConf rcConf) {
+    public static <T> String objectToJson(T rcModel) {
         Gson gson = new Gson();
-        return gson.toJson(rcConf);
+        return gson.toJson(rcModel);
     }
 
-    public static RcSourceModel objectFromString(String rcConfValue) {
+    public static RcSourceModel objectFromString(String rcSourceValue) {
         Gson gson = new Gson();
-        return gson.fromJson(rcConfValue, RcSourceModel.class);
+        return gson.fromJson(rcSourceValue, RcSourceModel.class);
     }
 }

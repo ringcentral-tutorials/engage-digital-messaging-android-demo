@@ -7,7 +7,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SwitchCompat;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 
 import com.dimelo.dimelosdk.main.Dimelo;
@@ -19,7 +18,7 @@ public class RcConfigurationActivity extends AppCompatActivity {
     private SwitchCompat switchCompat;
     private TextInputLayout textInputLayout;
     private ArrayList<RcSourceModel> allData;
-    private RcSourceModel confSelected;
+    private RcSourceModel rcSourceSelected;
 
 
     @Override
@@ -43,8 +42,8 @@ public class RcConfigurationActivity extends AppCompatActivity {
         recycleView.setAdapter(rcConfigAdaptater);
         rcConfigAdaptater.setOnItemClickListener(new RcSourceAdaptater.OnItemClickListener() {
             @Override
-            public void onItemClick(View view, int position, RcSourceModel rcConf) {
-                confSelected = rcConf;
+            public void onItemClick(View view, int position, RcSourceModel rcModel) {
+                rcSourceSelected = rcModel;
             }
         });
     }
@@ -65,8 +64,8 @@ public class RcConfigurationActivity extends AppCompatActivity {
             dimelo.setUserIdentifier(textInputLayout.getEditText().getText().toString());
         }
 
-        if (confSelected != null) {
-            RcConfig.savedStringInSharedPreference(this, RcConfig.RC_CONF_NAME, RcSourceModel.objectToJson(confSelected));
+        if (rcSourceSelected != null) {
+            RcConfig.savedStringInSharedPreference(this, RcConfig.RC_SOURCE_NAME, RcSourceModel.objectToJson(rcSourceSelected));
             RcConfig.setupDimelo(this);
         }
         setResult(RESULT_CANCELED);

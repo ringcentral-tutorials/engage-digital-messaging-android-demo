@@ -15,15 +15,15 @@ import java.io.InputStream;
 public class RcConfig {
       static final String RC_USER_ID = "rc_user_id";
       static final String RC_THREAD_ENABLED = "rc_thread_enabled";
-      static final String RC_CONF_NAME = "rc_conf_name";
+      static final String RC_SOURCE_NAME = "rc_source_name";
 
      static Dimelo setupDimelo(Context context) {
-        RcSourceModel rcConf = new RcSourceModel().getSelectedObject(context);
-        String secret = rcConf.domaineSecret;
-        String domainName = rcConf.domaineName;
+        RcSourceModel rcSource = new RcSourceModel().getSelectedObject(context);
+        String secret = rcSource.domaineSecret;
+        String domainName = rcSource.domaineName;
         Dimelo.setup(context);
         Dimelo dimelo = Dimelo.getInstance();
-        dimelo.initializeWithApiSecretAndHostName(secret, domainName+rcConf.hostname, null);
+        dimelo.initializeWithApiSecretAndHostName(secret, domainName+rcSource.hostname, null);
         dimelo.setDebug(true);
         dimelo.setUserName("John Doe");
         boolean isThreadEnabled = RcConfig.getBooleanValueFromSharedPreference(context, RC_THREAD_ENABLED);

@@ -14,7 +14,7 @@ import java.util.List;
 public class RcSourceAdaptater extends RecyclerView.Adapter<RcSourceAdaptater.ViewHolder> {
     private List<RcSourceModel> listData;
     private Context context;
-    private RcSourceModel selected;
+    private RcSourceModel rcSourceModel;
     private OnItemClickListener listener;
 
     public RcSourceAdaptater(List<RcSourceModel> listData, Context context) {
@@ -67,16 +67,16 @@ public class RcSourceAdaptater extends RecyclerView.Adapter<RcSourceAdaptater.Vi
             checkBox.setChecked(rcConf.isSelected);
             checkBox.setTag(new Integer(position));
             if (rcConf.isSelected) {
-                selected = rcConf;
+                rcSourceModel = rcConf;
             }
             checkBox.setOnClickListener(null);
             cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     if (!rcConf.isSelected) {
-                        selected.isSelected = false;
+                        rcSourceModel.isSelected = false;
                         rcConf.isSelected = true;
-                        selected = rcConf;
+                        rcSourceModel = rcConf;
                         if (listener != null) listener.onItemClick(itemView, position, rcConf);
                         notifyDataSetChanged();
                     }
