@@ -11,7 +11,7 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 import java.util.List;
 
-public class RcSourceAdaptater extends RecyclerView.Adapter<RcSourceAdaptater.ViewHolder> {
+public class RcSourceAdapter extends RecyclerView.Adapter<RcSourceAdaptater.ViewHolder> {
     private List<RcSourceModel> listData;
     private Context context;
     private RcSourceModel rcSourceModel;
