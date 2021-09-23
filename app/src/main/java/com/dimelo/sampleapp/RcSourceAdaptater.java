@@ -78,7 +78,10 @@ public class RcSourceAdaptater extends RecyclerView.Adapter<RcSourceAdaptater.Vi
                         rcSourceModel.isSelected = false;
                         rcConf.isSelected = true;
                         rcSourceModel = rcConf;
-                        if (listener != null) listener.onItemClick(itemView, position, rcConf);
+
+                        if (listener != null) {
+                           listener.onItemClick(itemView, position, rcConf);
+                        }
                         notifyDataSetChanged();
                     }
                 }
