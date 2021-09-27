@@ -19,8 +19,8 @@ public class RcConfig {
 
      static Dimelo setupDimelo(Context context) {
         RcSourceModel rcSource = new RcSourceModel().getSelectedObject(context);
-        String secret = rcSource.domaineSecret;
-        String domainName = rcSource.domaineName;
+        String secret = rcSource.apiSecret;
+        String domainName = rcSource.domainName;
         Dimelo.setup(context);
         Dimelo dimelo = Dimelo.getInstance();
         dimelo.initializeWithApiSecretAndHostName(secret, domainName + rcSource.hostname, null);

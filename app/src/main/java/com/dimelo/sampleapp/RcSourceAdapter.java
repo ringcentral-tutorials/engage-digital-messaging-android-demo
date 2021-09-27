@@ -7,17 +7,17 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import java.util.List;
 
-public class RcSourceAdapter extends RecyclerView.Adapter<RcSourceAdaptater.ViewHolder> {
+public class RcSourceAdapter extends RecyclerView.Adapter<RcSourceAdapter.ViewHolder>  {
     private List<RcSourceModel> listData;
     private Context context;
-    private RcSourceModel rcSourceModel;
     private OnItemClickListener listener;
+    private int selectedStarPosition = -1;
 
-    public RcSourceAdaptater(List<RcSourceModel> listData, Context context) {
+    public RcSourceAdapter(List<RcSourceModel> listData, Context context) {
         this.listData = listData;
         this.context = context;
     }
@@ -26,7 +26,7 @@ public class RcSourceAdapter extends RecyclerView.Adapter<RcSourceAdaptater.View
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(context).inflate(R.layout.rc_source_item, viewGroup, false);
-        return new ViewHolder(view);
+        return new ViewHolder(view, this);
     }
 
     @Override
@@ -43,49 +43,49 @@ public class RcSourceAdapter extends RecyclerView.Adapter<RcSourceAdaptater.View
         void onItemClick(View itemView, int position, RcSourceModel rcConf);
     }
 
-    public void setOnItemClickListener(OnItemClickListener listener) {
-        this.listener = listener;
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        this.listener = onItemClickListener;
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView configName;
         TextView description;
-        CheckBox checkBox;
+        RadioButton sourceChecked;
         CardView cardView;
+        int position;
+        RcSourceModel rcsSourceSelected;
 
-        public ViewHolder(@NonNull View itemView) {
+        public ViewHolder(@NonNull View itemView, RcSourceAdapter mAdapter) {
             super(itemView);
             configName = itemView.findViewById(R.id.name);
             description = itemView.findViewById(R.id.description);
-            checkBox = itemView.findViewById(R.id.CheckBox);
+            sourceChecked = itemView.findViewById(R.id.SourceChecked);
             cardView = itemView.findViewById(R.id.layoutItem);
+            sourceChecked.setOnClickListener(this);
         }
 
         void selectConfig(final RcSourceModel rcConf, final int position) {
             configName.setText(rcConf.name);
             description.setText(rcConf.description);
-            checkBox.setChecked(rcConf.isSelected);
-            checkBox.setTag(new Integer(position));
-
             if (rcConf.isSelected) {
-                rcSourceModel = rcConf;
+                selectedStarPosition = position;
             }
-            checkBox.setOnClickListener(null);
-            cardView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (!rcConf.isSelected) {
-                        rcSourceModel.isSelected = false;
-                        rcConf.isSelected = true;
-                        rcSourceModel = rcConf;
+            sourceChecked.setChecked(position == selectedStarPosition);
 
-                        if (listener != null) {
-                           listener.onItemClick(itemView, position, rcConf);
-                        }
-                        notifyDataSetChanged();
-                    }
-                }
-            });
+            this.position = position;
+            rcsSourceSelected = rcConf;
+            sourceChecked.setOnClickListener(this);
+            cardView.setOnClickListener(this);
+            description.setOnClickListener(this);
         }
+
+        @Override
+        public void onClick(View v) {
+            listData.get(selectedStarPosition).isSelected = false;
+            selectedStarPosition = getAdapterPosition();
+            notifyDataSetChanged();
+            listener.onItemClick(itemView, position, rcsSourceSelected);
+        }
+
     }
 }

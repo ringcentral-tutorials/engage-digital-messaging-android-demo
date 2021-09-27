@@ -11,8 +11,8 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 public class RcSourceModel {
-    String domaineName;
-    String domaineSecret;
+    String domainName;
+    String apiSecret;
     String name;
     String description;
     String hostname;
@@ -30,7 +30,7 @@ public class RcSourceModel {
             selectedObject = listData.get(index);
         } else {
             selectedObject = objectFromString(rcSourceValue);
-            index = findRcSourceBySecret(selectedObject.domaineSecret);
+            index = findRcSourceBySecret(selectedObject.apiSecret);
         }
         listData.get(index).isSelected = true;
         selectedObject.isSelected = true;
@@ -39,7 +39,7 @@ public class RcSourceModel {
 
     int findRcSourceBySecret(String secret) {
         for (RcSourceModel rc : listData) {
-            if (rc.domaineSecret.equals(secret)) {
+            if (rc.apiSecret.equals(secret)) {
                 return listData.indexOf(rc);
             }
         }

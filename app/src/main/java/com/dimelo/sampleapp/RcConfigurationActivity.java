@@ -1,5 +1,6 @@
 package com.dimelo.sampleapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SwitchCompat;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.dimelo.dimelosdk.main.Dimelo;
@@ -28,7 +30,6 @@ public class RcConfigurationActivity extends AppCompatActivity {
         Toolbar myToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
         textInputLayout = findViewById(R.id.user_id);
         dimelo = Dimelo.getInstance();
         String userIdVal = RcConfig.getStringValueFromSharedPreference(this, RcConfig.RC_USER_ID);
@@ -38,9 +39,9 @@ public class RcConfigurationActivity extends AppCompatActivity {
         allData =  RcSourceModel.listData;
         RecyclerView recycleView = findViewById(R.id.listView);
         recycleView.setLayoutManager(new LinearLayoutManager(this));
-        RcSourceAdaptater rcConfigAdaptater = new RcSourceAdaptater(allData, this);
+        RcSourceAdapter rcConfigAdaptater = new RcSourceAdapter(allData, this);
         recycleView.setAdapter(rcConfigAdaptater);
-        rcConfigAdaptater.setOnItemClickListener(new RcSourceAdaptater.OnItemClickListener() {
+        rcConfigAdaptater.setOnItemClickListener(new RcSourceAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position, RcSourceModel rcModel) {
                 rcSourceSelected = rcModel;
@@ -51,10 +52,26 @@ public class RcConfigurationActivity extends AppCompatActivity {
     @Override
     public boolean onSupportNavigateUp() {
         setResult(RESULT_OK);
-        finish();
         return true;
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+        }
+        return false;
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
     public void update(View v) {
         RcConfig.savedBooleanInsharedPreference(this, RcConfig.RC_THREAD_ENABLED, switchCompat.isChecked());
         Dimelo.getInstance().setThreadsEnabled(switchCompat.isChecked());
