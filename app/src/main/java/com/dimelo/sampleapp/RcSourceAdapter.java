@@ -67,6 +67,7 @@ public class RcSourceAdapter extends RecyclerView.Adapter<RcSourceAdapter.ViewHo
         void selectConfig(final RcSourceModel rcConf, final int position) {
             configName.setText(rcConf.name);
             description.setText(rcConf.description);
+
             if (rcConf.isSelected) {
                 selectedStarPosition = position;
             }
