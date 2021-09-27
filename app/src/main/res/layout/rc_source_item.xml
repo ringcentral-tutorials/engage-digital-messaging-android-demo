@@ -41,6 +41,7 @@
                 android:inputType="textMultiLine"
                 android:padding="5dp"
                 android:text="description"
+                android:background="@null"
                 android:textColor="@color/grey_400" />
         </LinearLayout>
 
