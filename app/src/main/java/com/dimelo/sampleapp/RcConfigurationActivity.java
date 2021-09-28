@@ -20,7 +20,7 @@ public class RcConfigurationActivity extends AppCompatActivity {
     private SwitchCompat switchCompat;
     private TextInputLayout textInputLayout;
     private ArrayList<RcSourceModel> allData;
-    private RcSourceModel rcSourceSelected;
+    private RcSourceModel rcSelectedSource;
 
 
     @Override
