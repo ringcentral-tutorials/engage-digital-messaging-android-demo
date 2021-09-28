@@ -19,11 +19,9 @@ public class RcConfig {
 
      static Dimelo setupDimelo(Context context) {
         RcSourceModel rcSource = new RcSourceModel().getSelectedObject(context);
-        String secret = rcSource.apiSecret;
-        String domainName = rcSource.domainName;
         Dimelo.setup(context);
         Dimelo dimelo = Dimelo.getInstance();
-        dimelo.initializeWithApiSecretAndHostName(secret, domainName + rcSource.hostname, null);
+        dimelo.initializeWithApiSecretAndHostName(rcSource.apiSecret, rcSource.domainName + rcSource.hostname, null);
         dimelo.setDebug(true);
         dimelo.setUserName("John Doe");
         boolean isThreadEnabled = RcConfig.getBooleanValueFromSharedPreference(context, RC_THREAD_ENABLED);

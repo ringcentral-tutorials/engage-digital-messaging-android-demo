@@ -11,7 +11,7 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 public class RcSourceModel {
-    private String domainName;
+    String domainName;
     String apiSecret;
     String name;
     String description;

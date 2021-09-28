@@ -44,7 +44,7 @@ public class RcConfigurationActivity extends AppCompatActivity {
         rcConfigAdaptater.setOnItemClickListener(new RcSourceAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position, RcSourceModel rcModel) {
-                rcSourceSelected = rcModel;
+                rcSelectedSource = rcModel;
             }
         });
     }
@@ -81,8 +81,8 @@ public class RcConfigurationActivity extends AppCompatActivity {
             dimelo.setUserIdentifier(textInputLayout.getEditText().getText().toString());
         }
 
-        if (rcSourceSelected != null) {
-            RcConfig.savedStringInSharedPreference(this, RcConfig.RC_SOURCE_NAME, RcSourceModel.objectToJson(rcSourceSelected));
+        if (rcSelectedSource != null) {
+            RcConfig.savedStringInSharedPreference(this, RcConfig.RC_SOURCE_NAME, RcSourceModel.objectToJson(rcSelectedSource));
             RcConfig.setupDimelo(this);
         }
         setResult(RESULT_CANCELED);
