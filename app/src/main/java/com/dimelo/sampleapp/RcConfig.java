@@ -115,7 +115,7 @@ public class RcConfig {
             is.read(buffer);
             is.close();
             resp = new String(buffer, "UTF-8");
-        }catch (Exception e) {
+        } catch (Exception e) {
             Log.e("RcConfiguration", e.toString());
         }
         return  resp;
