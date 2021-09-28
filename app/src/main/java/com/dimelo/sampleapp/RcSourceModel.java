@@ -50,8 +50,7 @@ public class RcSourceModel {
         if (TextUtils.isEmpty(json)) {
             return null;
         }
-        Type type = new TypeToken<ArrayList<JsonObject>>() {
-        }.getType();
+        Type type = new TypeToken<ArrayList<JsonObject>>() {}.getType();
         ArrayList<JsonObject> jsonObjects = new Gson().fromJson(json, type);
 
         ArrayList<T> arrayList = new ArrayList<>();
