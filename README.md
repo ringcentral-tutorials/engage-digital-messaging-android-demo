@@ -34,13 +34,13 @@ Here is the file structure:
 ]
 ```
 
-| Parameter     | Description                                                                 | Mandatory                                               |
-| ------------- | --------------------------------------------------------------------------- | ------------------------------------------------------- |
-| `name`        | Informative text                                                            | NO                                                      |
-| `description` | Informative text                                                            | NO                                                      |
-| `domainName`  | Your Engage Digital domain name                                             | **YES**                                                 |
-| `apiSecret`   | Your Engage Digital Messaging channel API secret                            | **YES**                                                 |
-| `hostname`    | Engage Digital Messaging hostname (ask your Engage Digital project manager) | NO (defaults to `.messaging.dimelo.com` if not present) |
+| Parameter     | Description                                                                                           | Mandatory                                               |
+| ------------- | ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
+| `name`        | Informative text                                                                                      | NO                                                      |
+| `description` | Informative text                                                                                      | NO                                                      |
+| `domainName`  | Your Engage Digital domain name                                                                       | **YES**                                                 |
+| `apiSecret`   | Your Engage Digital Messaging channel API secret                                                      | **YES**                                                 |
+| `hostname`    | Engage Digital Messaging hostname including the leading `.` (ask your Engage Digital project manager) | NO (defaults to `.messaging.dimelo.com` if not present) |
 
 <br>
 
