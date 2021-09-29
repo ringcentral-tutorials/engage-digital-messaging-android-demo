@@ -4,7 +4,7 @@ Engage Digital Android Sample Application
 This Android Studio Project is a Sample App showing how to use the [Engage Digital](https://www.ringcentral.com/digital-customer-engagement.html) Messaging SDK.
 
 	Engage Digital provides a mobile messaging component that allows users of your app
-	to easily communicate with your customer support agents. You can send text messages 
+	to easily communicate with your customer support agents. You can send text messages
 	and receive push notifications and automatic server-provided replies.
 
 	The component integrates nicely in any Android phone or tablet, allows presenting
@@ -17,10 +17,31 @@ This sample shows how to
 - Customize the Engage Digital Messaging UI (programmatically & Xml).
 - Integrate push notification support
 
-To build a fully functional version please edit `assets/RcConfigSource.json`:
-- replace apiSecret by your own Engage Digital Messaging SDK API secret (ask your Engage Digital project manager)
-- replace domainName by your own Engage Digital domain name (ask your Engage Digital project manager)
-- replace hostname by your own Engage Digital hostname (ask your Engage Digital project manager)
+<br>
 
-For more informations checkout the
-[documentation reference](http://mobile-messaging.dimelo.com)
+ℹ️ The `app/src/main/assets/RcConfigSource.json` file should be edited in order to connect this application to your Engage Digital Messaging channel.
+
+Here is the file structure:
+```json
+[
+  {
+    "name": "CHANGE_HERE",
+    "description": "CHANGE_HERE",
+    "domainName": "CHANGE_HERE",
+    "apiSecret": "CHANGE_HERE",
+    "hostname": "CHANGE_HERE"
+  }
+]
+```
+
+| Parameter     | Description                                                                                           | Mandatory                                               |
+| ------------- | ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
+| `name`        | Informative text                                                                                      | NO                                                      |
+| `description` | Informative text                                                                                      | NO                                                      |
+| `domainName`  | Your Engage Digital domain name                                                                       | **YES**                                                 |
+| `apiSecret`   | Your Engage Digital Messaging channel API secret                                                      | **YES**                                                 |
+| `hostname`    | Engage Digital Messaging hostname including the leading `.` (ask your Engage Digital project manager) | NO (defaults to `.messaging.dimelo.com` if not present) |
+
+<br>
+
+For more informations checkout the [documentation reference](http://mobile-messaging.dimelo.com)
