@@ -19,7 +19,7 @@ This sample shows how to
 
 <br>
 
-:information: The `app/src/main/assets/RcConfigSource.json` file should be edited in order to connect this application to your Engage Digital Messaging channel.
+ℹ️ The `app/src/main/assets/RcConfigSource.json` file should be edited in order to connect this application to your Engage Digital Messaging channel.
 
 Here is the file structure:
 ```json
