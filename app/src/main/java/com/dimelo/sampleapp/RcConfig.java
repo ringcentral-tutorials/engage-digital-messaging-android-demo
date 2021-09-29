@@ -22,7 +22,7 @@ public class RcConfig {
         Dimelo.setup(context);
         Dimelo dimelo = Dimelo.getInstance();
 
-        if ((rcSource.hostname != null) && !(rcSource.hostname.isEmpty())) {
+        if (rcSource.hostname != null && !rcSource.hostname.isEmpty()) {
             dimelo.initializeWithApiSecretAndHostName(rcSource.apiSecret, rcSource.domainName + rcSource.hostname, null);
         } else {
             dimelo.initWithApiSecret(rcSource.apiSecret, rcSource.domainName, null);
