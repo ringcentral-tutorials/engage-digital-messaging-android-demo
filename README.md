@@ -19,8 +19,7 @@ This sample shows how to
 
 To build a fully functional version please edit `assets/RcConfigSource.json`:
 - replace apiSecret by your own Engage Digital Messaging SDK API secret (ask your Engage Digital project manager)
-- replace domainName by your own Engage Digital domain name (ask your
-   Engage Digital project manager)
+- replace domainName by your own Engage Digital domain name (ask your Engage Digital project manager)
 - replace hostname by your own Engage Digital hostname (ask your Engage Digital project manager)
 
 For more informations checkout the
