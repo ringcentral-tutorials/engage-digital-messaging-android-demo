@@ -17,7 +17,7 @@ This sample shows how to
 - Customize the Engage Digital Messaging UI (programmatically & Xml).
 - Integrate push notification support
 
-To built a fully functional version please edit `assets/RcConfigSource.json` :
+To build a fully functional version please edit `assets/RcConfigSource.json`:
 - replace apiSecret by your own Engage Digital Messaging SDK API secret (ask your
    Engage Digital project manager)
 - replace domainName by your own Engage Digital domain name (ask your
