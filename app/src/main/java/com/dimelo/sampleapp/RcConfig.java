@@ -122,6 +122,6 @@ public class RcConfig {
         } catch (Exception e) {
             Log.e("RcConfiguration", e.toString());
         }
-        return  resp;
+        return resp;
     }
 }
