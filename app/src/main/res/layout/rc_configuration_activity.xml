@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:background="@color/white">
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -29,7 +29,7 @@
         android:orientation="vertical"
         android:padding="10dp">
 
-        <android.support.v7.widget.SwitchCompat
+        <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/thread"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -46,7 +46,7 @@
             android:layout_marginBottom="0dp"
             android:text="@string/user_identifier_text"
             android:textColor="@color/black"/>
-        <android.support.design.widget.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/user_id"
             android:layout_marginTop="0dp"
             android:layout_width="match_parent"
@@ -54,7 +54,7 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             local:boxStrokeColor="@color/blue_grey_200"
             android:textColorHint="@color/blue_grey_200">
-            <android.support.design.widget.TextInputEditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="User id"
@@ -62,7 +62,7 @@
                 android:textColorHint="@color/grey_400"
                 style="@style/TextInputLayoutTheme" />
 
-        </android.support.design.widget.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="32dp"
@@ -70,7 +70,7 @@
             android:text="Choose your source :"
             android:textColor="@color/black"/>
 
-        <android.support.v7.widget.RecyclerView
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/listView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
