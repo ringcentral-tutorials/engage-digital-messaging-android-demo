@@ -5,6 +5,10 @@ import android.content.SharedPreferences;
 import android.util.Log;
 
 import com.dimelo.dimelosdk.main.Dimelo;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.huawei.hms.api.HuaweiApiAvailability;
 
 import org.json.JSONException;
@@ -38,14 +42,26 @@ public class RcConfig {
             dimelo.setUserIdentifier(userIdVal);
         }
 
-        /*if (isHmsAvailable(context)) {
+     /*   if (isHmsAvailable(context)) {
             dimelo.setPushNotificationService("hms");
         }*/
+       /*  FirebaseApp.initializeApp(context);
+         FirebaseMessaging.getInstance().getToken()
+                 .addOnCompleteListener(new OnCompleteListener<String>() {
+                     @Override
+                     public void onComplete(Task<String> task) {
+                         if (task.isSuccessful()) {
+                           String refreshedToken =  task.getResult();
+                           if (refreshedToken != null){
+                               Dimelo.getInstance().setDeviceToken(refreshedToken);
+                           }
 
-       /* String refreshedToken = FirebaseInstanceId.getInstance().getToken();
-        if (refreshedToken != null) {
-            dimelo.setDeviceToken(refreshedToken);
-        }*/
+
+                             }
+
+                         }
+
+                 });*/
 
         JSONObject authInfo = new JSONObject();
 
