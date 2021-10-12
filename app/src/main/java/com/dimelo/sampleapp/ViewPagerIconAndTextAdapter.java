@@ -1,7 +1,7 @@
 package com.dimelo.sampleapp;
 
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 
 public abstract class ViewPagerIconAndTextAdapter extends FragmentPagerAdapter {
 

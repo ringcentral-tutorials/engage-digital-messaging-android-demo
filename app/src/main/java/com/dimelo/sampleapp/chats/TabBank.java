@@ -4,17 +4,18 @@ package com.dimelo.sampleapp.chats;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ViewFlipper;
 import android.util.Log;
 
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.dimelo.dimelosdk.main.RcFragment;
 import com.dimelo.dimelosdk.main.Dimelo;
@@ -64,12 +65,12 @@ public class TabBank extends Fragment implements SampleDimeloTab {
         mDimeloChat.setUserVisibleHint(false);
 
         mViewFlipper = (ViewFlipper) view.findViewById(R.id.viewflipper);
-        mViewFlipper.setOutAnimation(view.getContext(), android.support.v7.appcompat.R.anim.abc_shrink_fade_out_from_bottom);
+        mViewFlipper.setOutAnimation(view.getContext(), R.anim.abc_shrink_fade_out_from_bottom);
         view.findViewById(R.id.live_support).setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                mViewFlipper.setInAnimation(view.getContext(), android.support.v7.appcompat.R.anim.abc_grow_fade_in_from_bottom);
+                mViewFlipper.setInAnimation(view.getContext(), R.anim.abc_grow_fade_in_from_bottom);
                 openChat();
             }
         });
