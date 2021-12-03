@@ -37,7 +37,7 @@
         android:label="@string/app_name"
         android:launchMode="singleInstance"
         android:theme="@style/Theme.MyTheme"
-        tools:replace="android:appComponentFactory"
+        tools:replace="android:appComponentFactory,android:theme"
         android:appComponentFactory="whateverString">
 
         <!-- Push Notifs -->
@@ -83,7 +83,7 @@
         <!-- update userId and threading -->
         <activity android:name=".RcConfigurationActivity" />
 
-        <!-- Map API_KEY for Dimelo -->
+        <!-- Android Map API_KEY for Dimelo -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="ADD_YOUR_OWN_GEO_API_KEY" />

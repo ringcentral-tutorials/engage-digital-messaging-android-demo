@@ -1,14 +1,16 @@
 package com.dimelo.sampleapp;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.util.Log;
 
+import androidx.fragment.app.Fragment;
 import com.dimelo.dimelosdk.main.Dimelo;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.messaging.FirebaseMessaging;
+import com.dimelo.map.DimeloMap;
 import com.huawei.hms.api.HuaweiApiAvailability;
 
 import org.json.JSONException;
@@ -20,6 +22,7 @@ public class RcConfig {
       static final String RC_USER_ID = "rc_user_id";
       static final String RC_THREAD_ENABLED = "rc_thread_enabled";
       static final String RC_SOURCE_NAME = "rc_source_name";
+      static final int PLACE_PICKER_REQUEST = 1001;
 
      static Dimelo setupDimelo(Context context) {
         RcSourceModel rcSource = new RcSourceModel().getSelectedObject(context);
@@ -34,6 +37,7 @@ public class RcConfig {
 
         dimelo.setDebug(true);
         dimelo.setUserName("John Doe");
+        dimelo.setMapApiKey(BuildConfig.RC_MAPS_API_KEY);
         boolean isThreadEnabled = RcConfig.getBooleanValueFromSharedPreference(context, RC_THREAD_ENABLED);
         setThreadsEnabled(context, RC_THREAD_ENABLED, isThreadEnabled);
         String userIdVal = RcConfig.getStringValueFromSharedPreference(context, RC_USER_ID);
@@ -139,5 +143,17 @@ public class RcConfig {
             Log.e("RcConfiguration", e.toString());
         }
         return resp;
+    }
+
+    public static void clickMap(Fragment fragment, Activity activity){
+        DimeloMap.getInstance().setMapApiKey(BuildConfig.RC_MAPS_API_KEY)
+                .setMapsRequest(PLACE_PICKER_REQUEST)
+             // .setNavigationBarTitleColor(Color.GREEN)
+             // .setNavigationBarBackgroundColor(Color.GREEN)
+             // .setNavigationBarTitleFont(Typeface.DEFAULT_BOLD)
+             // .setNavigationBarIconColor(Color.RED)
+             // .setNavigationBarTitleSize((int) activity.getResources().getDimension(R.dimen.rc_navigation_bar_title_text_size_test))
+             // .setButtonTextSize(12)
+                .build(activity);
     }
 }

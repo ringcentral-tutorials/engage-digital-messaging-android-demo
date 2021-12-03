@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import com.dimelo.dimelosdk.main.Dimelo;
@@ -20,6 +21,12 @@ public class MainActivity extends AppCompatActivity {
 
         // Setup Dimelo
         final Dimelo dimelo = RcConfig.setupDimelo(getApplicationContext());
+        dimelo.callBackMaps = new Dimelo.DimeloMapClick(){
+            @Override
+            public void clickMap(Fragment chat) {
+                RcConfig.clickMap(chat, MainActivity.this);
+            }
+        };
         dimelo.setDimeloListener(dimeloListener);
         FragmentManager supportFragmentManager = getSupportFragmentManager();
         SlidingTabFragment mSlidingFragment = (SlidingTabFragment) supportFragmentManager.findFragmentByTag("mSlidingFragment");
@@ -86,11 +93,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
         if (requestCode == RESULT_CODE && resultCode == RESULT_CANCELED) {
             finishAffinity();
             System.exit(1);
        }
+        if ((requestCode == RcConfig.PLACE_PICKER_REQUEST) && (resultCode == RESULT_OK)) {
+             Dimelo.getInstance().sendMessageLocation(data );
+        }
     }
 }
 
