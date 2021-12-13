@@ -7,7 +7,7 @@ android {
     defaultConfig {
         applicationId "com.dimelo.sampleapp"
         minSdkVersion 21
-        targetSdkVersion 30
+        targetSdkVersion 31
         versionCode 6
         versionName "1.1"
         multiDexEnabled true

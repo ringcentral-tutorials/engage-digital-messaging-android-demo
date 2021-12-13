@@ -21,9 +21,9 @@ public class MainActivity extends AppCompatActivity {
 
         // Setup Dimelo
         final Dimelo dimelo = RcConfig.setupDimelo(getApplicationContext());
-        dimelo.callBackMaps = new Dimelo.DimeloMapClick(){
+        dimelo.callBackMaps = new Dimelo.RcMapsClick(){
             @Override
-            public void clickMap(Fragment chat) {
+            public void clickMaps(Fragment chat) {
                 RcConfig.clickMap(chat, MainActivity.this);
             }
         };

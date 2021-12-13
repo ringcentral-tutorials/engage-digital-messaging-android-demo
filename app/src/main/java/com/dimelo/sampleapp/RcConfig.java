@@ -10,8 +10,8 @@ import android.util.Log;
 
 import androidx.fragment.app.Fragment;
 import com.dimelo.dimelosdk.main.Dimelo;
-import com.dimelo.map.DimeloMap;
 import com.huawei.hms.api.HuaweiApiAvailability;
+import com.rc.rcmapssdk.RcMaps;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -146,7 +146,7 @@ public class RcConfig {
     }
 
     public static void clickMap(Fragment fragment, Activity activity){
-        DimeloMap.getInstance().setMapApiKey(BuildConfig.RC_MAPS_API_KEY)
+        RcMaps.getInstance().setMapApiKey(BuildConfig.RC_MAPS_API_KEY)
                 .setMapsRequest(PLACE_PICKER_REQUEST)
              // .setNavigationBarTitleColor(Color.GREEN)
              // .setNavigationBarBackgroundColor(Color.GREEN)
