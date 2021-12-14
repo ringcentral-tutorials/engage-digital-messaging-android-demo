@@ -9,6 +9,8 @@ import android.graphics.Typeface;
 import android.util.Log;
 
 import androidx.fragment.app.Fragment;
+
+import com.dimelo.dimelosdk.main.Chat;
 import com.dimelo.dimelosdk.main.Dimelo;
 import com.huawei.hms.api.HuaweiApiAvailability;
 import com.rc.rcmapssdk.RcMaps;
@@ -22,7 +24,6 @@ public class RcConfig {
       static final String RC_USER_ID = "rc_user_id";
       static final String RC_THREAD_ENABLED = "rc_thread_enabled";
       static final String RC_SOURCE_NAME = "rc_source_name";
-      static final int PLACE_PICKER_REQUEST = 1001;
 
      static Dimelo setupDimelo(Context context) {
         RcSourceModel rcSource = new RcSourceModel().getSelectedObject(context);
@@ -145,15 +146,23 @@ public class RcConfig {
         return resp;
     }
 
-    public static void clickMap(Fragment fragment, Activity activity){
-        RcMaps.getInstance().setMapApiKey(BuildConfig.RC_MAPS_API_KEY)
-                .setMapsRequest(PLACE_PICKER_REQUEST)
-             // .setNavigationBarTitleColor(Color.GREEN)
-             // .setNavigationBarBackgroundColor(Color.GREEN)
-             // .setNavigationBarTitleFont(Typeface.DEFAULT_BOLD)
-             // .setNavigationBarIconColor(Color.RED)
-             // .setNavigationBarTitleSize((int) activity.getResources().getDimension(R.dimen.rc_navigation_bar_title_text_size_test))
-             // .setButtonTextSize(12)
+    public static void clickMap(Chat fragment, Activity activity) {
+        RcMaps maps = RcMaps.getInstance();
+        maps.setMapApiKey(BuildConfig.RC_MAPS_API_KEY)
+                // .setNavigationBarTitleColor(Color.GREEN)
+                // .setNavigationBarBackgroundColor(Color.GREEN)
+                // .setNavigationBarTitleFont(Typeface.DEFAULT_BOLD)
+                // .setNavigationBarIconColor(Color.RED)
+                // .setNavigationBarTitleSize((int) activity.getResources().getDimension(R.dimen.rc_navigation_bar_title_text_size_test))
+                // .setButtonTextSize(12)
                 .build(activity);
+
+        maps.setMapsListener(new RcMaps.RcMapsListener() {
+            @Override
+            public void sendMessageLocation(Intent data) {
+                super.sendMessageLocation(data);
+                Dimelo.getInstance().sendMessageLocation(data, fragment);
+            }
+        });
     }
 }

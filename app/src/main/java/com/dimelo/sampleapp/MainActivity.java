@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+
+import com.dimelo.dimelosdk.main.Chat;
 import com.dimelo.dimelosdk.main.Dimelo;
 import com.dimelo.dimelosdk.main.DimeloConnection;
 
@@ -23,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         final Dimelo dimelo = RcConfig.setupDimelo(getApplicationContext());
         dimelo.callBackMaps = new Dimelo.RcMapsClick(){
             @Override
-            public void clickMaps(Fragment chat) {
+            public void clickMaps(Chat chat) {
                 RcConfig.clickMap(chat, MainActivity.this);
             }
         };
@@ -97,9 +99,6 @@ public class MainActivity extends AppCompatActivity {
             finishAffinity();
             System.exit(1);
        }
-        if ((requestCode == RcConfig.PLACE_PICKER_REQUEST) && (resultCode == RESULT_OK)) {
-             Dimelo.getInstance().sendMessageLocation(data );
-        }
     }
 }
 
