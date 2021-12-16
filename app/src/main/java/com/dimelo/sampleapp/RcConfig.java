@@ -55,7 +55,7 @@ public class RcConfig {
      /*   if (isHmsAvailable(context)) {
             dimelo.setPushNotificationService("hms");
         }*/
-         FirebaseApp.initializeApp(context);
+       /*  FirebaseApp.initializeApp(context);
          FirebaseMessaging.getInstance().getToken()
                  .addOnCompleteListener(new OnCompleteListener<String>() {
                      @Override
@@ -71,7 +71,7 @@ public class RcConfig {
 
                          }
 
-                 });
+                 });*/
 
         JSONObject authInfo = new JSONObject();
 
