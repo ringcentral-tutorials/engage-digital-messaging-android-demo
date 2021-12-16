@@ -43,7 +43,7 @@ public class RcConfig {
 
         dimelo.setDebug(true);
         dimelo.setUserName("John Doe");
-        dimelo.setMapApiKey(BuildConfig.RC_MAPS_API_KEY);
+        dimelo.setMapsApiKey(BuildConfig.RC_MAPS_API_KEY);
         boolean isThreadEnabled = RcConfig.getBooleanValueFromSharedPreference(context, RC_THREAD_ENABLED);
         setThreadsEnabled(context, RC_THREAD_ENABLED, isThreadEnabled);
         String userIdVal = RcConfig.getStringValueFromSharedPreference(context, RC_USER_ID);
@@ -153,7 +153,7 @@ public class RcConfig {
 
     public static void clickMap(Chat fragment, Activity activity) {
         RcMaps maps = RcMaps.getInstance();
-        maps.setMapApiKey(BuildConfig.RC_MAPS_API_KEY)
+        maps.setMapsLocationApiKey(BuildConfig.RC_MAPS_API_KEY)
                 // .setNavigationBarTitleColor(Color.GREEN)
                 // .setNavigationBarBackgroundColor(Color.GREEN)
                 // .setNavigationBarTitleFont(Typeface.DEFAULT_BOLD)
