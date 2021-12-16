@@ -12,6 +12,10 @@ import androidx.fragment.app.Fragment;
 
 import com.dimelo.dimelosdk.main.Chat;
 import com.dimelo.dimelosdk.main.Dimelo;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.huawei.hms.api.HuaweiApiAvailability;
 import com.rc.rcmapssdk.RcMaps;
 
@@ -26,6 +30,7 @@ public class RcConfig {
       static final String RC_SOURCE_NAME = "rc_source_name";
 
      static Dimelo setupDimelo(Context context) {
+
         RcSourceModel rcSource = new RcSourceModel().getSelectedObject(context);
         Dimelo.setup(context);
         Dimelo dimelo = Dimelo.getInstance();
@@ -50,7 +55,7 @@ public class RcConfig {
      /*   if (isHmsAvailable(context)) {
             dimelo.setPushNotificationService("hms");
         }*/
-       /*  FirebaseApp.initializeApp(context);
+         FirebaseApp.initializeApp(context);
          FirebaseMessaging.getInstance().getToken()
                  .addOnCompleteListener(new OnCompleteListener<String>() {
                      @Override
@@ -66,7 +71,7 @@ public class RcConfig {
 
                          }
 
-                 });*/
+                 });
 
         JSONObject authInfo = new JSONObject();
 

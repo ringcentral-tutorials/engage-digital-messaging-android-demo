@@ -13,6 +13,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.dimelo.dimelosdk.main.Chat;
 import com.dimelo.dimelosdk.main.Dimelo;
 import com.dimelo.dimelosdk.main.DimeloConnection;
+import com.google.firebase.FirebaseApp;
 
 public class MainActivity extends AppCompatActivity {
     public static int RESULT_CODE = 100;
@@ -20,15 +21,8 @@ public class MainActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
-
         // Setup Dimelo
         final Dimelo dimelo = RcConfig.setupDimelo(getApplicationContext());
-        dimelo.callBackMaps = new Dimelo.RcMapsClick(){
-            @Override
-            public void clickMaps(Chat chat) {
-                RcConfig.clickMap(chat, MainActivity.this);
-            }
-        };
         dimelo.setDimeloListener(dimeloListener);
         FragmentManager supportFragmentManager = getSupportFragmentManager();
         SlidingTabFragment mSlidingFragment = (SlidingTabFragment) supportFragmentManager.findFragmentByTag("mSlidingFragment");
@@ -71,6 +65,12 @@ public class MainActivity extends AppCompatActivity {
                 message = "The server is not responding, please try again later";
             }
             Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void clickMaps(Chat chat) {
+            super.clickMaps(chat);
+            RcConfig.clickMap(chat, MainActivity.this);
         }
     };
 
