@@ -8,10 +8,11 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.util.Log;
 
-import androidx.fragment.app.Fragment;
+
 
 import com.dimelo.dimelosdk.main.Chat;
 import com.dimelo.dimelosdk.main.Dimelo;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
@@ -28,12 +29,16 @@ public class RcConfig {
       static final String RC_USER_ID = "rc_user_id";
       static final String RC_THREAD_ENABLED = "rc_thread_enabled";
       static final String RC_SOURCE_NAME = "rc_source_name";
+      static RcMaps maps;
 
-     static Dimelo setupDimelo(Context context) {
+    static Dimelo setupDimelo(Context context) {
 
         RcSourceModel rcSource = new RcSourceModel().getSelectedObject(context);
         Dimelo.setup(context);
         Dimelo dimelo = Dimelo.getInstance();
+        maps = RcMaps.getInstance();
+        dimelo.setMapsDependenciesExist(true);
+        maps.setMapsLocationApiKey(BuildConfig.RC_MAPS_API_KEY);
 
         if (rcSource.hostname != null && !rcSource.hostname.isEmpty()) {
             dimelo.initializeWithApiSecretAndHostName(rcSource.apiSecret, rcSource.domainName + rcSource.hostname, null);
@@ -152,12 +157,14 @@ public class RcConfig {
     }
 
     public static void clickMap(Chat fragment, Activity activity) {
-        RcMaps maps = RcMaps.getInstance();
-        maps.setMapsLocationApiKey(BuildConfig.RC_MAPS_API_KEY)
-                // .setNavigationBarTitleColor(Color.GREEN)
-                // .setNavigationBarBackgroundColor(Color.GREEN)
-                // .setNavigationBarTitleFont(Typeface.DEFAULT_BOLD)
-                // .setNavigationBarIconColor(Color.RED)
+        maps
+              //  .setSendButtonIconColor(Color.RED)
+                //.setSendButtonIcon(R.drawable.bank_icon)
+                //.setSendButtonBackgroundColor(Color.RED)
+                 //.setNavigationBarTitleColor(Color.RED)
+                 //.setNavigationBarBackgroundColor(Color.RED)
+               // .setNavigationBarTitleFont(Typeface.DEFAULT_BOLD)
+             // .setNavigationBarIconColor(Color.RED)
                 // .setNavigationBarTitleSize((int) activity.getResources().getDimension(R.dimen.rc_navigation_bar_title_text_size_test))
                 // .setButtonTextSize(12)
                 .build(activity);
