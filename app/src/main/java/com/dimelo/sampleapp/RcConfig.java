@@ -37,7 +37,6 @@ public class RcConfig {
         Dimelo.setup(context);
         Dimelo dimelo = Dimelo.getInstance();
         maps = RcMaps.getInstance();
-        dimelo.setMapsDependenciesExist(true);
         maps.setMapsLocationApiKey(BuildConfig.RC_MAPS_API_KEY);
 
         if (rcSource.hostname != null && !rcSource.hostname.isEmpty()) {
