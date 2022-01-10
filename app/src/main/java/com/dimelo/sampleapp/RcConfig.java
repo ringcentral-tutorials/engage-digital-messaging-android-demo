@@ -37,7 +37,6 @@ public class RcConfig {
         Dimelo.setup(context);
         Dimelo dimelo = Dimelo.getInstance();
         maps = RcMaps.getInstance();
-        maps.setMapsLocationApiKey(BuildConfig.RC_MAPS_API_KEY);
 
         if (rcSource.hostname != null && !rcSource.hostname.isEmpty()) {
             dimelo.initializeWithApiSecretAndHostName(rcSource.apiSecret, rcSource.domainName + rcSource.hostname, null);
@@ -47,7 +46,7 @@ public class RcConfig {
 
         dimelo.setDebug(true);
         dimelo.setUserName("John Doe");
-        dimelo.setMapsApiKey(BuildConfig.RC_MAPS_API_KEY);
+        dimelo.setStaticMapsApiKey(BuildConfig.RC_MAPS_API_KEY);
         boolean isThreadEnabled = RcConfig.getBooleanValueFromSharedPreference(context, RC_THREAD_ENABLED);
         setThreadsEnabled(context, RC_THREAD_ENABLED, isThreadEnabled);
         String userIdVal = RcConfig.getStringValueFromSharedPreference(context, RC_USER_ID);
@@ -155,8 +154,8 @@ public class RcConfig {
         return resp;
     }
 
-    public static void clickMap(Chat fragment, Activity activity) {
-        maps
+    public static void onLocationButtonClick(Chat fragment, Activity activity) {
+        maps.setMapsLocationApiKey(BuildConfig.RC_MAPS_API_KEY)
               //  .setSendButtonIconColor(Color.RED)
                 //.setSendButtonIcon(R.drawable.bank_icon)
                 //.setSendButtonBackgroundColor(Color.RED)
@@ -167,12 +166,11 @@ public class RcConfig {
                 // .setNavigationBarTitleSize((int) activity.getResources().getDimension(R.dimen.rc_navigation_bar_title_text_size_test))
                 // .setButtonTextSize(12)
                 .build(activity);
-
         maps.setMapsListener(new RcMaps.RcMapsListener() {
             @Override
-            public void sendMessageLocation(Intent data) {
-                super.sendMessageLocation(data);
-                Dimelo.getInstance().sendMessageLocation(data, fragment);
+            public void sendLocationMessage(Intent data) {
+                super.sendLocationMessage(data);
+                Dimelo.getInstance().sendLocationMessage(data, fragment);
             }
         });
     }

@@ -68,9 +68,9 @@ public class MainActivity extends AppCompatActivity {
         }
 
         @Override
-        public void clickMaps(Chat chat) {
-            super.clickMaps(chat);
-            RcConfig.clickMap(chat, MainActivity.this);
+        public void onLocationButtonClick(Chat chat) {
+            super.onLocationButtonClick(chat);
+            RcConfig.onLocationButtonClick(chat, MainActivity.this);
         }
     };
 

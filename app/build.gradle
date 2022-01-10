@@ -47,16 +47,16 @@ android {
 
     repositories {
         maven {
-            url "https://raw.github.com/dimelo/Dimelo-Android/master"
+            url "https://raw.github.com/ringcentral/Dimelo-Android/master"
         }
         maven {
-                url "https://raw.github.com/dimelo/engage-digital-messaging-android-location-source/master"
+                url "https://raw.github.com/ringcentral/engage-digital-messaging-android-location-source/master"
             }
     }
 
     dependencies {
         //    GCM configuration
-        //    compile 'com.google.android.gms:play-services-gcm:9.8.0'
+          //  compile 'com.google.android.gms:play-services-gcm:9.8.0'
         coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
         implementation 'com.google.firebase:firebase-messaging:22.0.0'
         implementation 'com.google.firebase:firebase-core:19.0.0'
