@@ -155,7 +155,7 @@ public class RcConfig {
     }
 
     public static void onLocationButtonClick(Chat fragment, Activity activity) {
-        maps.setMapsLocationApiKey(BuildConfig.RC_MAPS_API_KEY)
+        maps.setMapsApiKey(BuildConfig.RC_MAPS_API_KEY)
               //  .setSendButtonIconColor(Color.RED)
                 //.setSendButtonIcon(R.drawable.bank_icon)
                 //.setSendButtonBackgroundColor(Color.RED)
