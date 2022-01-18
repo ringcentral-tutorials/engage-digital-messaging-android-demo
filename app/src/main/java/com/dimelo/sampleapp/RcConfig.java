@@ -161,10 +161,10 @@ public class RcConfig {
                  //.setSendButtonBackgroundColor(Color.RED)
                  //.setNavigationBarTitleColor(Color.RED)
                  //.setNavigationBarBackgroundColor(Color.RED)
-                 // .setNavigationBarTitleFont(Typeface.DEFAULT_BOLD)
-                 // .setNavigationBarIconColor(Color.RED)
-                 // .setNavigationBarTitleSize((int) activity.getResources().getDimension(R.dimen.rc_navigation_bar_title_text_size_test))
-                 // .setButtonTextSize(12)
+                 //.setNavigationBarTitleFont(Typeface.DEFAULT_BOLD)
+                 //.setNavigationBarIconColor(Color.RED)
+                 //.setNavigationBarTitleSize((int) activity.getResources().getDimension(R.dimen.rc_navigation_bar_title_text_size_test))
+                 //.setButtonTextSize(12)
                 .build(activity);
         maps.setMapsListener(new RcMaps.RcMapsListener() {
             @Override
