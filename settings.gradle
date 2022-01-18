@@ -1,1 +1,1 @@
-include ':app', ':dimelosdk-debug', ':volley-debug', ':glide-debug', 'rcmaps-debug'
+include ':app', ':dimelosdk-debug', ':volley-debug', ':glide-debug', 'edmessagingmapssdk-debug'
