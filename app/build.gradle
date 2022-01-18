@@ -47,10 +47,10 @@ android {
 
     repositories {
         maven {
-            url "https://raw.github.com/ringcentral/Dimelo-Android/master"
+            url "https://raw.github.com/ringcentral/engage-digital-messaging-android/master"
         }
         maven {
-                url "https://raw.github.com/ringcentral/engage-digital-messaging-android-location-source/master"
+            url "https://raw.github.com/ringcentral/engage-digital-messaging-android-location-source/master"
             }
     }
 

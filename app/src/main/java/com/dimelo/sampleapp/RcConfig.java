@@ -31,7 +31,7 @@ public class RcConfig {
       static final String RC_SOURCE_NAME = "rc_source_name";
       static RcMaps maps;
 
-    static Dimelo setupDimelo(Context context) {
+      static Dimelo setupDimelo(Context context) {
 
         RcSourceModel rcSource = new RcSourceModel().getSelectedObject(context);
         Dimelo.setup(context);
@@ -55,10 +55,10 @@ public class RcConfig {
             dimelo.setUserIdentifier(userIdVal);
         }
 
-     /*   if (isHmsAvailable(context)) {
+         /* if (isHmsAvailable(context)) {
             dimelo.setPushNotificationService("hms");
-        }*/
-       /*  FirebaseApp.initializeApp(context);
+          }*/
+         /*  FirebaseApp.initializeApp(context);
          FirebaseMessaging.getInstance().getToken()
                  .addOnCompleteListener(new OnCompleteListener<String>() {
                      @Override
@@ -156,15 +156,15 @@ public class RcConfig {
 
     public static void onLocationButtonClick(Chat fragment, Activity activity) {
         maps.setMapsApiKey(BuildConfig.RC_MAPS_API_KEY)
-              //  .setSendButtonIconColor(Color.RED)
-                //.setSendButtonIcon(R.drawable.bank_icon)
-                //.setSendButtonBackgroundColor(Color.RED)
+                 //.setSendButtonIconColor(Color.RED)
+                 //.setSendButtonIcon(R.drawable.bank_icon)
+                 //.setSendButtonBackgroundColor(Color.RED)
                  //.setNavigationBarTitleColor(Color.RED)
                  //.setNavigationBarBackgroundColor(Color.RED)
-               // .setNavigationBarTitleFont(Typeface.DEFAULT_BOLD)
-             // .setNavigationBarIconColor(Color.RED)
-                // .setNavigationBarTitleSize((int) activity.getResources().getDimension(R.dimen.rc_navigation_bar_title_text_size_test))
-                // .setButtonTextSize(12)
+                 // .setNavigationBarTitleFont(Typeface.DEFAULT_BOLD)
+                 // .setNavigationBarIconColor(Color.RED)
+                 // .setNavigationBarTitleSize((int) activity.getResources().getDimension(R.dimen.rc_navigation_bar_title_text_size_test))
+                 // .setButtonTextSize(12)
                 .build(activity);
         maps.setMapsListener(new RcMaps.RcMapsListener() {
             @Override
