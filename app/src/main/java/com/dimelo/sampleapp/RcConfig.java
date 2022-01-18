@@ -4,8 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
-import android.graphics.Typeface;
 import android.util.Log;
 
 
@@ -13,12 +11,8 @@ import android.util.Log;
 import com.dimelo.dimelosdk.main.Chat;
 import com.dimelo.dimelosdk.main.Dimelo;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.messaging.FirebaseMessaging;
 import com.huawei.hms.api.HuaweiApiAvailability;
-import com.rc.rcmapssdk.RcMaps;
+import com.ringcentral.edmessagingmapssdk.EngageDigitalMessagingMaps;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -29,14 +23,14 @@ public class RcConfig {
       static final String RC_USER_ID = "rc_user_id";
       static final String RC_THREAD_ENABLED = "rc_thread_enabled";
       static final String RC_SOURCE_NAME = "rc_source_name";
-      static RcMaps maps;
+      static EngageDigitalMessagingMaps engageDigitalMessagingMaps;
 
       static Dimelo setupDimelo(Context context) {
 
         RcSourceModel rcSource = new RcSourceModel().getSelectedObject(context);
         Dimelo.setup(context);
         Dimelo dimelo = Dimelo.getInstance();
-        maps = RcMaps.getInstance();
+        engageDigitalMessagingMaps = EngageDigitalMessagingMaps.getInstance();
 
         if (rcSource.hostname != null && !rcSource.hostname.isEmpty()) {
             dimelo.initializeWithApiSecretAndHostName(rcSource.apiSecret, rcSource.domainName + rcSource.hostname, null);
@@ -155,7 +149,7 @@ public class RcConfig {
     }
 
     public static void onLocationButtonClick(Chat fragment, Activity activity) {
-        maps.setMapsApiKey(BuildConfig.RC_MAPS_API_KEY)
+        engageDigitalMessagingMaps.setMapsApiKey(BuildConfig.RC_MAPS_API_KEY)
                  //.setSendButtonIconColor(Color.RED)
                  //.setSendButtonIcon(R.drawable.bank_icon)
                  //.setSendButtonBackgroundColor(Color.RED)
@@ -166,7 +160,7 @@ public class RcConfig {
                  //.setNavigationBarTitleSize((int) activity.getResources().getDimension(R.dimen.rc_navigation_bar_title_text_size_test))
                  //.setButtonTextSize(12)
                 .build(activity);
-        maps.setMapsListener(new RcMaps.RcMapsListener() {
+        engageDigitalMessagingMaps.setMapsListener(new EngageDigitalMessagingMaps.EngageDigitalMessagingMapsListener() {
             @Override
             public void sendLocationMessage(Intent data) {
                 super.sendLocationMessage(data);

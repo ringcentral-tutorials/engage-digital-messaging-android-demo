@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dimelo_footer_height">200dp</dimen>
+    <dimen name="dimelo_message_bubble_max_width">476dp</dimen>
+</resources>

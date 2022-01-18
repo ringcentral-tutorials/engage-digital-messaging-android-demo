@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/DimeloRowTheme"
+    android:layout_width="@dimen/rc_chat_template_width"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="4dp"
+    android:gravity="start"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/row_place_holder"
+        android:layout_width="@dimen/rc_chat_template_width"
+        android:layout_height="match_parent"
+        android:background="@drawable/dimelo_shape_round_border_carousel"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/image_view_container"
+            android:layout_width="@dimen/rc_chat_template_width"
+            android:layout_height="wrap_content">
+
+            <com.dimelo.dimelosdk.utilities.DMXShapesImage
+                android:id="@+id/image_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/placeholder" />
+
+            <View
+                android:id="@+id/shading_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:background="@drawable/dimelo_shading_round_corner"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/play_gif"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/dimelo_play_gif"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/header_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="1dp"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/rc_agent_structured_message_body_left_padding"
+            android:paddingTop="@dimen/rc_agent_structured_message_body_top_padding"
+            android:paddingRight="@dimen/rc_agent_structured_message_body_right_padding">
+
+            <TextView
+                android:id="@+id/title_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="@dimen/rc_chat_template_image_width" />
+
+            <TextView
+                android:id="@+id/sub_title_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/rc_agent_structured_message_subtitle_margin_top"
+                android:maxWidth="@dimen/rc_chat_template_image_width" />
+
+            <LinearLayout
+                android:id="@+id/container_url"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/rc_agent_structured_message_url_margin_top"
+                android:background="@color/transparent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="19dp"
+                    android:layout_height="18dp"
+                    android:layout_marginRight="@dimen/rc_chat_template_icon_space"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/dimelo_url_icon" />
+
+                <TextView
+                    android:id="@+id/url_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:includeFontPadding="false"
+                    android:lineSpacingExtra="0dp"
+                    android:maxWidth="@dimen/rc_chat_template_image_width"
+                    android:maxLines="1"
+                    android:paddingTop="-3dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/items_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@drawable/dimelo_item_text_view_round_corner_carousel"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/first_separator"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/rc_chat_template_border_width" />
+
+            <LinearLayout
+                android:id="@+id/container_options_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
