@@ -2,12 +2,16 @@ package com.dimelo.sampleapp.chats;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+
+import android.util.Log;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +21,8 @@ import com.dimelo.dimelosdk.main.RcFragment;
 import com.dimelo.dimelosdk.main.Dimelo;
 import com.dimelo.sampleapp.RcConfig;
 import com.dimelo.sampleapp.R;
+
+import java.text.SimpleDateFormat;
 
 public class TabTelecom extends Fragment implements SampleDimeloTab {
     static private String CHAT_STATE_KEY = "tab_telecom_chat_state";
@@ -90,6 +96,22 @@ public class TabTelecom extends Fragment implements SampleDimeloTab {
         customisation.dateTextColor = Color.WHITE;
         customisation.hourTimeTextColor = Color.WHITE;
         customisation.createNewThreadBackgroundColor = Color.RED;
+        int paddingReplies = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, getResources().getDimension(R.dimen.rc_quick_replies_padding), getResources().getDisplayMetrics());
+        customisation.quickRepliesItemPadding = new RcFragment.Customization.Padding(paddingReplies, paddingReplies, paddingReplies, paddingReplies);
+        SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd");
+        customisation.dateFormatter = dateFormatter;
+        customisation.messageFont = Typeface.DEFAULT_BOLD;
+        customisation.agentTemplateBorderColor = Color.RED;
+        customisation.agentTemplateWithImageBodyBackgroundColor = Color.GRAY;
+        int quickRepliesHeight = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, getResources().getDimension(R.dimen.rc_quick_replies_height), getResources().getDisplayMetrics());
+        customisation.quickRepliesBorderWidth = quickRepliesHeight;
+        customisation.quickRepliesBorderColor = Color.RED;
+        customisation.badgeFont = Typeface.DEFAULT_BOLD;
+        customisation.badgeTextColor = Color.RED;
+        customisation.backToAllChatsFont = Typeface.DEFAULT_BOLD;
+        customisation.threadsListSeparatorColor = Color.BLACK;
+        customisation.setBackToAllChatsImage(R.drawable.back_all_chat);
+        customisation.setLockedThreadImage(R.drawable.back_all_chat);
         customisation.apply();
     }
 

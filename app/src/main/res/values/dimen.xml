@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="rc_list_row_horizontal_padding_left">8dp</dimen>
+    <dimen name="rc_quick_replies_padding">10dp</dimen>
+    <dimen name="rc_quick_replies_height">7dp</dimen>
+    <dimen name="rc_hour_time_text_size">14dp</dimen>
+    <dimen name="rc_agent_time_text_size">16dp</dimen>
+</resources>
