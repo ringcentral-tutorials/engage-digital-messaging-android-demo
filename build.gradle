@@ -19,8 +19,5 @@ allprojects {
         maven { url "https://maven.google.com" }
         jcenter()
         maven { url 'https://developer.huawei.com/repo/' }
-        maven {
-            url "https://raw.github.com/ringcentral/engage-digital-messaging-android-location/master"
-        }
     }
 }

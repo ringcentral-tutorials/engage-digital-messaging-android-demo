@@ -49,29 +49,25 @@ public class RcConfig {
             dimelo.setUserIdentifier(userIdVal);
         }
 
-         /* if (isHmsAvailable(context)) {
+        if (isHmsAvailable(context)) {
             dimelo.setPushNotificationService("hms");
-          }*/
-         /*  FirebaseApp.initializeApp(context);
-         FirebaseMessaging.getInstance().getToken()
-                 .addOnCompleteListener(new OnCompleteListener<String>() {
-                     @Override
-                     public void onComplete(Task<String> task) {
-                         if (task.isSuccessful()) {
-                           String refreshedToken =  task.getResult();
-                           if (refreshedToken != null){
-                               Dimelo.getInstance().setDeviceToken(refreshedToken);
-                           }
-
-
-                             }
-
-                         }
-
-                 });*/
+        } else {
+            FirebaseApp.initializeApp(context);
+            FirebaseMessaging.getInstance().getToken()
+                    .addOnCompleteListener(new OnCompleteListener<String>() {
+                        @Override
+                        public void onComplete(Task<String> task) {
+                            if (task.isSuccessful()) {
+                                String refreshedToken =  task.getResult();
+                                if (refreshedToken != null) {
+                                    Dimelo.getInstance().setDeviceToken(refreshedToken);
+                                }
+                            }
+                        }
+                    });
+        }
 
         JSONObject authInfo = new JSONObject();
-
         try {
             authInfo.put("CustomerId", "0123456789");
             authInfo.put("Dimelo", "Rocks!");
@@ -156,10 +152,10 @@ public class RcConfig {
                  //.setNavigationBarTitleColor(Color.RED)
                  //.setNavigationBarBackgroundColor(Color.RED)
                  //.setNavigationBarTitleFont(Typeface.DEFAULT_BOLD)
-                 //.setNavigationBarIconColor(Color.RED)
+                 //.setNavigationBarBackIconColor(Color.RED)
                  //.setNavigationBarTitleSize((int) activity.getResources().getDimension(R.dimen.rc_navigation_bar_title_text_size_test))
-                 //.setButtonTextSize(12)
                 .build(activity);
+
         engageDigitalMessagingMaps.setMapsListener(new EngageDigitalMessagingMaps.EngageDigitalMessagingMapsListener() {
             @Override
             public void sendLocationMessage(Intent data) {
