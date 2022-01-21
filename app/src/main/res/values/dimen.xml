@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="rc_navigation_bar_title_text_size_test">21sp</dimen>
+</resources>

@@ -86,7 +86,7 @@
         <!-- update userId and threading -->
         <activity android:name=".RcConfigurationActivity" />
 
-        <!-- Map API_KEY for Dimelo -->
+        <!-- Android Map API_KEY for Dimelo -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="ADD_YOUR_OWN_GEO_API_KEY" />

@@ -1,15 +1,18 @@
 package com.dimelo.sampleapp;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.util.Log;
 
+
+
+import com.dimelo.dimelosdk.main.Chat;
 import com.dimelo.dimelosdk.main.Dimelo;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.messaging.FirebaseMessaging;
+
 import com.huawei.hms.api.HuaweiApiAvailability;
+import com.ringcentral.edmessagingmapssdk.EngageDigitalMessagingMaps;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -20,11 +23,14 @@ public class RcConfig {
       static final String RC_USER_ID = "rc_user_id";
       static final String RC_THREAD_ENABLED = "rc_thread_enabled";
       static final String RC_SOURCE_NAME = "rc_source_name";
+      static EngageDigitalMessagingMaps engageDigitalMessagingMaps;
 
-     static Dimelo setupDimelo(Context context) {
+      static Dimelo setupDimelo(Context context) {
+
         RcSourceModel rcSource = new RcSourceModel().getSelectedObject(context);
         Dimelo.setup(context);
         Dimelo dimelo = Dimelo.getInstance();
+        engageDigitalMessagingMaps = EngageDigitalMessagingMaps.getInstance();
 
         if (rcSource.hostname != null && !rcSource.hostname.isEmpty()) {
             dimelo.initializeWithApiSecretAndHostName(rcSource.apiSecret, rcSource.domainName + rcSource.hostname, null);
@@ -34,6 +40,7 @@ public class RcConfig {
 
         dimelo.setDebug(true);
         dimelo.setUserName("John Doe");
+        dimelo.setStaticMapsApiKey(BuildConfig.RC_MAPS_API_KEY);
         boolean isThreadEnabled = RcConfig.getBooleanValueFromSharedPreference(context, RC_THREAD_ENABLED);
         setThreadsEnabled(context, RC_THREAD_ENABLED, isThreadEnabled);
         String userIdVal = RcConfig.getStringValueFromSharedPreference(context, RC_USER_ID);
@@ -42,29 +49,25 @@ public class RcConfig {
             dimelo.setUserIdentifier(userIdVal);
         }
 
-     /*   if (isHmsAvailable(context)) {
+        if (isHmsAvailable(context)) {
             dimelo.setPushNotificationService("hms");
-        }*/
-       /*  FirebaseApp.initializeApp(context);
-         FirebaseMessaging.getInstance().getToken()
-                 .addOnCompleteListener(new OnCompleteListener<String>() {
-                     @Override
-                     public void onComplete(Task<String> task) {
-                         if (task.isSuccessful()) {
-                           String refreshedToken =  task.getResult();
-                           if (refreshedToken != null){
-                               Dimelo.getInstance().setDeviceToken(refreshedToken);
-                           }
-
-
-                             }
-
-                         }
-
-                 });*/
+        } else {
+            FirebaseApp.initializeApp(context);
+            FirebaseMessaging.getInstance().getToken()
+                    .addOnCompleteListener(new OnCompleteListener<String>() {
+                        @Override
+                        public void onComplete(Task<String> task) {
+                            if (task.isSuccessful()) {
+                                String refreshedToken =  task.getResult();
+                                if (refreshedToken != null) {
+                                    Dimelo.getInstance().setDeviceToken(refreshedToken);
+                                }
+                            }
+                        }
+                    });
+        }
 
         JSONObject authInfo = new JSONObject();
-
         try {
             authInfo.put("CustomerId", "0123456789");
             authInfo.put("Dimelo", "Rocks!");
@@ -139,5 +142,26 @@ public class RcConfig {
             Log.e("RcConfiguration", e.toString());
         }
         return resp;
+    }
+
+    public static void onLocationButtonClick(Chat fragment, Activity activity) {
+        engageDigitalMessagingMaps.setMapsApiKey(BuildConfig.RC_MAPS_API_KEY)
+                 //.setSendButtonIconColor(Color.RED)
+                 //.setSendButtonIcon(R.drawable.bank_icon)
+                 //.setSendButtonBackgroundColor(Color.RED)
+                 //.setNavigationBarTitleColor(Color.RED)
+                 //.setNavigationBarBackgroundColor(Color.RED)
+                 //.setNavigationBarTitleFont(Typeface.DEFAULT_BOLD)
+                 //.setNavigationBarBackIconColor(Color.RED)
+                 //.setNavigationBarTitleSize((int) activity.getResources().getDimension(R.dimen.rc_navigation_bar_title_text_size_test))
+                .build(activity);
+
+        engageDigitalMessagingMaps.setMapsListener(new EngageDigitalMessagingMaps.EngageDigitalMessagingMapsListener() {
+            @Override
+            public void sendLocationMessage(Intent data) {
+                super.sendLocationMessage(data);
+                Dimelo.getInstance().sendLocationMessage(data, fragment);
+            }
+        });
     }
 }
