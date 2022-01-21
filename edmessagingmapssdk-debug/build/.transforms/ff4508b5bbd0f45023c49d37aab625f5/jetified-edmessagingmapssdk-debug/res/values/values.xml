@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorAccent">#2196F3</color>
+    <color name="colorPrimary">#2196F3</color>
+    <color name="colorPrimaryDark">#2196F3</color>
+    <color name="rc_maps_navigation_bar_backgroung_color">#2196F3</color>
+    <color name="rc_maps_navigation_bar_icon_color">#FFFFFF</color>
+    <color name="rc_maps_navigation_bar_title_color">#FFFFFF</color>
+    <color name="rc_maps_send_button_background_color">#2196F3</color>
+    <color name="rc_maps_send_button_icon_color">#FFFFFF</color>
+    <color name="rc_maps_send_button_text_color">#FFFFFF</color>
+    <dimen name="rc_navigation_bar_title_text_size">20sp</dimen>
+    <dimen name="rc_send_message_title_size">18sp</dimen>
+    <string name="rc_auto_complete_hint_text">Search here</string>
+    <string name="rc_navigation_bar_title_text">Maps</string>
+    <string name="rc_no_connection_error">You are currently offline</string>
+    <string name="rc_search_menu_item_title">Search</string>
+    <string name="rc_send_location_error">You have to choose a location.</string>
+    <string name="rc_title_activity_maps">MapsActivity</string>
+    <style name="Theme.RcMapsTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+</resources>
