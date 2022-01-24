@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="rc_auto_complete_hint_text">Rechercher</string>
+    <string name="rc_navigation_bar_title_text">Maps</string>
+    <string name="rc_no_connection_error">Vous n\'êtes pas connecté à internet</string>
+    <string name="rc_search_menu_item_title">Recherche</string>
+    <string name="rc_send_location_error">Vous devez choisir une adresse.</string>
+    <string name="rc_title_activity_maps">MapsActivity</string>
+</resources>

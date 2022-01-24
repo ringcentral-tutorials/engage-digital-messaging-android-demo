@@ -6,10 +6,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+
+import com.dimelo.dimelosdk.main.Chat;
 import com.dimelo.dimelosdk.main.Dimelo;
 import com.dimelo.dimelosdk.main.DimeloConnection;
+import com.google.firebase.FirebaseApp;
 
 public class MainActivity extends AppCompatActivity {
     public static int RESULT_CODE = 100;
@@ -17,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
-
         // Setup Dimelo
         final Dimelo dimelo = RcConfig.setupDimelo(getApplicationContext());
         dimelo.setDimeloListener(dimeloListener);
@@ -63,6 +66,12 @@ public class MainActivity extends AppCompatActivity {
             }
             Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
         }
+
+        @Override
+        public void onLocationButtonClick(Chat chat) {
+            super.onLocationButtonClick(chat);
+            RcConfig.onLocationButtonClick(chat, MainActivity.this);
+        }
     };
 
     @Override
@@ -86,7 +95,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
         if (requestCode == RESULT_CODE && resultCode == RESULT_CANCELED) {
             finishAffinity();
             System.exit(1);

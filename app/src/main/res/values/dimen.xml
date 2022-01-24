@@ -5,4 +5,5 @@
     <dimen name="rc_quick_replies_height">7dp</dimen>
     <dimen name="rc_hour_time_text_size">14dp</dimen>
     <dimen name="rc_agent_time_text_size">16dp</dimen>
+    <dimen name="rc_navigation_bar_title_text_size_test">21sp</dimen>
 </resources>
