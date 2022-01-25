@@ -49,7 +49,7 @@ public class RcConfig {
             dimelo.setUserIdentifier(userIdVal);
         }
 
-      /*  if (isHmsAvailable(context)) {
+      /*if (isHmsAvailable(context)) {
             dimelo.setPushNotificationService("hms");
         } else {
             FirebaseApp.initializeApp(context);
