@@ -94,7 +94,7 @@ public class TabTelecom extends Fragment implements SampleDimeloTab {
         customisation.dateTextColor = Color.WHITE;
         customisation.hourTimeTextColor = Color.WHITE;
         customisation.createNewThreadBackgroundColor = Color.RED;
-        int paddingReplies = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, getResources().getDimension(R.dimen.rc_quick_replies_padding), getResources().getDisplayMetrics());
+        int paddingReplies = (int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, getResources().getDimension(R.dimen.rc_quick_replies_padding), getResources().getDisplayMetrics());
         customisation.quickRepliesItemPadding = new RcFragment.Customization.Padding(paddingReplies, paddingReplies, paddingReplies, paddingReplies);
         SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd");
         customisation.dateFormatter = dateFormatter;
