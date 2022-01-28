@@ -101,7 +101,7 @@ public class TabTelecom extends Fragment implements SampleDimeloTab {
         customisation.messageFont = Typeface.DEFAULT_BOLD;
         customisation.agentTemplateBorderColor = Color.RED;
         customisation.agentTemplateWithImageBodyBackgroundColor = Color.GRAY;
-        int quickRepliesHeight = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, getResources().getDimension(R.dimen.rc_quick_replies_height), getResources().getDisplayMetrics());
+        int quickRepliesHeight = (int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, getResources().getDimension(R.dimen.rc_quick_replies_height), getResources().getDisplayMetrics());
         customisation.quickRepliesBorderWidth = quickRepliesHeight;
         customisation.quickRepliesBorderColor = Color.RED;
         customisation.badgeFont = Typeface.DEFAULT_BOLD;
