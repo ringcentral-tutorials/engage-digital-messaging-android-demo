@@ -38,7 +38,8 @@
         android:launchMode="singleInstance"
         android:theme="@style/Theme.MyTheme"
         tools:replace="android:appComponentFactory"
-        android:appComponentFactory="whateverString">
+        android:appComponentFactory="whateverString"
+        android:name=".MyApplication">
 
         <!-- Push Notifs -->
         <!--FCM configuration-->
