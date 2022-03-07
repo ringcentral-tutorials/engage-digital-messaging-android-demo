@@ -57,7 +57,7 @@ public class TabBank extends Fragment implements SampleDimeloTab {
         super.onViewCreated(view, savedInstanceState);
         FragmentManager childFragmentManager = getChildFragmentManager();
         TextView versionName = view.findViewById(R.id.versionName);
-        versionName.setText(getString(R.string.rc_sdk_version)+com.dimelo.dimelosdk.BuildConfig.VERSION_NAME);
+        versionName.setText(getString(R.string.rc_sdk_version) + com.dimelo.dimelosdk.BuildConfig.VERSION_NAME);
         mDimeloChat = (RcFragment)childFragmentManager.findFragmentByTag("dimelo_bank_chat");
         if (mDimeloChat == null) {
             mDimeloChat = Dimelo.getInstance().newRcFragment();
