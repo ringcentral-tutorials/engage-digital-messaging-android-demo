@@ -7,7 +7,7 @@
     <string name="enable_thread" translatable="false">Enable Threads:</string>
     <string name="user_identifier_text" translatable="false">Choose a user identifier:</string>
     <string name="update" translatable="false">Update</string>
-    <string name="rc_sdk_version">SDK version : </string>
+    <string name="rc_sdk_version">SDK version: </string>
 
 
     <!-- -->
