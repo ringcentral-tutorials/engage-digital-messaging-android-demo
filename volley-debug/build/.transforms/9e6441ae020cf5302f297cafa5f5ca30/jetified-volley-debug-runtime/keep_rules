@@ -1,0 +1,24 @@
+-keep class java.util.function.ToDoubleFunction {
+    double applyAsDouble(java.lang.Object);
+}
+-keep class j$.util.Comparator { *; }
+-keep class j$.util.Comparator$-CC {
+    java.util.Comparator $default$thenComparingLong(java.util.Comparator, j$.util.function.ToLongFunction);
+    java.util.Comparator $default$thenComparingDouble(java.util.Comparator, j$.util.function.ToDoubleFunction);
+    java.util.Comparator $default$reversed(java.util.Comparator);
+    java.util.Comparator $default$thenComparing(java.util.Comparator, j$.util.function.Function, java.util.Comparator);
+    java.util.Comparator $default$thenComparing(java.util.Comparator, j$.util.function.Function);
+    java.util.Comparator $default$thenComparingInt(java.util.Comparator, j$.util.function.ToIntFunction);
+    java.util.Comparator $default$thenComparing(java.util.Comparator, java.util.Comparator);
+}
+-keep class java.util.function.Function { *; }
+-keep class j$.util.function.ToLongFunction { *; }
+-keep class java.util.function.ToLongFunction {
+    long applyAsLong(java.lang.Object);
+}
+-keep class j$.util.function.Function { *; }
+-keep class java.util.function.ToIntFunction {
+    int applyAsInt(java.lang.Object);
+}
+-keep class j$.util.function.ToDoubleFunction { *; }
+-keep class j$.util.function.ToIntFunction { *; }
