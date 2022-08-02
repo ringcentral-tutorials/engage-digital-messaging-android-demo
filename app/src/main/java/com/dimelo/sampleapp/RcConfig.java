@@ -20,13 +20,12 @@ import org.json.JSONObject;
 import java.io.InputStream;
 
 public class RcConfig {
-      static final String RC_USER_ID = "rc_user_id";
-      static final String RC_THREAD_ENABLED = "rc_thread_enabled";
-      static final String RC_SOURCE_NAME = "rc_source_name";
-      static EngageDigitalMessagingMaps engageDigitalMessagingMaps;
+    static final String RC_USER_ID = "rc_user_id";
+    static final String RC_THREAD_ENABLED = "rc_thread_enabled";
+    static final String RC_SOURCE_NAME = "rc_source_name";
+    static EngageDigitalMessagingMaps engageDigitalMessagingMaps;
 
-      static Dimelo setupDimelo(Context context) {
-
+    static Dimelo setupDimelo(Context context) {
         RcSourceModel rcSource = new RcSourceModel().getSelectedObject(context);
         Dimelo.setup(context);
         Dimelo dimelo = Dimelo.getInstance();
@@ -49,23 +48,24 @@ public class RcConfig {
             dimelo.setUserIdentifier(userIdVal);
         }
 
+        /*
         if (isHmsAvailable(context)) {
             dimelo.setPushNotificationService("hms");
         } else {
             FirebaseApp.initializeApp(context);
-            FirebaseMessaging.getInstance().getToken()
-                    .addOnCompleteListener(new OnCompleteListener<String>() {
-                        @Override
-                        public void onComplete(Task<String> task) {
-                            if (task.isSuccessful()) {
-                                String refreshedToken =  task.getResult();
-                                if (refreshedToken != null) {
-                                    Dimelo.getInstance().setDeviceToken(refreshedToken);
-                                }
-                            }
+            FirebaseMessaging.getInstance().getToken().addOnCompleteListener(new OnCompleteListener<String>() {
+                @Override
+                public void onComplete(Task<String> task) {
+                    if (task.isSuccessful()) {
+                        String refreshedToken =  task.getResult();
+                        if (refreshedToken != null) {
+                            Dimelo.getInstance().setDeviceToken(refreshedToken);
                         }
-                    });
+                    }
+                }
+            });
         }
+        */
 
         JSONObject authInfo = new JSONObject();
         try {
@@ -99,20 +99,20 @@ public class RcConfig {
         Dimelo.getInstance().setMessageContextInfo(messageContextInfo);
     }
 
-     static void setThreadsEnabled(Context context, String key, boolean value) {
-         SharedPreferences sharedPref = context.getSharedPreferences("RCSHAREDPREF", Context.MODE_PRIVATE);
-         SharedPreferences.Editor editor = sharedPref.edit();
-         editor.putBoolean(key, value).commit();
-         Dimelo.getInstance().setThreadsEnabled(value);
-     }
+    static void setThreadsEnabled(Context context, String key, boolean value) {
+        SharedPreferences sharedPref = context.getSharedPreferences("RCSHAREDPREF", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putBoolean(key, value).commit();
+        Dimelo.getInstance().setThreadsEnabled(value);
+    }
 
-     static void savedStringInSharedPreference(Context context, String key, String value) {
-         SharedPreferences sharedPref = context.getSharedPreferences("RCSHAREDPREF", Context.MODE_PRIVATE);
-         SharedPreferences.Editor editor = sharedPref.edit();
-         editor.putString(key, value).commit();
-     }
+    static void savedStringInSharedPreference(Context context, String key, String value) {
+        SharedPreferences sharedPref = context.getSharedPreferences("RCSHAREDPREF", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString(key, value).commit();
+    }
 
-     static String getStringValueFromSharedPreference(Context context, String key) {
+    static String getStringValueFromSharedPreference(Context context, String key) {
         SharedPreferences sharedPref = context.getSharedPreferences("RCSHAREDPREF", Context.MODE_PRIVATE);
         return sharedPref.getString(key, null);
     }
