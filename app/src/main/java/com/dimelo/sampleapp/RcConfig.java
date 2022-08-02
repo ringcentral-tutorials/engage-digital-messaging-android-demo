@@ -48,22 +48,24 @@ public class RcConfig {
             dimelo.setUserIdentifier(userIdVal);
         }
 
-        // if (isHmsAvailable(context)) {
-        //     dimelo.setPushNotificationService("hms");
-        // } else {
-        //     FirebaseApp.initializeApp(context);
-        //     FirebaseMessaging.getInstance().getToken().addOnCompleteListener(new OnCompleteListener<String>() {
-        //         @Override
-        //         public void onComplete(Task<String> task) {
-        //             if (task.isSuccessful()) {
-        //                 String refreshedToken =  task.getResult();
-        //                 if (refreshedToken != null) {
-        //                     Dimelo.getInstance().setDeviceToken(refreshedToken);
-        //                 }
-        //             }
-        //         }
-        //     });
-        // }
+        /*
+        if (isHmsAvailable(context)) {
+            dimelo.setPushNotificationService("hms");
+        } else {
+            FirebaseApp.initializeApp(context);
+            FirebaseMessaging.getInstance().getToken().addOnCompleteListener(new OnCompleteListener<String>() {
+                @Override
+                public void onComplete(Task<String> task) {
+                    if (task.isSuccessful()) {
+                        String refreshedToken =  task.getResult();
+                        if (refreshedToken != null) {
+                            Dimelo.getInstance().setDeviceToken(refreshedToken);
+                        }
+                    }
+                }
+            });
+        }
+        */
 
         JSONObject authInfo = new JSONObject();
         try {
