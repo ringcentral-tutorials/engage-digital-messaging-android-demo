@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="dimelo_toolbar_title">Chat</string>
+    <string name="rc_attachment_img">Anhang</string>
+    <string name="rc_attachment_size_label_kilobyte_unit">KB</string>
+    <string name="rc_attachment_size_label_megabyte_unit">MB</string>
+    <string name="rc_back_to_all_chats">Alle Chats anzeigen</string>
+    <string name="rc_cancel_button_title">Abbrechen</string>
+    <string name="rc_failed_send_message">Die Nachricht konnte nicht gesendet werden</string>
+    <string name="rc_hint_input_text">Eine Nachricht schicken...</string>
+    <string name="rc_notification_reply_response">Deine Antwort</string>
+    <string name="rc_notification_reply_title">Antworten</string>
+    <string name="rc_permission_camera_explanation">Wir benötigen einen Zugriff auf die Kamera, um diese Funktion anbieten zu können</string>
+    <string name="rc_permission_explanation_title">Berechtigung benötigt</string>
+    <string name="rc_permission_library_explanation">Wir müssen auf den externen Speicher zugreifen, um Ihnen diese Funktion bereitzustellen. Tippen Sie bitte auf Einstellungen > Berechtigungen und aktivieren Sie \"Dateien und Medien\".</string>
+    <string name="rc_permission_location_explanation">Wir benötigen Ihre Standortinformationen, um Ihre aktuelle Position auf der ausgewählten Karte anzeigen zu lassen</string>
+    <string name="rc_reload_img">Erneut laden</string>
+    <string name="rc_retry_button_title">Wiederholen</string>
+    <string name="rc_row_gallery_img">Fotogalerie</string>
+    <string name="rc_select_attachment_img">Anhang auswählen</string>
+    <string name="rc_select_from_album_img">Foto aus einem Album auswählen</string>
+    <string name="rc_select_from_camera_img">Foto aufnehmen</string>
+    <string name="rc_select_from_map_img">Standort teilen</string>
+    <string name="rc_send_message_image">Senden</string>
+    <string name="rc_settings">Einstellungen</string>
+    <string name="rc_share">Teilen</string>
+    <string name="rc_threads_title">Chats</string>
+    <string name="rc_today">Heute</string>
+    <string name="rc_video_call_requested_status_message">You will be connected to a video call shortly</string>
+    <string name="rc_waiting_for_agent">Warten auf einen Agenten</string>
+    <string name="rc_you">Sie:</string>
+</resources>
