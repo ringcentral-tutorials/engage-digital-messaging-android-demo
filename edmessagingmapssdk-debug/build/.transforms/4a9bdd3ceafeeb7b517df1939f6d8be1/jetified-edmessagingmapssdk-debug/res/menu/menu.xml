@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/search"
+        android:icon="@drawable/rc_maps_search_icon"
+        android:title="@string/rc_search_menu_item_title"
+        app:iconTint="@color/rc_maps_navigation_bar_search_icon_color"
+        app:showAsAction="ifRoom" />
+</menu>

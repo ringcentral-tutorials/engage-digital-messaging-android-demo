@@ -1,0 +1,29 @@
+-keep class j$.util.function.BiFunction { *; }
+-keep class java.util.function.BiConsumer { *; }
+-keep class j$.util.Map { *; }
+-keep class j$.util.concurrent.ConcurrentHashMap {
+    void clear();
+    java.lang.Object get(java.lang.Object);
+    java.lang.Object putIfAbsent(java.lang.Object, java.lang.Object);
+    void <init>();
+}
+-keep class java.util.function.Function { *; }
+-keep class j$.util.function.BiConsumer { *; }
+-keep class j$.util.function.Function { *; }
+-keep class java.util.function.BiFunction {
+    java.util.function.BiFunction andThen(java.util.function.Function);
+    java.lang.Object apply(java.lang.Object, java.lang.Object);
+}
+-keep class j$.util.Map$-CC {
+    boolean $default$replace(java.util.Map, java.lang.Object, java.lang.Object, java.lang.Object);
+    void $default$forEach(java.util.Map, j$.util.function.BiConsumer);
+    java.lang.Object $default$computeIfAbsent(java.util.Map, java.lang.Object, j$.util.function.Function);
+    java.lang.Object $default$putIfAbsent(java.util.Map, java.lang.Object, java.lang.Object);
+    java.lang.Object $default$getOrDefault(java.util.Map, java.lang.Object, java.lang.Object);
+    java.lang.Object $default$replace(java.util.Map, java.lang.Object, java.lang.Object);
+    java.lang.Object $default$computeIfPresent(java.util.Map, java.lang.Object, j$.util.function.BiFunction);
+    java.lang.Object $default$compute(java.util.Map, java.lang.Object, j$.util.function.BiFunction);
+    boolean $default$remove(java.util.Map, java.lang.Object, java.lang.Object);
+    java.lang.Object $default$merge(java.util.Map, java.lang.Object, java.lang.Object, j$.util.function.BiFunction);
+    void $default$replaceAll(java.util.Map, j$.util.function.BiFunction);
+}

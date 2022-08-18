@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:gravity="center">
+
+    <include
+        android:id="@+id/rc_custom_toolbar"
+        android:visibility="gone"
+        layout="@layout/rc_custom_toolbar"/>
+
+    <ImageView
+        android:id="@+id/myToolbarBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</androidx.appcompat.widget.Toolbar>

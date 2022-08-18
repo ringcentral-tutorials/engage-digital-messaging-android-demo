@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/row_root"
+    style="@style/DimeloRowTheme"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/dimelo_list_row_horizontal_padding"
+    android:paddingRight="@dimen/dimelo_list_row_horizontal_padding">
+
+    <include
+        layout="@layout/dimelo_date_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_gravity="end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/dimelo_user_location_message_error_icon"
+            android:layout_gravity="center_vertical"
+            android:paddingRight="8dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/rc_error"/>
+        <include
+            layout="@layout/dimelo_row_message_location"
+            android:layout_width="220dp"
+            android:layout_height="140dp"
+            android:layout_gravity="end"
+            android:visibility="gone"/>
+
+        <include
+            layout="@layout/dimelo_row_message_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end" />
+
+    </LinearLayout>
+
+</LinearLayout>
