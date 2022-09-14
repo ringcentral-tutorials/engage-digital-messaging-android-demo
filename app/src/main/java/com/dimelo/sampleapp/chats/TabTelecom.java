@@ -6,6 +6,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -84,7 +85,7 @@ public class TabTelecom extends Fragment implements SampleDimeloTab {
 
     private void customize(){
         RcFragment.Customization customisation = mDimeloChat.getCustomization();
-        customisation.backgroundColor = getResources().getColor(R.color.purple_500);
+        customisation.backgroundColor = getResources().getColor(R.color.backgroundColor);
         customisation.inputbarBackgroundColor = getResources().getColor(R.color.purple_50);
         customisation.userMessageTextColor = Color.WHITE;
         customisation.agentMessageTextColor = Color.BLACK;
@@ -93,7 +94,6 @@ public class TabTelecom extends Fragment implements SampleDimeloTab {
         customisation.systemMessageTextColor = Color.BLACK;
         customisation.dateTextColor = Color.RED;
         customisation.dateFont = Typeface.DEFAULT_BOLD;
-        customisation.hourTimeTextColor = Color.WHITE;
         customisation.createNewThreadBackgroundColor = Color.RED;
         int paddingReplies = (int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, getResources().getDimension(R.dimen.rc_quick_replies_padding), getResources().getDisplayMetrics());
         customisation.quickRepliesItemPadding = new RcFragment.Customization.Padding(paddingReplies, paddingReplies, paddingReplies, paddingReplies);
@@ -121,11 +121,11 @@ public class TabTelecom extends Fragment implements SampleDimeloTab {
         customisation.agentStructuredMessageTitleFont = Typeface.DEFAULT_BOLD;
         customisation.agentStructuredMessageTitleColor = Color.BLUE;
         customisation.agentStructuredMessageSubtitleColor = Color.RED;
-        customisation.agentStructuredMessageUrlColor = Color.RED;
-        customisation.agentStructuredMessageItemColor = Color.RED;
+        customisation.agentStructuredMessageUrlColor = ResourcesCompat.getColor(getResources(), R.color.brown_500, null);
+        customisation.agentStructuredMessageItemColor = ResourcesCompat.getColor(getResources(), R.color.brown_500, null);
         customisation.agentStructuredMessageItemTappedColor = Color.BLUE;
-        customisation.setBackToAllChatsImage(R.drawable.back_all_chat);
-        customisation.setLockedThreadImage(R.drawable.back_all_chat);
+        customisation.setBackToAllChatsImage(R.drawable.bank_icon);
+        customisation.setLockedThreadImage(R.drawable.bank_icon);
         customisation.apply();
     }
 
