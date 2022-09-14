@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.ViewFlipper;
 import android.util.Log;
 
@@ -55,6 +56,8 @@ public class TabBank extends Fragment implements SampleDimeloTab {
     public void onViewCreated(final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         FragmentManager childFragmentManager = getChildFragmentManager();
+        TextView versionName = view.findViewById(R.id.versionName);
+        versionName.setText(getString(R.string.rc_sdk_version) + com.dimelo.dimelosdk.BuildConfig.VERSION_NAME);
         mDimeloChat = (RcFragment)childFragmentManager.findFragmentByTag("dimelo_bank_chat");
         if (mDimeloChat == null) {
             mDimeloChat = Dimelo.getInstance().newRcFragment();

@@ -89,6 +89,14 @@
                 android:layout_height="wrap_content"
                 android:text="Live Support" />
 
+
+            <TextView
+                android:layout_weight="1"
+                android:id="@+id/versionName"
+                android:textSize="@dimen/abc_text_size_large_material"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
             <Space
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
