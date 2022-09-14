@@ -20,7 +20,6 @@ import com.dimelo.dimelosdk.main.RcFragment;
 import com.dimelo.dimelosdk.main.Dimelo;
 import com.dimelo.sampleapp.RcConfig;
 import com.dimelo.sampleapp.R;
-
 import java.text.SimpleDateFormat;
 
 public class TabTelecom extends Fragment implements SampleDimeloTab {
