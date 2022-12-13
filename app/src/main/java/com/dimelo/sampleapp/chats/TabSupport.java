@@ -41,6 +41,7 @@ public class TabSupport extends Fragment implements SampleDimeloTab {
             fragmentTransaction.commit();
         }
 
+        mDimeloChat.setUserVisibleHint(false);
         customize();
     }
 
@@ -65,6 +66,11 @@ public class TabSupport extends Fragment implements SampleDimeloTab {
 
     @Override
     public boolean isHandlingBack() {
+        if (isVisible()) {
+            mDimeloChat.setUserVisibleHint(false);
+            return true;
+        }
+
         return false;
     }
 
@@ -89,5 +95,11 @@ public class TabSupport extends Fragment implements SampleDimeloTab {
         mDimeloChat.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
+    public void rcFragmentSetUserVisibleHint(boolean hint) {
+        if (mDimeloChat == null) {
+            return;
+        }
 
+        mDimeloChat.setUserVisibleHint(hint);
+    }
 }
