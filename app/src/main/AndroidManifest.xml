@@ -15,9 +15,11 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- or use ACCESS_COARSE_LOCATION -->
 
     <!-- Gallery -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
 
     <!-- Notifications -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     <uses-permission android:name="com.dimelo.sampleapp.permission.C2D_MESSAGE" />

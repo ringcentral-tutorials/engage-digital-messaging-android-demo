@@ -273,6 +273,7 @@
     <color name="rc_threads_list_date_text_color">#A1A1A1</color>
     <color name="rc_threads_list_message_text_color">@color/black</color>
     <color name="rc_threads_list_separator_color">#E7E7E7</color>
+    <color name="rc_video_call_requested_status_message_text_color">@color/grey_400</color>
     <color name="rc_web_view_Header_background_color">@color/white</color>
     <color name="rc_web_view_body_background_color">@color/white</color>
     <color name="rc_web_view_close_button_icon_color">@color/black</color>
@@ -401,6 +402,7 @@
     <dimen name="rc_agent_time_right_padding">0dp</dimen>
     <dimen name="rc_agent_time_text_size">@dimen/dimelo_agent_name_text_size</dimen>
     <dimen name="rc_agent_time_top_padding">0dp</dimen>
+    <dimen name="rc_attachement_icon_right_padding">10dp</dimen>
     <dimen name="rc_avatar_carousel_vertical_spacing">2dp</dimen>
     <dimen name="rc_avatar_image_size">24dp</dimen>
     <dimen name="rc_back_to_all_chats_text_size">20sp</dimen>
@@ -440,7 +442,11 @@
     <dimen name="rc_threads_list_company_message_title_text_size">20sp</dimen>
     <dimen name="rc_threads_list_date_text_size">12sp</dimen>
     <dimen name="rc_threads_list_message_text_size">14sp</dimen>
+    <dimen name="rc_video_call_requested_status_message_text_size">12sp</dimen>
+    <dimen name="rc_video_date_margin">6dp</dimen>
+    <dimen name="rc_video_margin">10dp</dimen>
     <dimen name="rc_web_view_title_text_size">18sp</dimen>
+    <item name="rc_better_movement_method_highlight_background_span" type="id"/>
     <string name="dimelo_toolbar_title">Chat</string>
     <string name="rc_attachment_img">Attachment</string>
     <string name="rc_attachment_size_label_kilobyte_unit">KB</string>
@@ -460,6 +466,7 @@
     <string name="rc_retry_button_title">Resend</string>
     <string name="rc_row_gallery_img">Picture Gallery</string>
     <string name="rc_select_attachment_img">Select Attachment</string>
+    <string name="rc_select_document_file">Document</string>
     <string name="rc_select_from_album_img">Select photo from Album</string>
     <string name="rc_select_from_camera_img">Take picture</string>
     <string name="rc_select_from_map_img">Share location</string>
@@ -468,6 +475,7 @@
     <string name="rc_share">Share</string>
     <string name="rc_threads_title">Chats</string>
     <string name="rc_today">Today</string>
+    <string name="rc_video_call_requested_status_message">You will be connected to a video call shortly</string>
     <string name="rc_waiting_for_agent">Waiting for agent</string>
     <string name="rc_you">You:</string>
     <style name="DimeloImageRowTheme" parent="DimeloTheme">

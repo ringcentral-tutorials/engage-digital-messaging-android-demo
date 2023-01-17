@@ -3,11 +3,11 @@ apply plugin: 'com.android.application'
 // apply plugin: "com.huawei.agconnect"
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion 33
     defaultConfig {
         applicationId "com.dimelo.sampleapp"
         minSdkVersion 21
-        targetSdkVersion 31
+        targetSdkVersion 33
         versionCode 6
         versionName "1.1"
         multiDexEnabled true

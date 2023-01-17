@@ -44,7 +44,7 @@
                 android:layout_gravity="bottom"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginRight="10dp"
+                android:layout_marginRight="@dimen/rc_attachement_icon_right_padding"
                 android:layout_marginBottom="21dp"
                 android:background="?attr/selectableItemBackground"
                 android:clickable="true"
@@ -57,6 +57,25 @@
                 android:theme="@style/dimelo_dark_ripple"
                 tools:ignore="PrivateResource" />
 
+            <ImageView
+                android:id="@+id/send_video_call_request_button"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="21dp"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:src="@drawable/rc_video_call_request_button_image"
+                android:theme="@style/dimelo_dark_ripple"
+                tools:ignore="PrivateResource" />
+
             <EditText
                 android:id="@+id/dimelo_message_field"
                 android:layout_width="0px"
@@ -65,7 +84,9 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginBottom="16dp"
+                android:layout_toLeftOf="@+id/sendbutton"
                 android:layout_weight="1"
+                android:animateLayoutChanges="true"
                 android:background="@drawable/dimelo_edit_text_background"
                 android:gravity="start|center_vertical"
                 android:hint="@string/rc_hint_input_text"
@@ -80,8 +101,10 @@
                 android:textSize="@dimen/dimelo_message_field_text_size" />
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/sendbutton"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
+                android:layout_alignParentRight="true"
                 android:layout_gravity="bottom"
                 android:layout_marginTop="16dp"
                 android:layout_marginRight="16dp"
@@ -108,14 +131,12 @@
 
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
-
         </LinearLayout>
-
     </LinearLayout>
 
     <include
-        android:visibility="gone"
-        layout="@layout/rc_toolbar_fragment"/>
+        layout="@layout/rc_toolbar_fragment"
+        android:visibility="gone" />
 
     <RelativeLayout
         android:id="@+id/footer"
@@ -134,39 +155,43 @@
             android:paddingLeft="10dp">
 
             <ImageView
+                android:id="@+id/photo_camera_image_view"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginBottom="5dp"
+                android:background="?attr/selectableItemBackground"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:src="@drawable/ic_photo_camera_white"
+                android:theme="@style/dimelo_dark_ripple" />
+
+            <ImageView
                 android:id="@+id/gallery_image_view"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:layout_marginRight="4dp"
                 android:layout_marginBottom="5dp"
                 android:background="?attr/selectableItemBackground"
-                android:paddingLeft="0dp"
                 android:paddingTop="5dp"
-                android:paddingRight="0dp"
                 android:paddingBottom="5dp"
                 android:src="@drawable/ic_photo_white"
                 android:theme="@style/dimelo_dark_ripple" />
 
-
             <ImageView
-                android:id="@+id/photo_camera_image_view"
-
+                android:id="@+id/my_document_image_view"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:layout_marginRight="4dp"
                 android:layout_marginBottom="5dp"
                 android:background="?attr/selectableItemBackground"
-                android:paddingLeft="0dp"
                 android:paddingTop="5dp"
-                android:paddingRight="0dp"
                 android:paddingBottom="5dp"
-                android:src="@drawable/ic_photo_camera_white"
+                android:src="@drawable/ic_document_icon"
                 android:theme="@style/dimelo_dark_ripple" />
-
 
             <ImageView
                 android:id="@+id/my_location_image_view"
-
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:layout_marginRight="4dp"
@@ -180,7 +205,6 @@
                 android:theme="@style/dimelo_dark_ripple" />
 
         </LinearLayout>
-
 
         <FrameLayout
             android:id="@+id/quick_gallery_selection_view"
@@ -208,8 +232,6 @@
                 app:elevation="4dp"
                 app:pressedTranslationZ="8dp" />
         </FrameLayout>
-
     </RelativeLayout>
-
-
 </com.dimelo.dimelosdk.utilities.DetectKeyboardCoordinatorLayout>
+
