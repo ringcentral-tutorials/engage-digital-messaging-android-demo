@@ -47,12 +47,24 @@ public class SlidingTabFragment extends Fragment {
 
         // Creating The ViewPagerAdapter and Passing Fragment Manager, Titles fot the Tabs and Number Of Tabs.
         mViewPagerAdapter = new ViewPagerAdapter(getFragmentManager(), tabTitles, iconIds, selectedIconIds);
-//            mViewPagerAdapter = new ViewPagerAdapter(getFragmentManager(), tabTitles, iconIds, selectedIconIds);
 
         // Assigning ViewPager View and setting the adapter
         mViewPager = (ViewPager) view.findViewById(R.id.pager);
         mViewPager.setAdapter(mViewPagerAdapter);
         mViewPager.setOffscreenPageLimit(4);
+
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
+
+            @Override
+            public void onPageSelected(int position) {
+                support.rcFragmentSetUserVisibleHint(position == 2);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {}
+        });
 
         // Assiging the Sliding Tab Layout View
         SlidingTabLayout mSlidingTabLayout = (SlidingTabLayout) view.findViewById(R.id.sliding_tabs);
