@@ -1560,8 +1560,9 @@ int color quantum_yellowA200 0x0
 int color quantum_yellowA400 0x0
 int color quantum_yellowA700 0x0
 int color radiobutton_themeable_attribute_color 0x0
+int color rc_maps_navigation_bar_back_icon_color 0x0
 int color rc_maps_navigation_bar_backgroung_color 0x0
-int color rc_maps_navigation_bar_icon_color 0x0
+int color rc_maps_navigation_bar_search_icon_color 0x0
 int color rc_maps_navigation_bar_title_color 0x0
 int color rc_maps_send_button_background_color 0x0
 int color rc_maps_send_button_icon_color 0x0
@@ -1998,7 +1999,7 @@ int dimen places_autocomplete_search_bar_padding 0x0
 int dimen places_autocomplete_search_input_padding 0x0
 int dimen places_autocomplete_search_input_text 0x0
 int dimen places_autocomplete_vertical_dropdown 0x0
-int dimen rc_navigation_bar_title_text_size 0x0
+int dimen rc_maps_navigation_bar_title_text_size 0x0
 int dimen rc_send_message_title_size 0x0
 int dimen test_mtrl_calendar_day_cornerSize 0x0
 int dimen test_navigation_bar_active_item_max_width 0x0
@@ -2909,12 +2910,11 @@ int string places_cancel 0x0
 int string places_powered_by_google 0x0
 int string places_search_error 0x0
 int string places_try_again 0x0
-int string rc_auto_complete_hint_text 0x0
-int string rc_navigation_bar_title_text 0x0
+int string rc_maps_auto_complete_hint_text 0x0
+int string rc_maps_navigation_bar_title_text 0x0
 int string rc_no_connection_error 0x0
 int string rc_search_menu_item_title 0x0
 int string rc_send_location_error 0x0
-int string rc_title_activity_maps 0x0
 int string search_menu_title 0x0
 int string status_bar_notification_info_overflow 0x0
 int style AlertDialog_AppCompat 0x0

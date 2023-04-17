@@ -19,6 +19,7 @@
     <string name="rc_retry_button_title">Réessayer</string>
     <string name="rc_row_gallery_img">Galerie d\'images</string>
     <string name="rc_select_attachment_img">Choisir une piece jointe</string>
+    <string name="rc_select_document_file">Document</string>
     <string name="rc_select_from_album_img">Choisir une photo depuis un album</string>
     <string name="rc_select_from_camera_img">Prendre une photo</string>
     <string name="rc_select_from_map_img">Partager une position</string>

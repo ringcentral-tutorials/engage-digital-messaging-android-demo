@@ -155,31 +155,39 @@
             android:paddingLeft="10dp">
 
             <ImageView
-                android:id="@+id/gallery_image_view"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:layout_marginRight="4dp"
-                android:layout_marginBottom="5dp"
-                android:background="?attr/selectableItemBackground"
-                android:paddingLeft="0dp"
-                android:paddingTop="5dp"
-                android:paddingRight="0dp"
-                android:paddingBottom="5dp"
-                android:src="@drawable/ic_photo_white"
-                android:theme="@style/dimelo_dark_ripple" />
-
-            <ImageView
                 android:id="@+id/photo_camera_image_view"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:layout_marginRight="4dp"
                 android:layout_marginBottom="5dp"
                 android:background="?attr/selectableItemBackground"
-                android:paddingLeft="0dp"
                 android:paddingTop="5dp"
-                android:paddingRight="0dp"
                 android:paddingBottom="5dp"
                 android:src="@drawable/ic_photo_camera_white"
+                android:theme="@style/dimelo_dark_ripple" />
+
+            <ImageView
+                android:id="@+id/gallery_image_view"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginBottom="5dp"
+                android:background="?attr/selectableItemBackground"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:src="@drawable/ic_photo_white"
+                android:theme="@style/dimelo_dark_ripple" />
+
+            <ImageView
+                android:id="@+id/my_document_image_view"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginBottom="5dp"
+                android:background="?attr/selectableItemBackground"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:src="@drawable/ic_document_icon"
                 android:theme="@style/dimelo_dark_ripple" />
 
             <ImageView
