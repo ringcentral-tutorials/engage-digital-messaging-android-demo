@@ -59,7 +59,9 @@ public class SlidingTabFragment extends Fragment {
 
             @Override
             public void onPageSelected(int position) {
-                support.rcFragmentSetUserVisibleHint(position == 2);
+                if (support != null) {
+                    support.rcFragmentSetUserVisibleHint(position == 2);
+                }
             }
 
             @Override
