@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:clipChildren="false"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:background="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image"
+            android:adjustViewBounds="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+             />
+
+        <FrameLayout
+            android:id="@+id/map_container"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent">
+            <!-- MapView is now inserted programmatically to make the GMS dependency optional -->
+            <!-- Check StartAndValidateAttachmentProvider & DimeloChatAdapter -->
+            <!--<com.google.android.gms.maps.MapView-->
+            <!--xmlns:map="http://schemas.android.com/apk/res-auto"-->
+            <!--map:liteMode="true"-->
+            <!--android:id="@+id/map"-->
+            <!--android:visibility="gone"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"/>-->
+        </FrameLayout>
+
+    </FrameLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/validate_image_view"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        app:elevation="4dp"
+        app:pressedTranslationZ="8dp"
+        android:src="@drawable/dimelo_send_button" />
+
+</RelativeLayout>

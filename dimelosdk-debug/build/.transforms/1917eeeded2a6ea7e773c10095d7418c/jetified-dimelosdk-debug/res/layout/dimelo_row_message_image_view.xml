@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ViewFlipper xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/attachment_layout"
+    style="@style/DimeloImageRowTheme"
+    android:layout_width="@dimen/dimelo_message_bubble_max_width"
+    android:layout_height="@dimen/rc_chat_attachment_height">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center">
+
+        <ProgressBar
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center" />
+
+    </FrameLayout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ProgressBar
+            android:id="@+id/progress_spinner"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_gravity="center"
+            android:layout_marginRight="8dp"
+            android:indeterminateTint="@color/rc_progress_bar_tint_color"
+            android:indeterminateTintMode="src_in" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|top"
+            app:cardBackgroundColor="@color/transparent"
+            app:cardElevation="0dp">
+
+            <FrameLayout
+                android:id="@+id/image_bubble_background"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent">
+
+                <!-- This imageView has width and height modified programmatically -->
+                <FrameLayout
+                    android:id="@+id/big_cell_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/rc_chat_attachment_height"
+                            android:layout_gravity="center_horizontal"
+                            android:adjustViewBounds="true"
+                            android:background="@android:color/white"
+                            android:maxWidth="@dimen/dimelo_message_bubble_max_width" />
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:id="@+id/gif_view"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignStart="@+id/image"
+                            android:layout_alignLeft="@+id/image"
+                            android:layout_alignEnd="@+id/image"
+                            android:layout_alignRight="@+id/image"
+                            android:layout_alignParentBottom="true"
+                            android:visibility="gone">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/gif_label"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/gradient"
+                                android:maxLines="1"
+                                android:paddingLeft="9dp"
+                                android:paddingTop="4dp"
+                                android:paddingBottom="4dp"
+                                android:text="GIF"
+                                android:textColor="@android:color/white"
+                                android:visibility="visible" />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    </RelativeLayout>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/footerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="75dp"
+                        android:layout_gravity="bottom"
+                        android:layout_margin="4dp"
+                        android:background="@drawable/gradient"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/icon"
+                            android:layout_width="33dp"
+                            android:layout_height="33dp"
+                            android:layout_gravity="bottom"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginBottom="3dp"
+                            android:src="@drawable/pdf_icon" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/file_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_marginBottom="1dp"
+                            android:ellipsize="middle"
+                            android:fontFamily="sans-serif-medium"
+                            android:textColor="@android:color/white"
+                            android:singleLine="true" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </FrameLayout>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/small_cell_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="13dp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/second_icon"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="7dp" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/second_file_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="middle"
+                            android:fontFamily="sans-serif-medium"
+                            android:textColor="@android:color/black"
+                            android:singleLine="true" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/size"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-1dp"
+                            android:ellipsize="middle"
+                            android:textColor="@android:color/black"
+                            android:singleLine="true" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </FrameLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/reload_image"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_replay_black_24dp" />
+
+</ViewFlipper>

@@ -129,6 +129,7 @@ public class TabBank extends Fragment implements SampleDimeloTab {
     private void customize(){
         RcFragment.Customization customisation = mDimeloChat.getCustomization();
         customisation.backgroundColor = Color.WHITE;
+        customisation.showScrollToBottomButton = true;
         customisation.apply();
     }
 

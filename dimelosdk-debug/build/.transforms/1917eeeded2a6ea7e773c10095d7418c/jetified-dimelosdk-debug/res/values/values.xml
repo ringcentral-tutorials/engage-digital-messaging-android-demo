@@ -1,0 +1,568 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="amber_100">#FFECB3</color>
+    <color name="amber_200">#FFE082</color>
+    <color name="amber_300">#FFD54F</color>
+    <color name="amber_400">#FFCA28</color>
+    <color name="amber_50">#FFF8E1</color>
+    <color name="amber_500">#FFC107</color>
+    <color name="amber_600">#FFB300</color>
+    <color name="amber_700">#FFA000</color>
+    <color name="amber_800">#FF8F00</color>
+    <color name="amber_900">#FF6F00</color>
+    <color name="amber_A100">#FFE57F</color>
+    <color name="amber_A200">#FFD740</color>
+    <color name="amber_A400">#FFC400</color>
+    <color name="amber_A700">#FFAB00</color>
+    <color name="black">#000000</color>
+    <color name="blue_100">#BBDEFB</color>
+    <color name="blue_200">#90CAF9</color>
+    <color name="blue_300">#64B5F6</color>
+    <color name="blue_400">#42A5F5</color>
+    <color name="blue_50">#E3F2FD</color>
+    <color name="blue_500">#2196F3</color>
+    <color name="blue_600">#1E88E5</color>
+    <color name="blue_700">#1976D2</color>
+    <color name="blue_800">#1565C0</color>
+    <color name="blue_900">#0D47A1</color>
+    <color name="blue_A100">#82B1FF</color>
+    <color name="blue_A200">#448AFF</color>
+    <color name="blue_A400">#2979FF</color>
+    <color name="blue_A700">#2962FF</color>
+    <color name="blue_grey_100">#CFD8DC</color>
+    <color name="blue_grey_200">#B0BEC5</color>
+    <color name="blue_grey_300">#90A4AE</color>
+    <color name="blue_grey_400">#78909C</color>
+    <color name="blue_grey_50">#ECEFF1</color>
+    <color name="blue_grey_500">#607D8B</color>
+    <color name="blue_grey_600">#546E7A</color>
+    <color name="blue_grey_700">#455A64</color>
+    <color name="blue_grey_800">#37474F</color>
+    <color name="blue_grey_900">#263238</color>
+    <color name="brown_100">#D7CCC8</color>
+    <color name="brown_200">#BCAAA4</color>
+    <color name="brown_300">#A1887F</color>
+    <color name="brown_400">#8D6E63</color>
+    <color name="brown_50">#EFEBE9</color>
+    <color name="brown_500">#795548</color>
+    <color name="brown_600">#6D4C41</color>
+    <color name="brown_700">#5D4037</color>
+    <color name="brown_800">#4E342E</color>
+    <color name="brown_900">#3E2723</color>
+    <color name="cyan_100">#B2EBF2</color>
+    <color name="cyan_200">#80DEEA</color>
+    <color name="cyan_300">#4DD0E1</color>
+    <color name="cyan_400">#26C6DA</color>
+    <color name="cyan_50">#E0F7FA</color>
+    <color name="cyan_500">#00BCD4</color>
+    <color name="cyan_600">#00ACC1</color>
+    <color name="cyan_700">#0097A7</color>
+    <color name="cyan_800">#00838F</color>
+    <color name="cyan_900">#006064</color>
+    <color name="cyan_A100">#84FFFF</color>
+    <color name="cyan_A200">#18FFFF</color>
+    <color name="cyan_A400">#00E5FF</color>
+    <color name="cyan_A700">#00B8D4</color>
+    <color name="dark_purple_100">#D1C4E9</color>
+    <color name="dark_purple_200">#B39DDB</color>
+    <color name="dark_purple_300">#9575CD</color>
+    <color name="dark_purple_400">#7E57C2</color>
+    <color name="dark_purple_50">#EDE7F6</color>
+    <color name="dark_purple_500">#673AB7</color>
+    <color name="dark_purple_600">#5E35B1</color>
+    <color name="dark_purple_700">#512DA8</color>
+    <color name="dark_purple_800">#4527A0</color>
+    <color name="dark_purple_900">#311B92</color>
+    <color name="dark_purple_A100">#B388FF</color>
+    <color name="dark_purple_A200">#7C4DFF</color>
+    <color name="dark_purple_A400">#651FFF</color>
+    <color name="dark_purple_A700">#6200EA</color>
+    <color name="deep_orange_100">#FFCCBC</color>
+    <color name="deep_orange_200">#FFAB91</color>
+    <color name="deep_orange_300">#FF8A65</color>
+    <color name="deep_orange_400">#FF7043</color>
+    <color name="deep_orange_50">#FBE9E7</color>
+    <color name="deep_orange_500">#FF5722</color>
+    <color name="deep_orange_600">#F4511E</color>
+    <color name="deep_orange_700">#E64A19</color>
+    <color name="deep_orange_800">#D84315</color>
+    <color name="deep_orange_900">#BF360C</color>
+    <color name="deep_orange_A100">#FF9E80</color>
+    <color name="deep_orange_A200">#FF6E40</color>
+    <color name="deep_orange_A400">#FF3D00</color>
+    <color name="deep_orange_A700">#DD2C00</color>
+    <color name="dimelo_agent_attachment_bubble_color">@color/dimelo_agent_bubble_color</color>
+    <color name="dimelo_agent_bubble_color">@color/dimelo_grey</color>
+    <color name="dimelo_agent_message_text_color">@color/black</color>
+    <color name="dimelo_agent_name_color">#a1a1a1</color>
+    <color name="dimelo_background_color">@color/white</color>
+    <color name="dimelo_bottom_sheet_icons_disabled_color">@color/grey_400</color>
+    <color name="dimelo_color_primary">@color/blue_500</color>
+    <color name="dimelo_color_primary_dark">@color/blue_700</color>
+    <color name="dimelo_date_color">@color/dimelo_agent_name_color</color>
+    <color name="dimelo_error_icon_color">@color/red_error_icon</color>
+    <color name="dimelo_grey">#ecf0f6</color>
+    <color name="dimelo_inputbar_background_color">@color/white</color>
+    <color name="dimelo_navigation_bar_item_tint_color">@color/white</color>
+    <color name="dimelo_navigation_bar_title_color">@color/white</color>
+    <color name="dimelo_row_background_color">@color/transparent</color>
+    <color name="dimelo_send_button_disabled_color">@color/grey_200</color>
+    <color name="dimelo_system_attachment_bubble_color">@color/dimelo_system_bubble_color</color>
+    <color name="dimelo_system_bubble_color">@color/dimelo_grey</color>
+    <color name="dimelo_system_message_text_color">@color/black</color>
+    <color name="dimelo_user_attachment_bubble_color">@color/dimelo_user_bubble_color</color>
+    <color name="dimelo_user_bubble_color">#4481eb</color>
+    <color name="dimelo_user_message_text_color">@color/white</color>
+    <color name="green_100">#C8E6C9</color>
+    <color name="green_200">#A5D6A7</color>
+    <color name="green_300">#81C784</color>
+    <color name="green_400">#66BB6A</color>
+    <color name="green_50">#E8F5E9</color>
+    <color name="green_500">#4CAF50</color>
+    <color name="green_600">#43A047</color>
+    <color name="green_700">#388E3C</color>
+    <color name="green_800">#2E7D32</color>
+    <color name="green_900">#1B5E20</color>
+    <color name="green_A100">#B9F6CA</color>
+    <color name="green_A200">#69F0AE</color>
+    <color name="green_A400">#00E676</color>
+    <color name="green_A700">#00C853</color>
+    <color name="grey_100">#F5F5F5</color>
+    <color name="grey_200">#E7E7E7</color>
+    <color name="grey_300">#E0E0E0</color>
+    <color name="grey_400">#BDBDBD</color>
+    <color name="grey_50">#FAFAFA</color>
+    <color name="grey_500">#9E9E9E</color>
+    <color name="grey_600">#757575</color>
+    <color name="grey_700">#616161</color>
+    <color name="grey_800">#424242</color>
+    <color name="grey_900">#212121</color>
+    <color name="indigo_100">#C5CAE9</color>
+    <color name="indigo_200">#9FA8DA</color>
+    <color name="indigo_300">#7986CB</color>
+    <color name="indigo_400">#5C6BC0</color>
+    <color name="indigo_50">#E8EAF6</color>
+    <color name="indigo_500">#3F51B5</color>
+    <color name="indigo_600">#3949AB</color>
+    <color name="indigo_700">#303F9F</color>
+    <color name="indigo_800">#283593</color>
+    <color name="indigo_900">#1A237E</color>
+    <color name="indigo_A100">#8C9EFF</color>
+    <color name="indigo_A200">#536DFE</color>
+    <color name="indigo_A400">#3D5AFE</color>
+    <color name="indigo_A700">#304FFE</color>
+    <color name="light_blue_100">#B3E5FC</color>
+    <color name="light_blue_200">#81D4FA</color>
+    <color name="light_blue_300">#4FC3F7</color>
+    <color name="light_blue_400">#29B6F6</color>
+    <color name="light_blue_50">#E1F5FE</color>
+    <color name="light_blue_500">#03A9F4</color>
+    <color name="light_blue_600">#039BE5</color>
+    <color name="light_blue_700">#0288D1</color>
+    <color name="light_blue_800">#0277BD</color>
+    <color name="light_blue_900">#01579B</color>
+    <color name="light_blue_A100">#80D8FF</color>
+    <color name="light_blue_A200">#40C4FF</color>
+    <color name="light_blue_A400">#00B0FF</color>
+    <color name="light_blue_A700">#0091EA</color>
+    <color name="light_green_100">#DCEDC8</color>
+    <color name="light_green_200">#C5E1A5</color>
+    <color name="light_green_300">#AED581</color>
+    <color name="light_green_400">#9CCC65</color>
+    <color name="light_green_50">#F1F8E9</color>
+    <color name="light_green_500">#8BC34A</color>
+    <color name="light_green_600">#7CB342</color>
+    <color name="light_green_700">#689F38</color>
+    <color name="light_green_800">#558B2F</color>
+    <color name="light_green_900">#33691E</color>
+    <color name="light_green_A100">#CCFF90</color>
+    <color name="light_green_A200">#B2FF59</color>
+    <color name="light_green_A400">#76FF03</color>
+    <color name="light_green_A700">#64DD17</color>
+    <color name="lime_100">#F0F4C3</color>
+    <color name="lime_200">#E6EE9C</color>
+    <color name="lime_300">#DCE775</color>
+    <color name="lime_400">#D4E157</color>
+    <color name="lime_50">#F9FBE7</color>
+    <color name="lime_500">#CDDC39</color>
+    <color name="lime_600">#C0CA33</color>
+    <color name="lime_700">#AFB42B</color>
+    <color name="lime_800">#9E9D24</color>
+    <color name="lime_900">#827717</color>
+    <color name="lime_A100">#F4FF81</color>
+    <color name="lime_A200">#EEFF41</color>
+    <color name="lime_A400">#C6FF00</color>
+    <color name="lime_A700">#AEEA00</color>
+    <color name="orange_100">#FFE0B2</color>
+    <color name="orange_200">#FFCC80</color>
+    <color name="orange_300">#FFB74D</color>
+    <color name="orange_400">#FFA726</color>
+    <color name="orange_50">#FFF3E0</color>
+    <color name="orange_500">#FF9800</color>
+    <color name="orange_600">#FB8C00</color>
+    <color name="orange_700">#F57C00</color>
+    <color name="orange_800">#EF6C00</color>
+    <color name="orange_900">#E65100</color>
+    <color name="orange_A100">#FFD180</color>
+    <color name="orange_A200">#FFAB40</color>
+    <color name="orange_A400">#FF9100</color>
+    <color name="orange_A700">#FF6D00</color>
+    <color name="pink_100">#F8BBD0</color>
+    <color name="pink_200">#F48FB1</color>
+    <color name="pink_300">#F06292</color>
+    <color name="pink_400">#EC407A</color>
+    <color name="pink_50">#FCE4EC</color>
+    <color name="pink_500">#E91E63</color>
+    <color name="pink_600">#D81B60</color>
+    <color name="pink_700">#C2185B</color>
+    <color name="pink_800">#AD1457</color>
+    <color name="pink_900">#880E4F</color>
+    <color name="pink_A100">#FF80AB</color>
+    <color name="pink_A200">#FF4081</color>
+    <color name="pink_A400">#F50057</color>
+    <color name="pink_A700">#C51162</color>
+    <color name="purple_100">#E1BEE7</color>
+    <color name="purple_200">#CE93D8</color>
+    <color name="purple_300">#BA68C8</color>
+    <color name="purple_400">#AB47BC</color>
+    <color name="purple_50">#F3E5F5</color>
+    <color name="purple_500">#9C27B0</color>
+    <color name="purple_600">#8E24AA</color>
+    <color name="purple_700">#7B1FA2</color>
+    <color name="purple_800">#6A1B9A</color>
+    <color name="purple_900">#4A148C</color>
+    <color name="purple_A100">#EA80FC</color>
+    <color name="purple_A200">#E040FB</color>
+    <color name="purple_A400">#D500F9</color>
+    <color name="purple_A700">#AA00FF</color>
+    <color name="rc_agent_structured_message_body_background_color">#ECF0F6</color>
+    <color name="rc_agent_structured_message_item_background_color">@color/transparent</color>
+    <color name="rc_agent_structured_message_item_color">#4481EB</color>
+    <color name="rc_agent_structured_message_item_tapped_background_color">#1A258BFB</color>
+    <color name="rc_agent_structured_message_subtitle_color">#757575</color>
+    <color name="rc_agent_structured_message_title_color">@color/black</color>
+    <color name="rc_agent_structured_message_url_color">@color/dimelo_agent_name_color</color>
+    <color name="rc_agent_template_border_color">@color/rc_agent_structured_message_body_background_color</color>
+    <color name="rc_agent_template_with_image_body_background_color">@color/white</color>
+    <color name="rc_agent_time_color">@color/dimelo_agent_name_color</color>
+    <color name="rc_background_color_item_selected">#1FE8EFFC</color>
+    <color name="rc_badge_background_color">#F0512A</color>
+    <color name="rc_badge_text_color">@color/white</color>
+    <color name="rc_create_new_thread_background_color">#4481EB</color>
+    <color name="rc_create_new_thread_image_color">@color/white</color>
+    <color name="rc_delete_message_button_title_color">#FF0000</color>
+    <color name="rc_delete_message_confirmation_dialog_title_color">#212121</color>
+    <color name="rc_deleted_message_background_color">#1F4481EB</color>
+    <color name="rc_deleted_message_text_color">#757575</color>
+    <color name="rc_down_scroll_background_color">@color/white</color>
+    <color name="rc_fragment_header_color">#D94481eb</color>
+    <color name="rc_fragment_navigation_bar_selected_background_color">#804481eb</color>
+    <color name="rc_hour_time_text_color">@color/rc_agent_time_color</color>
+    <color name="rc_input_text_border_color">#d8d8d8</color>
+    <color name="rc_input_text_hint_color">@color/dimelo_agent_name_color</color>
+    <color name="rc_locked_thread_image_tint_color">#A1A1A1</color>
+    <color name="rc_open_gallery_background_color">#4481EB</color>
+    <color name="rc_open_gallery_icon_color">@color/white</color>
+    <color name="rc_progress_bar_tint_color">#4481EB</color>
+    <color name="rc_quick_Replies_background_color">#00ffffff</color>
+    <color name="rc_quick_Replies_tapped_background_color">#1A000000</color>
+    <color name="rc_quick_replies_border_color">#4481eb</color>
+    <color name="rc_quick_replies_tapped_border_color">#4481eb</color>
+    <color name="rc_quick_replies_tapped_text_color">#4481eb</color>
+    <color name="rc_quick_replies_text_color">#4481eb</color>
+    <color name="rc_scroll_down_image_color">#0091FF</color>
+    <color name="rc_selected_message_cell_background_color">#1F4481EB</color>
+    <color name="rc_threads_list_agent_name_text_color">#A1A1A1</color>
+    <color name="rc_threads_list_background_color">@color/white</color>
+    <color name="rc_threads_list_background_color_selection">@color/blue_grey_100</color>
+    <color name="rc_threads_list_company_message_background_color">#99EFEFF0</color>
+    <color name="rc_threads_list_company_message_subtitle_text_color">@color/grey_600</color>
+    <color name="rc_threads_list_company_message_title_text_color">@color/grey_900</color>
+    <color name="rc_threads_list_date_text_color">#A1A1A1</color>
+    <color name="rc_threads_list_message_text_color">@color/black</color>
+    <color name="rc_threads_list_separator_color">#E7E7E7</color>
+    <color name="rc_video_call_requested_status_message_text_color">@color/grey_400</color>
+    <color name="rc_web_view_Header_background_color">@color/white</color>
+    <color name="rc_web_view_body_background_color">@color/white</color>
+    <color name="rc_web_view_close_button_icon_color">@color/black</color>
+    <color name="rc_web_view_next_previous_button_icon_disabled_color">#D3D3D3</color>
+    <color name="rc_web_view_next_previous_button_icon_enabled_color">@color/black</color>
+    <color name="rc_web_view_progress_bar_color">@color/dimelo_user_bubble_color</color>
+    <color name="rc_web_view_title_text_color">@color/grey_900</color>
+    <color name="rc_welcome_message_text_color">@color/dimelo_agent_name_color</color>
+    <color name="red_100">#FFCDD2</color>
+    <color name="red_200">#EF9A9A</color>
+    <color name="red_300">#E57373</color>
+    <color name="red_400">#EF5350</color>
+    <color name="red_50">#FFEBEE</color>
+    <color name="red_500">#F44336</color>
+    <color name="red_600">#E53935</color>
+    <color name="red_700">#D32F2F</color>
+    <color name="red_800">#C62828</color>
+    <color name="red_900">#B71C1C</color>
+    <color name="red_A100">#FF8A80</color>
+    <color name="red_A200">#FF5252</color>
+    <color name="red_A400">#FF1744</color>
+    <color name="red_A700">#D50000</color>
+    <color name="red_error_icon">#F76161</color>
+    <color name="teal_100">#B2DFDB</color>
+    <color name="teal_200">#80CBC4</color>
+    <color name="teal_300">#4DB6AC</color>
+    <color name="teal_400">#26A69A</color>
+    <color name="teal_50">#E0F2F1</color>
+    <color name="teal_500">#009688</color>
+    <color name="teal_600">#00897B</color>
+    <color name="teal_700">#00796B</color>
+    <color name="teal_800">#00695C</color>
+    <color name="teal_900">#004D40</color>
+    <color name="teal_A100">#A7FFEB</color>
+    <color name="teal_A200">#64FFDA</color>
+    <color name="teal_A400">#1DE9B6</color>
+    <color name="teal_A700">#00BFA5</color>
+    <color name="transparent">#00000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="yellow_100">#FFF9C4</color>
+    <color name="yellow_200">#FFF59D</color>
+    <color name="yellow_300">#FFF176</color>
+    <color name="yellow_400">#FFEE58</color>
+    <color name="yellow_50">#FFFDE7</color>
+    <color name="yellow_500">#FFEB3B</color>
+    <color name="yellow_600">#FDD835</color>
+    <color name="yellow_700">#FBC02D</color>
+    <color name="yellow_800">#F9A825</color>
+    <color name="yellow_900">#F57F17</color>
+    <color name="yellow_A100">#FFFF8D</color>
+    <color name="yellow_A200">#FFFF00</color>
+    <color name="yellow_A400">#FFEA00</color>
+    <color name="yellow_A700">#FFD600</color>
+    <dimen name="dimelo_agent_attachment_bubble_bottom_padding">0dp</dimen>
+    <dimen name="dimelo_agent_attachment_bubble_left_padding">0dp</dimen>
+    <dimen name="dimelo_agent_attachment_bubble_right_padding">0dp</dimen>
+    <dimen name="dimelo_agent_attachment_bubble_top_padding">0dp</dimen>
+    <dimen name="dimelo_agent_message_bubble_bottom_padding">8dp</dimen>
+    <dimen name="dimelo_agent_message_bubble_left_padding">10dp</dimen>
+    <dimen name="dimelo_agent_message_bubble_right_padding">10dp</dimen>
+    <dimen name="dimelo_agent_message_bubble_top_padding">8dp</dimen>
+    <dimen name="dimelo_agent_name_bottom_padding">0dp</dimen>
+    <dimen name="dimelo_agent_name_left_padding">0dp</dimen>
+    <dimen name="dimelo_agent_name_right_padding">0dp</dimen>
+    <dimen name="dimelo_agent_name_text_size">14sp</dimen>
+    <dimen name="dimelo_agent_name_top_padding">0dp</dimen>
+    <dimen name="dimelo_date_text_size">16sp</dimen>
+    <dimen name="dimelo_default_text_size">17sp</dimen>
+    <dimen name="dimelo_footer_height">272dp</dimen>
+    <dimen name="dimelo_list_row_horizontal_padding">8dp</dimen>
+    <dimen name="dimelo_list_row_huge_separation">8dp</dimen>
+    <dimen name="dimelo_list_row_small_separation">8dp</dimen>
+    <dimen name="dimelo_message_bubble_max_width">300dp</dimen>
+    <dimen name="dimelo_message_field_text_size">@dimen/dimelo_default_text_size</dimen>
+    <dimen name="dimelo_message_text_size">@dimen/dimelo_default_text_size</dimen>
+    <dimen name="dimelo_system_attachment_bubble_bottom_padding">0dp</dimen>
+    <dimen name="dimelo_system_attachment_bubble_left_padding">0dp</dimen>
+    <dimen name="dimelo_system_attachment_bubble_right_padding">0dp</dimen>
+    <dimen name="dimelo_system_attachment_bubble_top_padding">0dp</dimen>
+    <dimen name="dimelo_system_message_bubble_bottom_padding">8dp</dimen>
+    <dimen name="dimelo_system_message_bubble_left_padding">10dp</dimen>
+    <dimen name="dimelo_system_message_bubble_right_padding">10dp</dimen>
+    <dimen name="dimelo_system_message_bubble_top_padding">8dp</dimen>
+    <dimen name="dimelo_system_message_text_size">@dimen/dimelo_default_text_size</dimen>
+    <dimen name="dimelo_user_attachment_bubble_bottom_padding">0dp</dimen>
+    <dimen name="dimelo_user_attachment_bubble_left_padding">0dp</dimen>
+    <dimen name="dimelo_user_attachment_bubble_right_padding">0dp</dimen>
+    <dimen name="dimelo_user_attachment_bubble_top_padding">0dp</dimen>
+    <dimen name="dimelo_user_message_bubble_bottom_padding">8dp</dimen>
+    <dimen name="dimelo_user_message_bubble_left_padding">10dp</dimen>
+    <dimen name="dimelo_user_message_bubble_right_padding">10dp</dimen>
+    <dimen name="dimelo_user_message_bubble_top_padding">8dp</dimen>
+    <dimen name="rc_agent_name_hour_spacing">4dp</dimen>
+    <dimen name="rc_agent_name_top_margin">0dp</dimen>
+    <dimen name="rc_agent_structured_message_body_bottom_padding">10dp</dimen>
+    <dimen name="rc_agent_structured_message_body_left_padding">8dp</dimen>
+    <dimen name="rc_agent_structured_message_body_right_padding">8dp</dimen>
+    <dimen name="rc_agent_structured_message_body_top_padding">10dp</dimen>
+    <dimen name="rc_agent_structured_message_item_bottom_padding">10dp</dimen>
+    <dimen name="rc_agent_structured_message_item_left_padding">15dp</dimen>
+    <dimen name="rc_agent_structured_message_item_right_padding">15dp</dimen>
+    <dimen name="rc_agent_structured_message_item_text_size">17sp</dimen>
+    <dimen name="rc_agent_structured_message_item_top_padding">10dp</dimen>
+    <dimen name="rc_agent_structured_message_subtitle_margin_top">10dp</dimen>
+    <dimen name="rc_agent_structured_message_subtitle_text_size">17sp</dimen>
+    <dimen name="rc_agent_structured_message_title_text_size">17sp</dimen>
+    <dimen name="rc_agent_structured_message_url_margin_top">10dp</dimen>
+    <dimen name="rc_agent_structured_message_url_text_size">15sp</dimen>
+    <dimen name="rc_agent_time_bottom_padding">0dp</dimen>
+    <dimen name="rc_agent_time_left_padding">0dp</dimen>
+    <dimen name="rc_agent_time_right_padding">0dp</dimen>
+    <dimen name="rc_agent_time_text_size">@dimen/dimelo_agent_name_text_size</dimen>
+    <dimen name="rc_agent_time_top_padding">0dp</dimen>
+    <dimen name="rc_attachement_icon_right_padding">10dp</dimen>
+    <dimen name="rc_avatar_carousel_vertical_spacing">2dp</dimen>
+    <dimen name="rc_avatar_image_size">24dp</dimen>
+    <dimen name="rc_back_to_all_chats_text_size">20sp</dimen>
+    <dimen name="rc_badge_text_size">12sp</dimen>
+    <dimen name="rc_chat_attachment_height">270dp</dimen>
+    <dimen name="rc_chat_template_border_width">1dp</dimen>
+    <dimen name="rc_chat_template_icon_space">8dp</dimen>
+    <dimen name="rc_chat_template_image_height_horizontal">250dp</dimen>
+    <dimen name="rc_chat_template_image_height_vertical">350dp</dimen>
+    <dimen name="rc_chat_template_image_width">280dp</dimen>
+    <dimen name="rc_chat_template_width">300dp</dimen>
+    <dimen name="rc_chat_view_padding_bottom">4dp</dimen>
+    <dimen name="rc_chat_view_padding_top">6dp</dimen>
+    <dimen name="rc_date_message_bottom_padding">8dp</dimen>
+    <dimen name="rc_date_message_top_padding">4dp</dimen>
+    <dimen name="rc_deleted_message_text_size">16sp</dimen>
+    <dimen name="rc_dialog_item_height">55dp</dimen>
+    <dimen name="rc_dialog_item_margin">10dp</dimen>
+    <dimen name="rc_dialog_title_height">45dp</dimen>
+    <dimen name="rc_dialog_title_separator_height">0.5dp</dimen>
+    <dimen name="rc_hour_time_text_size">@dimen/dimelo_date_text_size</dimen>
+    <dimen name="rc_image_default_margin">4dp</dimen>
+    <dimen name="rc_list_row_horizontal_padding_left">8dp</dimen>
+    <dimen name="rc_quick_replies_border_width">1dp</dimen>
+    <dimen name="rc_quick_replies_horizontal_spacing">2dp</dimen>
+    <dimen name="rc_quick_replies_item_bottom_padding">10dp</dimen>
+    <dimen name="rc_quick_replies_item_left_padding">16dp</dimen>
+    <dimen name="rc_quick_replies_item_right_padding">16dp</dimen>
+    <dimen name="rc_quick_replies_item_top_padding">10dp</dimen>
+    <dimen name="rc_quick_replies_margin_bottom">0dp</dimen>
+    <dimen name="rc_quick_replies_margin_left">8dp</dimen>
+    <dimen name="rc_quick_replies_margin_right">8dp</dimen>
+    <dimen name="rc_quick_replies_margin_top">4dp</dimen>
+    <dimen name="rc_quick_replies_text_size">14sp</dimen>
+    <dimen name="rc_quick_replies_vertical_spacing">4dp</dimen>
+    <dimen name="rc_scroll_button_to_end_margin_bottom">8sp</dimen>
+    <dimen name="rc_scroll_button_to_end_margin_right">14sp</dimen>
+    <dimen name="rc_threads_list_agent_name_text_size">12sp</dimen>
+    <dimen name="rc_threads_list_company_message_subtitle_text_size">14sp</dimen>
+    <dimen name="rc_threads_list_company_message_title_text_size">20sp</dimen>
+    <dimen name="rc_threads_list_date_text_size">12sp</dimen>
+    <dimen name="rc_threads_list_message_text_size">14sp</dimen>
+    <dimen name="rc_video_call_requested_status_message_text_size">12sp</dimen>
+    <dimen name="rc_video_date_margin">6dp</dimen>
+    <dimen name="rc_video_margin">10dp</dimen>
+    <dimen name="rc_web_view_title_text_size">18sp</dimen>
+    <item name="rc_better_movement_method_highlight_background_span" type="id"/>
+    <string name="dimelo_toolbar_title">Chat</string>
+    <string name="rc_attachment_img">Attachment</string>
+    <string name="rc_attachment_size_label_kilobyte_unit">KB</string>
+    <string name="rc_attachment_size_label_megabyte_unit">MB</string>
+    <string name="rc_back_to_all_chats">Back to all chats</string>
+    <string name="rc_cancel_button_title">Cancel</string>
+    <string name="rc_copy_message_button_title">Copy</string>
+    <string name="rc_delete_message_button_title">Delete for everyone</string>
+    <string name="rc_delete_message_confirmation_dialog_cancel_button_title">CANCEL</string>
+    <string name="rc_delete_message_confirmation_dialog_delete_button_title">DELETE</string>
+    <string name="rc_delete_message_confirmation_dialog_description">Are you sure you would like to delete this message for everyone?</string>
+    <string name="rc_delete_message_confirmation_dialog_title">Delete message for everyone</string>
+    <string name="rc_deleted_message_replacement_text">You deleted this message for everyone.</string>
+    <string name="rc_failed_send_message">Could not send the message</string>
+    <string name="rc_hint_input_text">Send a message...</string>
+    <string name="rc_loading">Loading...</string>
+    <string name="rc_notification_reply_response">Your response</string>
+    <string name="rc_notification_reply_title">Reply</string>
+    <string name="rc_permission_camera_explanation">We need to access the camera to provide you this feature</string>
+    <string name="rc_permission_explanation_title">Authorization required</string>
+    <string name="rc_permission_library_explanation">We need to access the external storage to provide you this feature. Tap Settings > Permissions, and turn \"Files and media\" on.</string>
+    <string name="rc_permission_location_explanation">We need the location information to display your current location on the location-picker map</string>
+    <string name="rc_reload_img">Reload</string>
+    <string name="rc_retry_button_title">Resend</string>
+    <string name="rc_row_gallery_img">Picture Gallery</string>
+    <string name="rc_select_attachment_img">Select Attachment</string>
+    <string name="rc_select_document_file">Document</string>
+    <string name="rc_select_from_album_img">Select photo from Album</string>
+    <string name="rc_select_from_camera_img">Take picture</string>
+    <string name="rc_select_from_map_img">Share location</string>
+    <string name="rc_send_message_image">Send</string>
+    <string name="rc_settings">Settings</string>
+    <string name="rc_share">Share</string>
+    <string name="rc_threads_title">Chats</string>
+    <string name="rc_today">Today</string>
+    <string name="rc_video_call_requested_status_message">You will be connected to a video call shortly</string>
+    <string name="rc_waiting_for_agent">Waiting for agent</string>
+    <string name="rc_you">You:</string>
+    <style name="DimeloImageRowTheme" parent="DimeloTheme">
+        <item name="background">@color/transparent</item>
+    </style>
+    <style name="DimeloRowGalleryTheme" parent="DimeloTheme">
+        <item name="background">@color/dimelo_inputbar_background_color</item>
+    </style>
+    <style name="DimeloRowTheme" parent="DimeloTheme">
+        <item name="background">@color/dimelo_row_background_color</item>
+    </style>
+    <style name="DimeloTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/dimelo_color_primary</item>
+        <item name="colorPrimaryDark">@color/dimelo_color_primary_dark</item>
+    </style>
+    <style name="RcAlertDialogDeleteTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:background">@color/white</item>
+        <item name="dialogCornerRadius">16dp</item>
+    </style>
+    <style name="RcStyle.PopupMenu" parent="Widget.AppCompat.PopupMenu">
+        <item name="android:itemBackground">@android:color/white</item>
+    </style>
+    <style name="RcWebViewDialogAnimationStyle">
+        <item name="android:windowEnterAnimation">@anim/web_view_dialog_show</item>
+        <item name="android:windowExitAnimation">@anim/web_view_dialog_hide</item>
+    </style>
+    <style name="RcWebViewDialogExitAnimationStyle">
+        <item name="android:windowExitAnimation">@anim/web_view_dialog_hide</item>
+    </style>
+    <style name="RcWebViewDialogWithAnimationTheme" parent="RcWebViewDialogWithoutAnimationTheme">
+        <item name="android:windowAnimationStyle">@style/RcWebViewDialogAnimationStyle</item>
+    </style>
+    <style name="RcWebViewDialogWithoutAnimationTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowAnimationStyle">@style/RcWebViewDialogExitAnimationStyle</item>
+    </style>
+    <style name="dimelo_dark_ripple">
+        <item name="colorControlHighlight">@color/grey_500</item>
+    </style>
+    <style name="rc_medium_font">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+    <declare-styleable name="DMXEllipsizeTextView">
+        <attr format="string|reference" name="ellipsize_text"/>
+        <attr format="integer|reference" name="ellipsize_index"/>
+    </declare-styleable>
+    <declare-styleable name="DMXGravitySnapRecyclerViewDMX">
+        <attr format="enum" name="snapGravity">
+            <enum name="start" value="0"/>
+            <enum name="top" value="1"/>
+            <enum name="end" value="2"/>
+            <enum name="bottom" value="3"/>
+            <enum name="center" value="4"/>
+        </attr>
+        <attr format="boolean" name="snapEnabled"/>
+        <attr format="boolean" name="snapLastItem"/>
+        <attr format="boolean" name="snapToPadding"/>
+        <attr format="float" name="snapScrollMsPerInch"/>
+        <attr format="float" name="snapMaxFlingSizeFraction"/>
+    </declare-styleable>
+    <declare-styleable name="DMXMaxHeightLinearLayout">
+        <attr format="integer" name="maxHeightPx"/>
+    </declare-styleable>
+    <declare-styleable name="DMXZoomageView">
+        <attr format="boolean" name="zoomage_zoomable"/>
+        <attr format="boolean" name="zoomage_translatable"/>
+        <attr format="boolean" name="zoomage_restrictBounds"/>
+        <attr format="boolean" name="zoomage_animateOnReset"/>
+        <attr format="boolean" name="zoomage_doubleTapToZoom"/>
+        <attr format="float" name="zoomage_doubleTapToZoomScaleFactor"/>
+        <attr format="boolean" name="zoomage_autoCenter"/>
+        <attr format="float" name="zoomage_minScale"/>
+        <attr format="float" name="zoomage_maxScale"/>
+        <attr format="enum" name="zoomage_autoResetMode">
+            <enum name="UNDER" value="0"/>
+            <enum name="OVER" value="1"/>
+            <enum name="ALWAYS" value="2"/>
+            <enum name="NEVER" value="3"/>
+        </attr>
+    </declare-styleable>
+</resources>
