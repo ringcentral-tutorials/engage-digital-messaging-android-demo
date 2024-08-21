@@ -1,11 +1,3 @@
 <resources>
     <string name="rc_sdk_version">SDK version: </string>
-    <string name="user_identifier">User Identifier</string>
-    <string name="username">Username</string>
-    <string name="company">Company</string>
-    <string name="email">Email</string>
-    <string name="firstname">Firstname</string>
-    <string name="lastname">Lastname</string>
-    <string name="home_phone">Home Phone</string>
-    <string name="mobile_phone">Mobile Phone</string>
 </resources>

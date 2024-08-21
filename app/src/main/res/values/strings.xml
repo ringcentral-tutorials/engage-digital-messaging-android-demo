@@ -8,14 +8,14 @@
     <string name="user_identifier_text" translatable="false">Choose a user identifier:</string>
     <string name="update" translatable="false">Update</string>
     <string name="rc_sdk_version">SDK version: </string>
-    <string name="user_identifier">User Identifier</string>
-    <string name="username">Username</string>
-    <string name="company">Company</string>
-    <string name="email">Email</string>
-    <string name="firstname">Firstname</string>
-    <string name="lastname">Lastname</string>
-    <string name="home_phone">Home Phone</string>
-    <string name="mobile_phone">Mobile Phone</string>
+    <string name="user_identifier" translatable="false">User Identifier</string>
+    <string name="username" translatable="false">Username</string>
+    <string name="company" translatable="false">Company</string>
+    <string name="email" translatable="false">Email</string>
+    <string name="firstname" translatable="false">Firstname</string>
+    <string name="lastname" translatable="false">Lastname</string>
+    <string name="home_phone" translatable="false">Home Phone</string>
+    <string name="mobile_phone" translatable="false">Mobile Phone</string>
 
 
     <!-- -->
