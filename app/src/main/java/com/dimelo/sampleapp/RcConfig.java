@@ -46,7 +46,7 @@ public class RcConfig {
 
         dimelo.setDebug(true);
 
-        String userNameVal = RcConfig.getStringValueFromSharedPreference(context, RC_USER_NAME_VAL);
+        String userName = RcConfig.getStringValueFromSharedPreference(context, RC_USER_NAME_VAL);
         if (userNameVal != null) {
             dimelo.setUserName(userNameVal);
         }
