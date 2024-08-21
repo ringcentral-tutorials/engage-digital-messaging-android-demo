@@ -58,7 +58,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="User id"
+                    android:hint="@string/user_identifier"
                     android:textColor="@color/black"
                     android:textColorHint="@color/grey_400"
                     style="@style/TextInputLayoutTheme" />
@@ -70,7 +70,7 @@
                 android:layout_height="25dp"
                 android:layout_marginBottom="0dp"
                 android:layout_marginTop="20dp"
-                android:text="username"
+                android:text="@string/username"
                 android:textColor="@color/black"/>
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/user_name"
@@ -83,7 +83,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="username"
+                    android:hint="@string/username"
                     android:textColor="@color/black"
                     android:textColorHint="@color/grey_400"
                     style="@style/TextInputLayoutTheme" />
@@ -95,7 +95,7 @@
                 android:layout_height="25dp"
                 android:layout_marginBottom="0dp"
                 android:layout_marginTop="20dp"
-                android:text="company"
+                android:text="@string/company"
                 android:textColor="@color/black"/>
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/company"
@@ -108,7 +108,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="comapny"
+                    android:hint="@string/company"
                     android:textColor="@color/black"
                     android:textColorHint="@color/grey_400"
                     style="@style/TextInputLayoutTheme" />
@@ -120,7 +120,7 @@
                 android:layout_height="25dp"
                 android:layout_marginBottom="0dp"
                 android:layout_marginTop="20dp"
-                android:text="email"
+                android:text="@string/email"
                 android:textColor="@color/black"/>
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/email"
@@ -133,7 +133,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="email"
+                    android:hint="@string/email"
                     android:inputType="textEmailAddress"
                     android:textColor="@color/black"
                     android:textColorHint="@color/grey_400"
@@ -146,7 +146,7 @@
                 android:layout_height="25dp"
                 android:layout_marginBottom="0dp"
                 android:layout_marginTop="20dp"
-                android:text="firstname"
+                android:text="@string/firstname"
                 android:textColor="@color/black"/>
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/firstname"
@@ -159,7 +159,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="firstname"
+                    android:hint="@string/firstname"
                     android:textColor="@color/black"
                     android:textColorHint="@color/grey_400"
                     style="@style/TextInputLayoutTheme" />
@@ -171,7 +171,7 @@
                 android:layout_height="25dp"
                 android:layout_marginBottom="0dp"
                 android:layout_marginTop="20dp"
-                android:text="lastname"
+                android:text="@string/lastname"
                 android:textColor="@color/black"/>
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/lastname"
@@ -184,7 +184,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="lastname"
+                    android:hint="@string/lastname"
                     android:textColor="@color/black"
                     android:textColorHint="@color/grey_400"
                     style="@style/TextInputLayoutTheme" />
@@ -196,7 +196,7 @@
                 android:layout_height="25dp"
                 android:layout_marginBottom="0dp"
                 android:layout_marginTop="20dp"
-                android:text="homephone"
+                android:text="@string/home_phone"
                 android:textColor="@color/black"/>
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/homephone"
@@ -210,7 +210,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="phone"
-                    android:hint="homephone"
+                    android:hint="@string/home_phone"
                     android:textColor="@color/black"
                     android:textColorHint="@color/grey_400"
                     style="@style/TextInputLayoutTheme" />
@@ -222,7 +222,7 @@
                 android:layout_height="25dp"
                 android:layout_marginBottom="0dp"
                 android:layout_marginTop="20dp"
-                android:text="mobilephone"
+                android:text="@string/mobile_phone"
                 android:textColor="@color/black"/>
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/mobilephone"
@@ -235,7 +235,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="mobilephone"
+                    android:hint="@string/mobile_phone"
                     android:inputType="phone"
                     android:textColor="@color/black"
                     android:textColorHint="@color/grey_400"

@@ -49,25 +49,25 @@ public class RcConfigurationActivity extends AppCompatActivity {
         String userIdVal = RcConfig.getStringValueFromSharedPreference(this, RcConfig.RC_USER_ID);
         textInputLayout.getEditText().setText(userIdVal == null ? dimelo.getUserIdentifier() : userIdVal);
 
-        String userNameVal = RcConfig.getStringValueFromSharedPreference(this, RcConfig.RC_USER_NAME_VAL);
+        String userNameVal = RcConfig.getStringValueFromSharedPreference(this, RcConfig.RC_USER_NAME);
         userNameInputLayout.getEditText().setText(userNameVal == null ? dimelo.getUserName() : userNameVal);
 
-        String companyVal = RcConfig.getStringValueFromSharedPreference(this, RcConfig.RC_COMPANY_VAL);
+        String companyVal = RcConfig.getStringValueFromSharedPreference(this, RcConfig.RC_COMPANY);
         companyInputLayout.getEditText().setText(companyVal == null ? dimelo.getCompany() : companyVal);
 
-        String emailVal = RcConfig.getStringValueFromSharedPreference(this, RcConfig.RC_EMAIL_VAL);
+        String emailVal = RcConfig.getStringValueFromSharedPreference(this, RcConfig.RC_EMAIL);
         emailInputLayout.getEditText().setText(emailVal == null ? dimelo.getEmail() : emailVal);
 
-        String firstnameVal = RcConfig.getStringValueFromSharedPreference(this, RcConfig.RC_FIRSTNAME_VAL);
+        String firstnameVal = RcConfig.getStringValueFromSharedPreference(this, RcConfig.RC_FIRSTNAME);
         firstnameInputLayout.getEditText().setText(firstnameVal == null ? dimelo.getFirstname() : firstnameVal);
 
-        String lastnameVal = RcConfig.getStringValueFromSharedPreference(this, RcConfig.RC_LASTNAME_VAL);
+        String lastnameVal = RcConfig.getStringValueFromSharedPreference(this, RcConfig.RC_LASTNAME);
         lastnameInputLayout.getEditText().setText(lastnameVal == null ? dimelo.getLastname() : lastnameVal);
 
-        String homePhoneVal = RcConfig.getStringValueFromSharedPreference(this, RcConfig.RC_HOME_PHONE_VAL);
+        String homePhoneVal = RcConfig.getStringValueFromSharedPreference(this, RcConfig.RC_HOME_PHONE);
         homePhoneInputLayout.getEditText().setText(homePhoneVal == null ? dimelo.getHomePhone() : homePhoneVal);
 
-        String mobilePhoneVal = RcConfig.getStringValueFromSharedPreference(this, RcConfig.RC_MOBILE_PHONE_VAL);
+        String mobilePhoneVal = RcConfig.getStringValueFromSharedPreference(this, RcConfig.RC_MOBILE_PHONE);
         mobilePhoneInputLayout.getEditText().setText(mobilePhoneVal == null ? dimelo.getUserIdentifier() : mobilePhoneVal);
 
         switchCompat = findViewById(R.id.thread);
@@ -118,37 +118,37 @@ public class RcConfigurationActivity extends AppCompatActivity {
         }
 
         if (userNameInputLayout.getEditText() != null && !userNameInputLayout.getEditText().getText().toString().contains(" ")) {
-            RcConfig.savedStringInSharedPreference(this, RcConfig.RC_USER_NAME_VAL, userNameInputLayout.getEditText().getText().toString());
+            RcConfig.savedStringInSharedPreference(this, RcConfig.RC_USER_NAME, userNameInputLayout.getEditText().getText().toString());
             dimelo.setUserName(userNameInputLayout.getEditText().getText().toString());
         }
 
         if (companyInputLayout.getEditText() != null && !companyInputLayout.getEditText().getText().toString().contains(" ")) {
-            RcConfig.savedStringInSharedPreference(this, RcConfig.RC_COMPANY_VAL, companyInputLayout.getEditText().getText().toString());
+            RcConfig.savedStringInSharedPreference(this, RcConfig.RC_COMPANY, companyInputLayout.getEditText().getText().toString());
             dimelo.setCompany(companyInputLayout.getEditText().getText().toString());
         }
 
         if (emailInputLayout.getEditText() != null && !emailInputLayout.getEditText().getText().toString().contains(" ")) {
-            RcConfig.savedStringInSharedPreference(this, RcConfig.RC_EMAIL_VAL, emailInputLayout.getEditText().getText().toString());
+            RcConfig.savedStringInSharedPreference(this, RcConfig.RC_EMAIL, emailInputLayout.getEditText().getText().toString());
             dimelo.setEmail(emailInputLayout.getEditText().getText().toString());
         }
 
         if (firstnameInputLayout.getEditText() != null && !firstnameInputLayout.getEditText().getText().toString().contains(" ")) {
-            RcConfig.savedStringInSharedPreference(this, RcConfig.RC_FIRSTNAME_VAL, firstnameInputLayout.getEditText().getText().toString());
+            RcConfig.savedStringInSharedPreference(this, RcConfig.RC_FIRSTNAME, firstnameInputLayout.getEditText().getText().toString());
             dimelo.setFirstname(firstnameInputLayout.getEditText().getText().toString());
         }
 
         if (lastnameInputLayout.getEditText() != null && !lastnameInputLayout.getEditText().getText().toString().contains(" ")) {
-            RcConfig.savedStringInSharedPreference(this, RcConfig.RC_LASTNAME_VAL, lastnameInputLayout.getEditText().getText().toString());
+            RcConfig.savedStringInSharedPreference(this, RcConfig.RC_LASTNAME, lastnameInputLayout.getEditText().getText().toString());
             dimelo.setLastname(lastnameInputLayout.getEditText().getText().toString());
         }
 
         if (homePhoneInputLayout.getEditText() != null && !homePhoneInputLayout.getEditText().getText().toString().contains(" ")) {
-            RcConfig.savedStringInSharedPreference(this, RcConfig.RC_HOME_PHONE_VAL, homePhoneInputLayout.getEditText().getText().toString());
+            RcConfig.savedStringInSharedPreference(this, RcConfig.RC_HOME_PHONE, homePhoneInputLayout.getEditText().getText().toString());
             dimelo.setHomePhone(homePhoneInputLayout.getEditText().getText().toString());
         }
 
         if (mobilePhoneInputLayout.getEditText() != null && !mobilePhoneInputLayout.getEditText().getText().toString().contains(" ")) {
-            RcConfig.savedStringInSharedPreference(this, RcConfig.RC_MOBILE_PHONE_VAL, mobilePhoneInputLayout.getEditText().getText().toString());
+            RcConfig.savedStringInSharedPreference(this, RcConfig.RC_MOBILE_PHONE, mobilePhoneInputLayout.getEditText().getText().toString());
             dimelo.setMobilePhone(mobilePhoneInputLayout.getEditText().getText().toString());
         }
 

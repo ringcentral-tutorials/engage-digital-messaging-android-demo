@@ -46,40 +46,40 @@ public class RcConfig {
 
         dimelo.setDebug(true);
 
-        String userName = RcConfig.getStringValueFromSharedPreference(context, RC_USER_NAME_VAL);
-        if (userNameVal != null) {
-            dimelo.setUserName(userNameVal);
+        String userName = RcConfig.getStringValueFromSharedPreference(context, RC_USER_NAME);
+        if (userName != null) {
+            dimelo.setUserName(userName);
         }
 
-        String companyVal = RcConfig.getStringValueFromSharedPreference(context, RC_COMPANY_VAL);
-        if (companyVal != null) {
-            dimelo.setCompany(companyVal);
+        String company = RcConfig.getStringValueFromSharedPreference(context, RC_COMPANY);
+        if (company != null) {
+            dimelo.setCompany(company);
         }
 
-        String emailVal = RcConfig.getStringValueFromSharedPreference(context, RC_EMAIL_VAL);
-        if (emailVal != null) {
-            dimelo.setEmail(emailVal);
+        String email = RcConfig.getStringValueFromSharedPreference(context, RC_EMAIL);
+        if (email != null) {
+            dimelo.setEmail(email);
         }
 
 
-        String firstnameVal = RcConfig.getStringValueFromSharedPreference(context, RC_FIRSTNAME_VAL);
-        if (firstnameVal != null) {
-            dimelo.setFirstname(firstnameVal);
+        String firstname = RcConfig.getStringValueFromSharedPreference(context, RC_FIRSTNAME);
+        if (firstname != null) {
+            dimelo.setFirstname(firstname);
         }
 
-        String lastnameVal = RcConfig.getStringValueFromSharedPreference(context, RC_LASTNAME_VAL);
-        if (lastnameVal != null) {
-            dimelo.setLastname(lastnameVal);
+        String lastname = RcConfig.getStringValueFromSharedPreference(context, RC_LASTNAME);
+        if (lastname != null) {
+            dimelo.setLastname(lastname);
         }
 
-        String homePhoneVal = RcConfig.getStringValueFromSharedPreference(context, RC_HOME_PHONE_VAL);
-        if (homePhoneVal != null) {
-            dimelo.setHomePhone(homePhoneVal);
+        String homePhone = RcConfig.getStringValueFromSharedPreference(context, RC_HOME_PHONE);
+        if (homePhone != null) {
+            dimelo.setHomePhone(homePhone);
         }
 
-        String mobilePhoneVal = RcConfig.getStringValueFromSharedPreference(context, RC_MOBILE_PHONE_VAL);
-        if (mobilePhoneVal != null) {
-            dimelo.setMobilePhone(mobilePhoneVal);
+        String mobilePhone = RcConfig.getStringValueFromSharedPreference(context, RC_MOBILE_PHONE);
+        if (mobilePhone != null) {
+            dimelo.setMobilePhone(mobilePhone);
         }
 
         dimelo.setStaticMapsApiKey(BuildConfig.RC_MAPS_API_KEY);
