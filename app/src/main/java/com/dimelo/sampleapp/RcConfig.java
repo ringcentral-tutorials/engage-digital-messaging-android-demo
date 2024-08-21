@@ -21,13 +21,13 @@ import java.io.InputStream;
 
 public class RcConfig {
     static final String RC_USER_ID = "rc_user_id";
-    static final String RC_USER_NAME_VAL = "rc_user_name_val";
-    static final String RC_COMPANY_VAL = "rc_company_val";
-    static final String RC_EMAIL_VAL = "rc_email_val";
-    static final String RC_LASTNAME_VAL = "rc_lastname";
-    static final String RC_FIRSTNAME_VAL = "rc_firstname";
-    static final String RC_MOBILE_PHONE_VAL = "rc_mobile_phone";
-    static final String RC_HOME_PHONE_VAL = "rc_home_phone";
+    static final String RC_USER_NAME = "rc_user_name";
+    static final String RC_COMPANY = "rc_company";
+    static final String RC_EMAIL = "rc_email";
+    static final String RC_LASTNAME = "rc_lastname";
+    static final String RC_FIRSTNAME = "rc_firstname";
+    static final String RC_MOBILE_PHONE = "rc_mobile_phone";
+    static final String RC_HOME_PHONE = "rc_home_phone";
     static final String RC_THREAD_ENABLED = "rc_thread_enabled";
     static final String RC_SOURCE_NAME = "rc_source_name";
     static EngageDigitalMessagingMaps engageDigitalMessagingMaps;
