@@ -21,6 +21,13 @@ import java.io.InputStream;
 
 public class RcConfig {
     static final String RC_USER_ID = "rc_user_id";
+    static final String RC_USER_NAME = "rc_user_name";
+    static final String RC_COMPANY = "rc_company";
+    static final String RC_EMAIL = "rc_email";
+    static final String RC_LASTNAME = "rc_lastname";
+    static final String RC_FIRSTNAME = "rc_firstname";
+    static final String RC_MOBILE_PHONE = "rc_mobile_phone";
+    static final String RC_HOME_PHONE = "rc_home_phone";
     static final String RC_THREAD_ENABLED = "rc_thread_enabled";
     static final String RC_SOURCE_NAME = "rc_source_name";
     static EngageDigitalMessagingMaps engageDigitalMessagingMaps;
@@ -38,7 +45,43 @@ public class RcConfig {
         }
 
         dimelo.setDebug(true);
-        dimelo.setUserName("John Doe");
+
+        String userName = RcConfig.getStringValueFromSharedPreference(context, RC_USER_NAME);
+        if (userName != null) {
+            dimelo.setUserName(userName);
+        }
+
+        String company = RcConfig.getStringValueFromSharedPreference(context, RC_COMPANY);
+        if (company != null) {
+            dimelo.setCompany(company);
+        }
+
+        String email = RcConfig.getStringValueFromSharedPreference(context, RC_EMAIL);
+        if (email != null) {
+            dimelo.setEmail(email);
+        }
+
+
+        String firstname = RcConfig.getStringValueFromSharedPreference(context, RC_FIRSTNAME);
+        if (firstname != null) {
+            dimelo.setFirstname(firstname);
+        }
+
+        String lastname = RcConfig.getStringValueFromSharedPreference(context, RC_LASTNAME);
+        if (lastname != null) {
+            dimelo.setLastname(lastname);
+        }
+
+        String homePhone = RcConfig.getStringValueFromSharedPreference(context, RC_HOME_PHONE);
+        if (homePhone != null) {
+            dimelo.setHomePhone(homePhone);
+        }
+
+        String mobilePhone = RcConfig.getStringValueFromSharedPreference(context, RC_MOBILE_PHONE);
+        if (mobilePhone != null) {
+            dimelo.setMobilePhone(mobilePhone);
+        }
+
         dimelo.setStaticMapsApiKey(BuildConfig.RC_MAPS_API_KEY);
         boolean isThreadEnabled = RcConfig.getBooleanValueFromSharedPreference(context, RC_THREAD_ENABLED);
         setThreadsEnabled(context, RC_THREAD_ENABLED, isThreadEnabled);
@@ -146,14 +189,14 @@ public class RcConfig {
 
     public static void onLocationButtonClick(Chat fragment, Activity activity) {
         engageDigitalMessagingMaps.setMapsApiKey(BuildConfig.RC_MAPS_API_KEY)
-                 //.setSendButtonIconColor(Color.RED)
-                 //.setSendButtonIcon(R.drawable.bank_icon)
-                 //.setSendButtonBackgroundColor(Color.RED)
-                 //.setNavigationBarTitleColor(Color.RED)
-                 //.setNavigationBarBackgroundColor(Color.RED)
-                 //.setNavigationBarTitleFont(Typeface.DEFAULT_BOLD)
-                 //.setNavigationBarBackIconColor(Color.RED)
-                 //.setNavigationBarTitleSize((int) activity.getResources().getDimension(R.dimen.rc_navigation_bar_title_text_size_test))
+                //.setSendButtonIconColor(Color.RED)
+                //.setSendButtonIcon(R.drawable.bank_icon)
+                //.setSendButtonBackgroundColor(Color.RED)
+                //.setNavigationBarTitleColor(Color.RED)
+                //.setNavigationBarBackgroundColor(Color.RED)
+                //.setNavigationBarTitleFont(Typeface.DEFAULT_BOLD)
+                //.setNavigationBarBackIconColor(Color.RED)
+                //.setNavigationBarTitleSize((int) activity.getResources().getDimension(R.dimen.rc_navigation_bar_title_text_size_test))
                 .build(activity);
 
         engageDigitalMessagingMaps.setMapsListener(new EngageDigitalMessagingMaps.EngageDigitalMessagingMapsListener() {

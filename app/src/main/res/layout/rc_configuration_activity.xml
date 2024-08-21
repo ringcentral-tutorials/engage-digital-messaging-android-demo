@@ -22,69 +22,247 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white"
-        android:fitsSystemWindows="true"
-        android:orientation="vertical"
-        android:padding="10dp">
-
-        <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/thread"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:theme="@style/SelectionSwitch"
-            android:layout_marginTop="20dp"
-            android:text="@string/enable_thread"
-            android:layout_marginBottom="20dp"
-            android:textColor="@color/black"/>
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:fitsSystemWindows="true"
+            android:orientation="vertical"
+            android:padding="10dp">
 
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:layout_marginBottom="0dp"
-            android:text="@string/user_identifier_text"
-            android:textColor="@color/black"/>
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/user_id"
-            android:layout_marginTop="0dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            local:boxStrokeColor="@color/blue_grey_200"
-            android:textColorHint="@color/blue_grey_200">
-            <com.google.android.material.textfield.TextInputEditText
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/thread"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="User id"
-                android:textColor="@color/black"
-                android:textColorHint="@color/grey_400"
-                style="@style/TextInputLayoutTheme" />
+                android:theme="@style/SelectionSwitch"
+                android:layout_marginTop="20dp"
+                android:text="@string/enable_thread"
+                android:layout_marginBottom="20dp"
+                android:textColor="@color/black"/>
 
-        </com.google.android.material.textfield.TextInputLayout>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="32dp"
-            android:layout_marginTop="20dp"
-            android:text="Choose your source :"
-            android:textColor="@color/black"/>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/listView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginBottom="0dp"
+                android:text="@string/user_identifier_text"
+                android:textColor="@color/black"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/user_id"
+                android:layout_marginTop="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                local:boxStrokeColor="@color/blue_grey_200"
+                android:textColorHint="@color/blue_grey_200">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/user_identifier"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey_400"
+                    style="@style/TextInputLayoutTheme" />
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:onClick="update"
-            android:layout_marginTop="15dp"
-            android:background="@color/blue_300"
-            android:text="@string/update" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/username"
+                android:textColor="@color/black"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/user_name"
+                android:layout_marginTop="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                local:boxStrokeColor="@color/blue_grey_200"
+                android:textColorHint="@color/blue_grey_200">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/username"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey_400"
+                    style="@style/TextInputLayoutTheme" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/company"
+                android:textColor="@color/black"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/company"
+                android:layout_marginTop="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                local:boxStrokeColor="@color/blue_grey_200"
+                android:textColorHint="@color/blue_grey_200">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/company"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey_400"
+                    style="@style/TextInputLayoutTheme" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/email"
+                android:textColor="@color/black"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/email"
+                android:layout_marginTop="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                local:boxStrokeColor="@color/blue_grey_200"
+                android:textColorHint="@color/blue_grey_200">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/email"
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey_400"
+                    style="@style/TextInputLayoutTheme" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/firstname"
+                android:textColor="@color/black"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/firstname"
+                android:layout_marginTop="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                local:boxStrokeColor="@color/blue_grey_200"
+                android:textColorHint="@color/blue_grey_200">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/firstname"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey_400"
+                    style="@style/TextInputLayoutTheme" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/lastname"
+                android:textColor="@color/black"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lastname"
+                android:layout_marginTop="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                local:boxStrokeColor="@color/blue_grey_200"
+                android:textColorHint="@color/blue_grey_200">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/lastname"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey_400"
+                    style="@style/TextInputLayoutTheme" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/home_phone"
+                android:textColor="@color/black"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/homephone"
+                android:layout_marginTop="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                local:boxStrokeColor="@color/blue_grey_200"
+                android:textColorHint="@color/blue_grey_200">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="phone"
+                    android:hint="@string/home_phone"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey_400"
+                    style="@style/TextInputLayoutTheme" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/mobile_phone"
+                android:textColor="@color/black"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/mobilephone"
+                android:layout_marginTop="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                local:boxStrokeColor="@color/blue_grey_200"
+                android:textColorHint="@color/blue_grey_200">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/mobile_phone"
+                    android:inputType="phone"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey_400"
+                    style="@style/TextInputLayoutTheme" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginTop="20dp"
+                android:text="Choose your source :"
+                android:textColor="@color/black"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:onClick="update"
+                android:layout_marginTop="15dp"
+                android:background="@color/blue_300"
+                android:text="@string/update" />
+
+        </LinearLayout>
     </ScrollView>
 </LinearLayout>
