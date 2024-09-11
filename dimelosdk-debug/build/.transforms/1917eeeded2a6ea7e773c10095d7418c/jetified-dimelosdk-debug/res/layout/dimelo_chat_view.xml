@@ -8,25 +8,46 @@
     android:focusable="true">
 <RelativeLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    app:layout_behavior="com.dimelo.dimelosdk.utilities.ReactToFooterBehavior">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/chat_layout"
         android:background="@color/dimelo_background_color"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_behavior="com.dimelo.dimelosdk.utilities.ReactToFooterBehavior">
+        android:orientation="vertical">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/message_list"
+        <!-- https://stackoverflow.com/a/32457091 -->
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="0px"
-            android:layout_weight="1"
-            android:background="@color/dimelo_background_color"
-            android:paddingTop="@dimen/rc_chat_view_padding_top"
-            android:paddingBottom="@dimen/dimelo_list_row_small_separation"
-            android:scrollbars="vertical" />
+            android:layout_weight="1">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/message_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/dimelo_background_color"
+                android:scrollbars="vertical" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/scroll_to_the_end_button"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_gravity="end|bottom"
+                android:layout_marginRight="@dimen/rc_scroll_button_to_end_margin_right"
+                android:layout_marginBottom="@dimen/rc_scroll_button_to_end_margin_bottom"
+                android:foregroundGravity="center_vertical"
+                android:src="@drawable/arrowdown"
+                android:visibility="gone"
+                app:borderWidth="0dp"
+                app:elevation="6dp"
+                app:fabCustomSize="42dp"
+                app:fabSize="mini"
+                app:maxImageSize="12dp"
+                app:pressedTranslationZ="1dp" />
+        </FrameLayout>
 
         <View
             android:id="@+id/dimelo_chat_inputbar_separator"
@@ -139,21 +160,6 @@
             </androidx.cardview.widget.CardView>
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.appcompat.widget.LinearLayoutCompat>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/scroll_to_the_end_button"
-        android:layout_width="42dp"
-        android:layout_height="42dp"
-        android:src="@drawable/arrowdown"
-        app:fabSize="mini"
-        app:maxImageSize="12dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:foregroundGravity="center_vertical"
-        android:visibility="gone"
-        app:elevation="6dp"
-        app:borderWidth="0dp"
-        app:pressedTranslationZ="1dp"/>
 </RelativeLayout>
     <include
         layout="@layout/rc_toolbar_fragment"

@@ -248,6 +248,7 @@
     <color name="rc_background_color_item_selected">#1FE8EFFC</color>
     <color name="rc_badge_background_color">#F0512A</color>
     <color name="rc_badge_text_color">@color/white</color>
+    <color name="rc_closed_thread_message_text_color">@color/grey_600</color>
     <color name="rc_create_new_thread_background_color">#4481EB</color>
     <color name="rc_create_new_thread_image_color">@color/white</color>
     <color name="rc_delete_message_button_title_color">#FF0000</color>
@@ -261,6 +262,7 @@
     <color name="rc_input_text_border_color">#d8d8d8</color>
     <color name="rc_input_text_hint_color">@color/dimelo_agent_name_color</color>
     <color name="rc_locked_thread_image_tint_color">#A1A1A1</color>
+    <color name="rc_navigation_bar_back_item_tint_color">@color/white</color>
     <color name="rc_open_gallery_background_color">#4481EB</color>
     <color name="rc_open_gallery_icon_color">@color/white</color>
     <color name="rc_progress_bar_tint_color">#4481EB</color>
@@ -408,7 +410,7 @@
     <dimen name="rc_chat_template_image_width">280dp</dimen>
     <dimen name="rc_chat_template_width">300dp</dimen>
     <dimen name="rc_chat_view_padding_bottom">4dp</dimen>
-    <dimen name="rc_chat_view_padding_top">6dp</dimen>
+    <dimen name="rc_closed_thread_message_text_size">12sp</dimen>
     <dimen name="rc_date_message_bottom_padding">8dp</dimen>
     <dimen name="rc_date_message_top_padding">4dp</dimen>
     <dimen name="rc_deleted_message_text_size">16sp</dimen>
@@ -449,6 +451,7 @@
     <string name="rc_attachment_size_label_megabyte_unit">MB</string>
     <string name="rc_back_to_all_chats">Back to all chats</string>
     <string name="rc_cancel_button_title">Cancel</string>
+    <string name="rc_close_text">The conversation has ended</string>
     <string name="rc_copy_message_button_title">Copy</string>
     <string name="rc_delete_message_button_title">Delete for everyone</string>
     <string name="rc_delete_message_confirmation_dialog_cancel_button_title">CANCEL</string>
@@ -477,6 +480,8 @@
     <string name="rc_settings">Settings</string>
     <string name="rc_share">Share</string>
     <string name="rc_threads_title">Chats</string>
+    <string name="rc_thumbs_down_button_title">Dislike</string>
+    <string name="rc_thumbs_up_button_title">Like</string>
     <string name="rc_today">Today</string>
     <string name="rc_video_call_requested_status_message">You will be connected to a video call shortly</string>
     <string name="rc_waiting_for_agent">Waiting for agent</string>

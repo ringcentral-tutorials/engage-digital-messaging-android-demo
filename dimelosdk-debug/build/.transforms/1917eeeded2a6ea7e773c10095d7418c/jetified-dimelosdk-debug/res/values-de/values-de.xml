@@ -6,6 +6,7 @@
     <string name="rc_attachment_size_label_megabyte_unit">MB</string>
     <string name="rc_back_to_all_chats">Alle Chats anzeigen</string>
     <string name="rc_cancel_button_title">Abbrechen</string>
+    <string name="rc_close_text">Die Konversation ist beendet</string>
     <string name="rc_copy_message_button_title">Kopieren</string>
     <string name="rc_delete_message_button_title">Für alle löschen</string>
     <string name="rc_delete_message_confirmation_dialog_cancel_button_title">ABBRECHEN</string>
@@ -33,6 +34,8 @@
     <string name="rc_settings">Einstellungen</string>
     <string name="rc_share">Teilen</string>
     <string name="rc_threads_title">Chats</string>
+    <string name="rc_thumbs_down_button_title">Gefällt mir nicht</string>
+    <string name="rc_thumbs_up_button_title">Gefällt mir</string>
     <string name="rc_today">Heute</string>
     <string name="rc_video_call_requested_status_message">Verbindung mit Videoanruf wird in Kürze hergestellt</string>
     <string name="rc_waiting_for_agent">Warten auf einen Agenten</string>

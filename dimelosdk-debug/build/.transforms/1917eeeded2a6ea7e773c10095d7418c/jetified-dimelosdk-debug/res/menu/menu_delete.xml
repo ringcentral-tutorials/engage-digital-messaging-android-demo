@@ -15,4 +15,20 @@
         app:showAsAction="always"
         android:visible="false"
         />
+
+    <item
+        android:id="@+id/likeItem"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/thumbs_up"
+        tools:ignore="MenuTitle"
+        android:visible="false"
+        />
+
+    <item
+        android:id="@+id/dislikeItem"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/thumbs_down"
+        tools:ignore="MenuTitle"
+        android:visible="false"
+        />
 </menu>

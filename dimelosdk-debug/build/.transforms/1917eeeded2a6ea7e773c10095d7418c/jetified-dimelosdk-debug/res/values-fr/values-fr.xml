@@ -6,6 +6,7 @@
     <string name="rc_attachment_size_label_megabyte_unit">Mo</string>
     <string name="rc_back_to_all_chats">Voir toutes les discussions</string>
     <string name="rc_cancel_button_title">Annuler</string>
+    <string name="rc_close_text">La conversation est terminée</string>
     <string name="rc_copy_message_button_title">Copier</string>
     <string name="rc_delete_message_button_title">Supprimer pour tout le monde</string>
     <string name="rc_delete_message_confirmation_dialog_cancel_button_title">ANNULER</string>
@@ -34,6 +35,8 @@
     <string name="rc_settings">Paramètres</string>
     <string name="rc_share">Partager</string>
     <string name="rc_threads_title">Discussions</string>
+    <string name="rc_thumbs_down_button_title">Je n\'aime pas</string>
+    <string name="rc_thumbs_up_button_title">J\'aime</string>
     <string name="rc_today">Aujourd\'hui</string>
     <string name="rc_video_call_requested_status_message">Vous serez bientôt connecté à un appel vidéo</string>
     <string name="rc_waiting_for_agent">En attente d\'un agent</string>
