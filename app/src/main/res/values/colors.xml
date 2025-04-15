@@ -10,4 +10,5 @@
     <color name="secondary_text">@color/grey_600</color>
     <color name="icons">@color/white</color>
     <color name="divider">@color/grey_400</color>
+    <color name="backgroundColor">#4F95E0</color>
 </resources>
