@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/row_root"
+    style="@style/DimeloRowTheme"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:paddingStart="@dimen/dimelo_user_message_bubble_left_padding"
+    android:paddingLeft="@dimen/dimelo_user_message_bubble_left_padding"
+    android:paddingEnd="@dimen/dimelo_user_message_bubble_right_padding"
+    android:paddingRight="@dimen/dimelo_user_message_bubble_right_padding"
+    android:layout_marginBottom="@dimen/rc_video_margin"
+    android:layout_marginTop="@dimen/rc_video_margin">
+    <include
+        layout="@layout/dimelo_date_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="@dimen/rc_list_row_horizontal_padding_left"
+        android:layout_marginRight="@dimen/dimelo_list_row_horizontal_padding"
+        android:layout_marginBottom="@dimen/rc_video_date_margin"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/video_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/rc_video_call_requested_status_message_text_size"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/dimelo_agent_name_color"
+        android:maxLines="1"
+        android:ellipsize = "end"
+        />
+
+</androidx.appcompat.widget.LinearLayoutCompat>
