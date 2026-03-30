@@ -2,12 +2,15 @@ package com.dimelo.sampleapp.chats;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +20,7 @@ import com.dimelo.dimelosdk.main.RcFragment;
 import com.dimelo.dimelosdk.main.Dimelo;
 import com.dimelo.sampleapp.RcConfig;
 import com.dimelo.sampleapp.R;
+import java.text.SimpleDateFormat;
 
 public class TabTelecom extends Fragment implements SampleDimeloTab {
     static private String CHAT_STATE_KEY = "tab_telecom_chat_state";
@@ -80,16 +84,47 @@ public class TabTelecom extends Fragment implements SampleDimeloTab {
 
     private void customize(){
         RcFragment.Customization customisation = mDimeloChat.getCustomization();
-        customisation.backgroundColor = getResources().getColor(R.color.purple_500);
+        customisation.backgroundColor = getResources().getColor(R.color.backgroundColor);
         customisation.inputbarBackgroundColor = getResources().getColor(R.color.purple_50);
         customisation.userMessageTextColor = Color.WHITE;
         customisation.agentMessageTextColor = Color.BLACK;
-        customisation.agentNameColor = Color.BLACK;
-        customisation.agentTimeColor = Color.BLACK;
+        customisation.agentNameColor = Color.RED;
+        customisation.agentTimeColor = Color.GREEN;
         customisation.systemMessageTextColor = Color.BLACK;
-        customisation.dateTextColor = Color.WHITE;
-        customisation.hourTimeTextColor = Color.WHITE;
+        customisation.dateTextColor = Color.RED;
+        customisation.dateFont = Typeface.DEFAULT_BOLD;
         customisation.createNewThreadBackgroundColor = Color.RED;
+        int paddingReplies = (int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, getResources().getDimension(R.dimen.rc_quick_replies_padding), getResources().getDisplayMetrics());
+        customisation.quickRepliesItemPadding = new RcFragment.Customization.Padding(paddingReplies, paddingReplies, paddingReplies, paddingReplies);
+        SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd");
+        customisation.dateFormatter = dateFormatter;
+        customisation.messageFont = Typeface.DEFAULT_BOLD;
+        customisation.agentTemplateBorderColor = Color.RED;
+        customisation.agentTemplateWithImageBodyBackgroundColor = Color.LTGRAY;
+        int quickRepliesHeight = (int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, getResources().getDimension(R.dimen.rc_quick_replies_height), getResources().getDisplayMetrics());
+        customisation.quickRepliesBorderWidth = quickRepliesHeight;
+        customisation.quickRepliesTextColor = Color.WHITE;
+        customisation.quickRepliesTappedTextColor = Color.RED;
+        customisation.quickRepliesBorderColor = Color.RED;
+        customisation.badgeFont = Typeface.DEFAULT_BOLD;
+        customisation.badgeTextColor = Color.RED;
+        customisation.backToAllChatsFont = Typeface.DEFAULT_BOLD;
+        customisation.threadsListSeparatorColor = Color.BLACK;
+        customisation.quickRepliesHorizontalSpacing = (int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, getResources().getDimension(R.dimen.rc_quick_replies_horizontal_spacing), getResources().getDisplayMetrics());
+        customisation.hourTimeFont = Typeface.DEFAULT_BOLD;
+        customisation.agentTimeFont = Typeface.DEFAULT_BOLD;
+        customisation.hourTimeTextColor = Color.GREEN;
+        customisation.agentStructuredMessageItemFont = Typeface.DEFAULT_BOLD;
+        customisation.agentStructuredMessageUrlFont = Typeface.DEFAULT_BOLD;
+        customisation.agentStructuredMessageSubTitleFont = Typeface.DEFAULT_BOLD;
+        customisation.agentStructuredMessageTitleFont = Typeface.DEFAULT_BOLD;
+        customisation.agentStructuredMessageTitleColor = Color.BLUE;
+        customisation.agentStructuredMessageSubtitleColor = Color.RED;
+        customisation.agentStructuredMessageUrlColor = ResourcesCompat.getColor(getResources(), R.color.brown_500, null);
+        customisation.agentStructuredMessageItemColor = ResourcesCompat.getColor(getResources(), R.color.brown_500, null);
+        customisation.agentStructuredMessageItemTappedColor = Color.BLUE;
+        customisation.setBackToAllChatsImage(R.drawable.bank_icon);
+        customisation.setLockedThreadImage(R.drawable.bank_icon);
         customisation.apply();
     }
 
