@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
-// apply plugin: "com.google.gms.google-services"
-// apply plugin: "com.huawei.agconnect"
+//apply plugin: "com.google.gms.google-services"
+//apply plugin: "com.huawei.agconnect"
 
 android {
     compileSdkVersion 34
     defaultConfig {
         applicationId "com.dimelo.sampleapp"
-        minSdkVersion 21
+        minSdkVersion 24
         targetSdkVersion 34
         versionCode 6
         versionName "1.1"
@@ -75,8 +75,9 @@ android {
         implementation project(':edmessagingmapssdk-debug')
         implementation 'com.huawei.hms:base:6.2.0.300'
         implementation 'com.huawei.hms:push:6.1.0.300'
-        implementation 'com.google.code.gson:gson:2.8.5'
-        implementation 'com.google.android.gms:play-services-maps:18.0.0'
-        implementation 'com.google.android.libraries.places:places:2.5.0'
+        implementation 'com.google.code.gson:gson:2.13.2'
+        implementation 'com.google.android.gms:play-services-maps:20.0.0'
+        implementation 'com.google.android.libraries.places:places:5.2.0'
     }
+    namespace 'com.dimelo.sampleapp'
 }
