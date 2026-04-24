@@ -1,8 +1,9 @@
 apply plugin: 'com.android.application'
-//apply plugin: "com.google.gms.google-services"
-//apply plugin: "com.huawei.agconnect"
+// apply plugin: "com.google.gms.google-services"
+// apply plugin: "com.huawei.agconnect"
 
 android {
+    namespace 'com.dimelo.sampleapp'
     compileSdkVersion 34
     defaultConfig {
         applicationId "com.dimelo.sampleapp"
@@ -12,6 +13,11 @@ android {
         versionName "1.1"
         multiDexEnabled true
     }
+
+    buildFeatures {
+        buildConfig true
+    }
+
     compileOptions {
         coreLibraryDesugaringEnabled true
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -79,5 +85,4 @@ android {
         implementation 'com.google.android.gms:play-services-maps:20.0.0'
         implementation 'com.google.android.libraries.places:places:5.2.0'
     }
-    namespace 'com.dimelo.sampleapp'
 }
