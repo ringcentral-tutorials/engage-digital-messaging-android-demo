@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/row_root"
+    style="@style/DimeloRowTheme"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/rc_list_row_horizontal_padding_left"
+    android:paddingRight="@dimen/dimelo_list_row_horizontal_padding">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/closed_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:lineSpacingExtra="0dp"
+        android:maxLines="1"
+        android:visibility="gone" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

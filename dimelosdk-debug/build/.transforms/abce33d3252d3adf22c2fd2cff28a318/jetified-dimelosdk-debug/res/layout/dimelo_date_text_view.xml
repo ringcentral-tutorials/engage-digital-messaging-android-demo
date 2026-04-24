@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/date_container"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:paddingStart="@dimen/dimelo_user_message_bubble_left_padding"
+    android:paddingLeft="@dimen/dimelo_user_message_bubble_left_padding"
+    android:paddingTop="@dimen/rc_date_message_top_padding"
+    android:paddingEnd="@dimen/dimelo_user_message_bubble_right_padding"
+    android:paddingRight="@dimen/dimelo_user_message_bubble_right_padding"
+    android:paddingBottom="@dimen/rc_date_message_bottom_padding">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/dimelo_date_text_size" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/hour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/rc_agent_name_hour_spacing"
+        android:paddingLeft="@dimen/rc_agent_name_hour_spacing"
+        android:paddingEnd="@dimen/rc_agent_name_hour_spacing"
+        android:textSize="@dimen/rc_hour_time_text_size" />
+</androidx.appcompat.widget.LinearLayoutCompat>

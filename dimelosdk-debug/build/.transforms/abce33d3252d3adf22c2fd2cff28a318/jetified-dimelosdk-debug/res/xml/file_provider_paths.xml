@@ -1,0 +1,4 @@
+<paths>
+    <files-path name="shared_image_path" path="dimelo_shared_images/"/>
+    <external-path name="shared_attachments" path="."/>
+</paths>

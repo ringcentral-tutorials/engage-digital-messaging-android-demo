@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activities.PatientSelectionActivity">
+    <item
+        android:id="@+id/copy"
+        android:icon="@drawable/ic_copy"
+        app:showAsAction="ifRoom"
+        tools:ignore="MenuTitle" />
+
+    <item
+        android:id="@+id/delete"
+        android:icon="@drawable/ic_delete"
+        app:showAsAction="always"
+        android:visible="false"
+        />
+
+    <item
+        android:id="@+id/likeItem"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/thumbs_up"
+        tools:ignore="MenuTitle"
+        android:visible="false"
+        />
+
+    <item
+        android:id="@+id/dislikeItem"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/thumbs_down"
+        tools:ignore="MenuTitle"
+        android:visible="false"
+        />
+</menu>

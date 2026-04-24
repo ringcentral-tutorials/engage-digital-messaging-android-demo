@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/DimeloRowTheme"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="start"
+    android:paddingStart="@dimen/rc_list_row_horizontal_padding_left"
+    android:paddingEnd="@dimen/dimelo_list_row_horizontal_padding">
+
+    <RelativeLayout
+        android:id="@+id/rc_date_text_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            layout="@layout/dimelo_date_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:paddingLeft="@dimen/dimelo_list_row_horizontal_padding"
+            android:paddingRight="@dimen/dimelo_list_row_horizontal_padding" />
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/avatar_img_container"
+        android:layout_width="@dimen/rc_avatar_image_size"
+        android:layout_height="@dimen/rc_avatar_image_size"
+        android:layout_above="@+id/rc_agent_name_hour_container"
+        android:layout_alignParentStart="true"
+        android:layout_marginEnd="@dimen/rc_list_row_horizontal_padding_left"
+        app:cardBackgroundColor="@color/transparent"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="0dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/avatar_img"
+            android:layout_width="@dimen/rc_avatar_image_size"
+            android:layout_height="@dimen/rc_avatar_image_size"
+            android:layout_gravity="bottom" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/border_linear_layout"
+        android:layout_width="@dimen/rc_video_width"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rc_date_text_view_container"
+        android:layout_toEndOf="@+id/avatar_img_container"
+        android:background="@drawable/rc_embedded_video_border_background"
+        android:paddingStart="1dp"
+        android:paddingTop="1dp"
+        android:paddingEnd="1dp"
+        android:paddingBottom="1dp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/row_place_holder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rc_embedded_video_background"
+            android:orientation="vertical">
+
+            <com.dimelo.dimelosdk.utilities.DMXRoundedWebView
+                android:id="@+id/web_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/rc_video_height" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/message_text_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp"
+                android:orientation="vertical"
+                android:paddingStart="@dimen/rc_agent_structured_message_body_left_padding"
+                android:paddingTop="@dimen/rc_agent_structured_message_body_top_padding"
+                android:paddingEnd="@dimen/rc_agent_structured_message_body_right_padding"
+                android:paddingBottom="@dimen/rc_agent_structured_message_body_top_padding">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/message_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <RelativeLayout
+        android:id="@+id/rc_agent_name_hour_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/border_linear_layout"
+        android:layout_gravity="start"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/avatar_img_container">
+
+        <include
+            layout="@layout/rc_agent_name_hour"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+</RelativeLayout>
